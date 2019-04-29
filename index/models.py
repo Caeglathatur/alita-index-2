@@ -1,71 +1,68 @@
-from django.db.models import (CASCADE, SET_NULL, BooleanField, CharField,
-                              DateTimeField, ForeignKey, ManyToManyField,
-                              Model, PositiveIntegerField, TextField,
-                              UniqueConstraint, URLField, SlugField)
+from django.db import models
 
 
-class Entry(Model):
+class Entry(models.Model):
 
     class Meta:
         verbose_name_plural = 'entries'
 
-    title = CharField(
+    title = models.CharField(
         max_length=255,
     )
-    description = TextField(
+    description = models.TextField(
         blank=True,
     )
-    parent = ForeignKey(
+    parent = models.ForeignKey(
         'self',
-        on_delete=SET_NULL,
+        on_delete=models.SET_NULL,
         related_name='children',
         null=True,
         blank=True,
     )
-    url = URLField(
+    url = models.URLField(
         verbose_name='URL',
         blank=True,
     )
-    media_type = ForeignKey(
+    media_type = models.ForeignKey(
         'MediaType',
         related_name='entries',
-        on_delete=SET_NULL,
+        on_delete=models.SET_NULL,
         null=True,
         blank=True,
     )
-    length_seconds = PositiveIntegerField(
+    length_seconds = models.PositiveIntegerField(
         null=True,
         blank=True,
     )
-    length_words = PositiveIntegerField(
+    length_words = models.PositiveIntegerField(
         null=True,
         blank=True,
     )
-    created = DateTimeField(
+    created = models.DateTimeField(
         auto_now_add=True,
     )
-    updated = DateTimeField(
+    updated = models.DateTimeField(
         auto_now=True,
     )
-    is_visible = BooleanField(
+    is_visible = models.BooleanField(
         default=False,
     )
-    categories = ManyToManyField(
+    categories = models.ManyToManyField(
         'Category',
         related_name='entries',
         blank=True,
     )
-    authors = ManyToManyField(
+    authors = models.ManyToManyField(
         'Author',
         related_name='entries',
         blank=True,
     )
-    tags = ManyToManyField(
+    tags = models.ManyToManyField(
         'Tag',
         related_name='entries',
         blank=True,
     )
-    identifier_types = ManyToManyField(
+    identifier_types = models.ManyToManyField(
         'IdentifierType',
         related_name='entries',
         through='Identifier',
@@ -81,20 +78,20 @@ class Entry(Model):
         return self.title
 
 
-class Identifier(Model):
+class Identifier(models.Model):
 
     class Meta:
         verbose_name_plural = 'identifiers'
 
-    entry = ForeignKey(
+    entry = models.ForeignKey(
         Entry,
-        on_delete=CASCADE,
+        on_delete=models.CASCADE,
     )
-    type = ForeignKey(
+    type = models.ForeignKey(
         'IdentifierType',
-        on_delete=CASCADE,
+        on_delete=models.CASCADE,
     )
-    value = CharField(
+    value = models.CharField(
         max_length=255,
     )
 
@@ -106,8 +103,8 @@ class Identifier(Model):
         return self.value
 
 
-class IdentifierType(Model):
-    name = CharField(
+class IdentifierType(models.Model):
+    name = models.CharField(
         max_length=150,
         unique=True,
     )
@@ -116,17 +113,17 @@ class IdentifierType(Model):
         return self.name
 
 
-class Category(Model):
+class Category(models.Model):
 
     class Meta:
         verbose_name_plural = 'categories'
 
-    name = CharField(
+    name = models.CharField(
         max_length=150,
     )
-    parent = ForeignKey(
+    parent = models.ForeignKey(
         'self',
-        on_delete=SET_NULL,
+        on_delete=models.SET_NULL,
         related_name='children',
         null=True,
         blank=True,
@@ -136,25 +133,25 @@ class Category(Model):
         return self.name
 
 
-class Author(Model):
+class Author(models.Model):
 
     class Meta:
         constraints = [
-            UniqueConstraint(
+            models.UniqueConstraint(
                 fields=['name', 'discriminator'], name='unique_person')
         ]
 
-    name = CharField(
+    name = models.CharField(
         max_length=255,
     )
-    discriminator = CharField(
+    discriminator = models.CharField(
         help_text=(
             'Used for distinguishing two people with the same name. '
             'Human-readable and visible to users.'),
         max_length=255,
         blank=True,
     )
-    url = URLField(
+    url = models.URLField(
         blank=True,
     )
 
@@ -162,8 +159,8 @@ class Author(Model):
         return self.name
 
 
-class Tag(Model):
-    name = CharField(
+class Tag(models.Model):
+    name = models.CharField(
         max_length=150,
         unique=True,
     )
@@ -172,8 +169,8 @@ class Tag(Model):
         return self.name
 
 
-class MediaType(Model):
-    name = CharField(
+class MediaType(models.Model):
+    name = models.CharField(
         max_length=150,
         unique=True,
     )
