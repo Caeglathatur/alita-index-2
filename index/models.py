@@ -147,6 +147,7 @@ class Author(Model):
 class Tag(Model):
     name = CharField(
         max_length=150,
+        unique=True,
     )
 
     def __str__(self):
@@ -156,6 +157,7 @@ class Tag(Model):
 class MediaType(Model):
     name = CharField(
         max_length=150,
+        unique=True,
     )
 
     def __str__(self):
