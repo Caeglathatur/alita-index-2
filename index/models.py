@@ -1,7 +1,7 @@
 from django.db.models import (CASCADE, SET_NULL, BooleanField, CharField,
                               DateTimeField, ForeignKey, ManyToManyField,
                               Model, PositiveIntegerField, TextField,
-                              UniqueConstraint, URLField)
+                              UniqueConstraint, URLField, SlugField)
 
 
 class Entry(Model):
@@ -65,13 +65,17 @@ class Entry(Model):
         related_name='entries',
         blank=True,
     )
-    identifiers = ManyToManyField(
+    identifier_types = ManyToManyField(
         'IdentifierType',
         related_name='entries',
         through='Identifier',
         # through_fields=('entry', 'type'),
         blank=True,
     )
+
+    @property
+    def identifiers(self):
+        return Identifier.objects.filter(entry=self)
 
     def __str__(self):
         return self.title
@@ -94,8 +98,22 @@ class Identifier(Model):
         max_length=255,
     )
 
+    @property
+    def name(self):
+        return self.type.name
+
     def __str__(self):
         return self.value
+
+
+class IdentifierType(Model):
+    name = CharField(
+        max_length=150,
+        unique=True,
+    )
+
+    def __str__(self):
+        return self.name
 
 
 class Category(Model):
@@ -158,15 +176,6 @@ class MediaType(Model):
     name = CharField(
         max_length=150,
         unique=True,
-    )
-
-    def __str__(self):
-        return self.name
-
-
-class IdentifierType(Model):
-    name = CharField(
-        max_length=150,
     )
 
     def __str__(self):

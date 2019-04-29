@@ -2,9 +2,16 @@ from django.contrib import admin
 from . import models
 
 
+class IdentifierInline(admin.TabularInline):
+    model = models.Identifier
+    extra = 1
+
+
 @admin.register(models.Entry)
 class EntryAdmin(admin.ModelAdmin):
-    pass
+    inlines = (
+        IdentifierInline,
+    )
 
 
 @admin.register(models.Identifier)

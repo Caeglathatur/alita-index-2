@@ -1,3 +1,4 @@
 Django==2.2
 djangorestframework==3.9.3
 Markdown==3.1
+djangorestframework-recursive==0.1.2
