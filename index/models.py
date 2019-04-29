@@ -5,6 +5,10 @@ from django.db.models import (CASCADE, SET_NULL, BooleanField, CharField,
 
 
 class Entry(Model):
+
+    class Meta:
+        verbose_name_plural = 'entries'
+
     title = CharField(
         max_length=255,
     )
@@ -19,6 +23,7 @@ class Entry(Model):
         blank=True,
     )
     url = URLField(
+        verbose_name='URL',
         blank=True,
     )
     media_type = ForeignKey(
@@ -48,24 +53,35 @@ class Entry(Model):
     categories = ManyToManyField(
         'Category',
         related_name='entries',
+        blank=True,
     )
     authors = ManyToManyField(
         'Author',
         related_name='entries',
+        blank=True,
     )
     tags = ManyToManyField(
         'Tag',
         related_name='entries',
+        blank=True,
     )
     identifiers = ManyToManyField(
         'IdentifierType',
         related_name='entries',
         through='Identifier',
         # through_fields=('entry', 'type'),
+        blank=True,
     )
+
+    def __str__(self):
+        return self.title
 
 
 class Identifier(Model):
+
+    class Meta:
+        verbose_name_plural = 'identifiers'
+
     entry = ForeignKey(
         Entry,
         on_delete=CASCADE,
@@ -78,8 +94,15 @@ class Identifier(Model):
         max_length=255,
     )
 
+    def __str__(self):
+        return self.value
+
 
 class Category(Model):
+
+    class Meta:
+        verbose_name_plural = 'categories'
+
     name = CharField(
         max_length=150,
     )
@@ -90,6 +113,9 @@ class Category(Model):
         null=True,
         blank=True,
     )
+
+    def __str__(self):
+        return self.name
 
 
 class Author(Model):
@@ -110,6 +136,12 @@ class Author(Model):
         max_length=255,
         blank=True,
     )
+    url = URLField(
+        blank=True,
+    )
+
+    def __str__(self):
+        return self.name
 
 
 class Tag(Model):
@@ -117,14 +149,23 @@ class Tag(Model):
         max_length=150,
     )
 
+    def __str__(self):
+        return self.name
+
 
 class MediaType(Model):
     name = CharField(
         max_length=150,
     )
 
+    def __str__(self):
+        return self.name
+
 
 class IdentifierType(Model):
     name = CharField(
         max_length=150,
     )
+
+    def __str__(self):
+        return self.name

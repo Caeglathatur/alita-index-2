@@ -1,3 +1,37 @@
 from django.contrib import admin
+from . import models
 
-# Register your models here.
+
+@admin.register(models.Entry)
+class EntryAdmin(admin.ModelAdmin):
+    pass
+
+
+@admin.register(models.Identifier)
+class IdentifierAdmin(admin.ModelAdmin):
+    pass
+
+
+@admin.register(models.Category)
+class CategoryAdmin(admin.ModelAdmin):
+    pass
+
+
+@admin.register(models.Author)
+class AuthorAdmin(admin.ModelAdmin):
+    pass
+
+
+@admin.register(models.Tag)
+class TagAdmin(admin.ModelAdmin):
+    pass
+
+
+@admin.register(models.MediaType)
+class MediaTypeAdmin(admin.ModelAdmin):
+    pass
+
+
+@admin.register(models.IdentifierType)
+class IdentifierTypeAdmin(admin.ModelAdmin):
+    pass
