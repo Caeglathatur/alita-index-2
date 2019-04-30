@@ -36,8 +36,8 @@ class EntryViewSet(
 
     def get_queryset(self):
         qs = models.Entry.objects.all()
-        if self.action == 'list':
-            qs = qs.filter(parent__isnull=True)
+        # if self.action == 'list':
+        #     qs = qs.filter(parent__isnull=True)
         return qs
 
 
@@ -49,7 +49,7 @@ class CategoryViewSet(
     # UpdateModelMixin,
     GenericViewSet,
 ):
-    serializer_class = serializers.CategorySerializer
+    serializer_class = serializers.CategoryTreeSerializer
     permission_classes = (IsAdminUser | ReadOnly,)
 
     def get_queryset(self):

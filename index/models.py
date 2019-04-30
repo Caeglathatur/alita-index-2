@@ -12,29 +12,25 @@ class Entry(models.Model):
     description = models.TextField(
         blank=True,
     )
-    parent = models.ForeignKey(
-        'self',
-        on_delete=models.SET_NULL,
-        related_name='children',
-        null=True,
-        blank=True,
-    )
     url = models.URLField(
         verbose_name='URL',
         blank=True,
     )
-    media_type = models.ForeignKey(
-        'MediaType',
+    # media_type = models.ForeignKey(
+    #     'MediaType',
+    #     related_name='entries',
+    #     on_delete=models.SET_NULL,
+    #     null=True,
+    #     blank=True,
+    # )
+    length = models.PositiveIntegerField(
+        null=True,
+        blank=True,
+    )
+    length_unit = models.ForeignKey(
+        'LengthUnit',
         related_name='entries',
         on_delete=models.SET_NULL,
-        null=True,
-        blank=True,
-    )
-    length_seconds = models.PositiveIntegerField(
-        null=True,
-        blank=True,
-    )
-    length_words = models.PositiveIntegerField(
         null=True,
         blank=True,
     )
@@ -65,23 +61,88 @@ class Entry(models.Model):
     identifier_types = models.ManyToManyField(
         'IdentifierType',
         related_name='entries',
-        through='Identifier',
+        through='EntryIdentifier',
         # through_fields=('entry', 'type'),
         blank=True,
     )
 
     @property
     def identifiers(self):
-        return Identifier.objects.filter(entry=self)
+        return EntryIdentifier.objects.filter(entry=self)
 
     def __str__(self):
         return self.title
 
 
-class Identifier(models.Model):
+class SubEntry(models.Model):
 
     class Meta:
-        verbose_name_plural = 'identifiers'
+        verbose_name_plural = 'sub entries'
+
+    title = models.CharField(
+        max_length=255,
+    )
+    description = models.TextField(
+        blank=True,
+    )
+    entry = models.ForeignKey(
+        Entry,
+        on_delete=models.CASCADE,
+        related_name='children',
+        null=True,
+        blank=True,
+    )
+    parent = models.ForeignKey(
+        'self',
+        on_delete=models.CASCADE,
+        related_name='children',
+        null=True,
+        blank=True,
+    )
+    url = models.URLField(
+        verbose_name='URL',
+        blank=True,
+    )
+    length = models.PositiveIntegerField(
+        null=True,
+        blank=True,
+    )
+    length_unit = models.ForeignKey(
+        'LengthUnit',
+        related_name='sub_entries',
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+    )
+    identifier_types = models.ManyToManyField(
+        'IdentifierType',
+        related_name='sub_entries',
+        through='SubEntryIdentifier',
+        # through_fields=('entry', 'type'),
+        blank=True,
+    )
+
+    @property
+    def identifiers(self):
+        return SubEntryIdentifier.objects.filter(entry=self)
+
+    def __str__(self):
+        path = [self.title]
+        next_ancestor = self.parent or self.entry
+        while next_ancestor:
+            path.append(next_ancestor.title)
+            if isinstance(next_ancestor, Entry):
+                break
+            else:
+                next_ancestor = next_ancestor.parent or next_ancestor.entry
+        path.reverse()
+        return ' / '.join(path)
+
+
+class EntryIdentifier(models.Model):
+
+    class Meta:
+        verbose_name_plural = 'entry identifiers'
 
     entry = models.ForeignKey(
         Entry,
@@ -95,9 +156,26 @@ class Identifier(models.Model):
         max_length=255,
     )
 
-    @property
-    def name(self):
-        return self.type.name
+    def __str__(self):
+        return self.value
+
+
+class SubEntryIdentifier(models.Model):
+
+    class Meta:
+        verbose_name_plural = 'sub entry identifiers'
+
+    entry = models.ForeignKey(
+        SubEntry,
+        on_delete=models.CASCADE,
+    )
+    type = models.ForeignKey(
+        'IdentifierType',
+        on_delete=models.CASCADE,
+    )
+    value = models.CharField(
+        max_length=255,
+    )
 
     def __str__(self):
         return self.value
@@ -170,6 +248,16 @@ class Tag(models.Model):
 
 
 class MediaType(models.Model):
+    name = models.CharField(
+        max_length=150,
+        unique=True,
+    )
+
+    def __str__(self):
+        return self.name
+
+
+class LengthUnit(models.Model):
     name = models.CharField(
         max_length=150,
         unique=True,
