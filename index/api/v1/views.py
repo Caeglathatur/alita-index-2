@@ -16,8 +16,24 @@ class IndexAPIRootView(views.APIView):
     def get(self, request):
         return Response({
             'entry-list-url': reverse_lazy('entry-list', request=request),
+            'author-url': reverse_lazy(
+                'author-list',
+                request=request,
+            ),
             'category-list-url': reverse_lazy(
                 'category-list',
+                request=request,
+            ),
+            'tag-url': reverse_lazy(
+                'tag-list',
+                request=request,
+            ),
+            'identifier-type-url': reverse_lazy(
+                'identifier-type-list',
+                request=request,
+            ),
+            'length-unit-url': reverse_lazy(
+                'length-unit-list',
                 request=request,
             ),
         })
@@ -36,8 +52,6 @@ class EntryViewSet(
 
     def get_queryset(self):
         qs = models.Entry.objects.all()
-        # if self.action == 'list':
-        #     qs = qs.filter(parent__isnull=True)
         return qs
 
 
@@ -57,3 +71,55 @@ class CategoryViewSet(
         if self.action == 'list':
             qs = qs.filter(parent__isnull=True)
         return qs
+
+
+class IdentifierTypeViewSet(
+    ListModelMixin,
+    # CreateModelMixin,
+    # DestroyModelMixin,
+    RetrieveModelMixin,
+    # UpdateModelMixin,
+    GenericViewSet,
+):
+    queryset = models.IdentifierType.objects.all()
+    serializer_class = serializers.IdentifierTypeSerializer
+    permission_classes = (IsAdminUser | ReadOnly,)
+
+
+class LengthUnitViewSet(
+    ListModelMixin,
+    # CreateModelMixin,
+    # DestroyModelMixin,
+    RetrieveModelMixin,
+    # UpdateModelMixin,
+    GenericViewSet,
+):
+    queryset = models.LengthUnit.objects.all()
+    serializer_class = serializers.LengthUnitSerializer
+    permission_classes = (IsAdminUser | ReadOnly,)
+
+
+class TagViewSet(
+    ListModelMixin,
+    # CreateModelMixin,
+    # DestroyModelMixin,
+    RetrieveModelMixin,
+    # UpdateModelMixin,
+    GenericViewSet,
+):
+    queryset = models.Tag.objects.all()
+    serializer_class = serializers.TagSerializer
+    permission_classes = (IsAdminUser | ReadOnly,)
+
+
+class AuthorViewSet(
+    ListModelMixin,
+    # CreateModelMixin,
+    # DestroyModelMixin,
+    RetrieveModelMixin,
+    # UpdateModelMixin,
+    GenericViewSet,
+):
+    queryset = models.Author.objects.filter(entries__isnull=False)
+    serializer_class = serializers.AuthorSerializer
+    permission_classes = (IsAdminUser | ReadOnly,)

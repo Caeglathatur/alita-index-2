@@ -50,8 +50,18 @@ class TagSerializer(serializers.ModelSerializer):
         )
 
 
+class IdentifierTypeSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = models.IdentifierType
+        fields = (
+            'id',
+            'name',
+        )
+
+
 class EntryIdentifierSerializer(serializers.ModelSerializer):
-    type = serializers.CharField(source='type.name')
+    type = IdentifierTypeSerializer()
 
     class Meta:
         model = models.EntryIdentifier
@@ -62,7 +72,7 @@ class EntryIdentifierSerializer(serializers.ModelSerializer):
 
 
 class SubEntryIdentifierSerializer(serializers.ModelSerializer):
-    type = serializers.CharField(source='type.name')
+    type = IdentifierTypeSerializer()
 
     class Meta:
         model = models.SubEntryIdentifier
@@ -72,13 +82,21 @@ class SubEntryIdentifierSerializer(serializers.ModelSerializer):
         )
 
 
+class LengthUnitSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = models.LengthUnit
+        fields = (
+            'id',
+            'name',
+            'name_plural',
+        )
+
+
 class SubEntrySerializer(serializers.ModelSerializer):
     identifiers = EntryIdentifierSerializer(many=True, read_only=True)
     children = RecursiveField(allow_null=True, many=True)
-    length_unit = serializers.CharField(
-        source='length_unit.name',
-        allow_null=True,
-    )
+    length_unit = LengthUnitSerializer()
 
     class Meta:
         model = models.Entry
@@ -99,10 +117,7 @@ class EntrySerializer(serializers.ModelSerializer):
     tags = TagSerializer(many=True)
     identifiers = EntryIdentifierSerializer(many=True, read_only=True)
     children = SubEntrySerializer(allow_null=True, many=True)
-    length_unit = serializers.CharField(
-        source='length_unit.name',
-        allow_null=True,
-    )
+    length_unit = LengthUnitSerializer()
     # media_type = serializers.CharField(
     #     source='media_type.name',
     #     allow_null=True,

@@ -124,7 +124,7 @@ class SubEntry(models.Model):
 
     @property
     def identifiers(self):
-        return SubEntryIdentifier.objects.filter(entry=self)
+        return SubEntryIdentifier.objects.filter(sub_entry=self)
 
     def __str__(self):
         path = [self.title]
@@ -165,7 +165,7 @@ class SubEntryIdentifier(models.Model):
     class Meta:
         verbose_name_plural = 'sub entry identifiers'
 
-    entry = models.ForeignKey(
+    sub_entry = models.ForeignKey(
         SubEntry,
         on_delete=models.CASCADE,
     )
@@ -208,7 +208,16 @@ class Category(models.Model):
     )
 
     def __str__(self):
-        return self.name
+        path = [self.name]
+        next_ancestor = self.parent
+        while next_ancestor:
+            path.append(next_ancestor.name)
+            if isinstance(next_ancestor, Entry):
+                break
+            else:
+                next_ancestor = next_ancestor.parent
+        path.reverse()
+        return ' / '.join(path)
 
 
 class Author(models.Model):
@@ -240,17 +249,6 @@ class Author(models.Model):
 class Tag(models.Model):
     name = models.CharField(
         max_length=150,
-        unique=True,
-    )
-
-    def __str__(self):
-        return self.name
-
-
-class MediaType(models.Model):
-    name = models.CharField(
-        max_length=150,
-        unique=True,
     )
 
     def __str__(self):
@@ -259,8 +257,11 @@ class MediaType(models.Model):
 
 class LengthUnit(models.Model):
     name = models.CharField(
+        help_text='Singular.',
         max_length=150,
-        unique=True,
+    )
+    name_plural = models.CharField(
+        max_length=150,
     )
 
     def __str__(self):

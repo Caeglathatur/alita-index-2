@@ -23,6 +23,10 @@ class EntryAdmin(admin.ModelAdmin):
         EntryIdentifierInline,
         SubEntryInline,
     )
+    list_display = (
+        '__str__',
+        'id',
+    )
 
 
 @admin.register(models.SubEntry)
@@ -35,12 +39,20 @@ class SubEntryAdmin(admin.ModelAdmin):
 
 @admin.register(models.EntryIdentifier)
 class EntryIdentifierAdmin(admin.ModelAdmin):
-    pass
+    list_display = (
+        '__str__',
+        'type',
+        'entry',
+    )
 
 
 @admin.register(models.SubEntryIdentifier)
 class SubEntryIdentifierAdmin(admin.ModelAdmin):
-    pass
+    list_display = (
+        '__str__',
+        'type',
+        'sub_entry',
+    )
 
 
 @admin.register(models.IdentifierType)
@@ -55,17 +67,18 @@ class CategoryAdmin(admin.ModelAdmin):
 
 @admin.register(models.Author)
 class AuthorAdmin(admin.ModelAdmin):
+    list_display = (
+        '__str__',
+        'id',
+        'discriminator',
+        'url',
+    )
     pass
 
 
 @admin.register(models.Tag)
 class TagAdmin(admin.ModelAdmin):
     pass
-
-
-# @admin.register(models.MediaType)
-# class MediaTypeAdmin(admin.ModelAdmin):
-#     pass
 
 
 @admin.register(models.LengthUnit)
