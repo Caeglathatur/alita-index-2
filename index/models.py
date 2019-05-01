@@ -195,6 +195,7 @@ class Category(models.Model):
 
     class Meta:
         verbose_name_plural = 'categories'
+        ordering = ['name']
 
     name = models.CharField(
         max_length=150,

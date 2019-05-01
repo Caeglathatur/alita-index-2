@@ -141,3 +141,18 @@ class EntrySerializer(serializers.ModelSerializer):
             'identifiers',
             'children',
         )
+
+
+class CategoryTreeEntrySerializer(serializers.ModelSerializer):
+    entries = EntrySerializer(many=True, allow_null=True)
+    children = RecursiveField(many=True, allow_null=True)
+
+    class Meta:
+        model = models.Category
+        fields = (
+            'id',
+            'name',
+            'parent',
+            'entries',
+            'children',
+        )

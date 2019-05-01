@@ -1,4 +1,5 @@
 from rest_framework import views
+from rest_framework.decorators import action
 from rest_framework.mixins import (CreateModelMixin, DestroyModelMixin,
                                    ListModelMixin, RetrieveModelMixin,
                                    UpdateModelMixin)
@@ -52,8 +53,16 @@ class EntryViewSet(
     filterset_class = filters.EntryFilterSet
 
     def get_queryset(self):
-        qs = models.Entry.objects.all()
+        qs = models.Entry.objects.filter(is_visible=True)
         return qs
+
+    @action(url_path='by-category', detail=False, methods=['get'])
+    def by_category(self, request):
+        root_cats = models.Category.objects.filter(
+            parent__isnull=True).order_by('name')
+        print(root_cats)
+        s = serializers.CategoryTreeEntrySerializer(root_cats, many=True)
+        return Response(s.data)
 
 
 class CategoryViewSet(
