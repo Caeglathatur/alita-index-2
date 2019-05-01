@@ -135,6 +135,14 @@ REST_FRAMEWORK = {
     ),
     'DEFAULT_VERSIONING_CLASS':
         'rest_framework.versioning.NamespaceVersioning',
+    'DEFAULT_THROTTLE_CLASSES': (
+        'index.api.throttles.BurstRateThrottle',
+        'index.api.throttles.SustainedRateThrottle',
+    ),
+    'DEFAULT_THROTTLE_RATES': {
+        'burst': '120/min',
+        'sustained': '2000/day',
+    },
 }
 
 
