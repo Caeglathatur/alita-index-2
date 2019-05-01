@@ -1,14 +1,14 @@
+from rest_framework import views
 from rest_framework.mixins import (CreateModelMixin, DestroyModelMixin,
                                    ListModelMixin, RetrieveModelMixin,
                                    UpdateModelMixin)
 from rest_framework.permissions import IsAdminUser
-from rest_framework.viewsets import GenericViewSet
-from rest_framework import views
 from rest_framework.response import Response
 from rest_framework.reverse import reverse_lazy
+from rest_framework.viewsets import GenericViewSet
 
 from ... import models
-from . import serializers
+from . import filters, serializers
 from .permissions import ReadOnly
 
 
@@ -49,6 +49,7 @@ class EntryViewSet(
 ):
     serializer_class = serializers.EntrySerializer
     permission_classes = (IsAdminUser | ReadOnly,)
+    filterset_class = filters.EntryFilterSet
 
     def get_queryset(self):
         qs = models.Entry.objects.all()

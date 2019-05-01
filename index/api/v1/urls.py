@@ -4,6 +4,8 @@ from rest_framework import routers
 from . import views
 
 
+app_name = 'index-api-v1'
+
 router = routers.SimpleRouter()
 router.register(r'entries', views.EntryViewSet, basename='entry')
 router.register(r'categories', views.CategoryViewSet, basename='category')

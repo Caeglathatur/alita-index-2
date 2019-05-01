@@ -207,17 +207,32 @@ class Category(models.Model):
         blank=True,
     )
 
-    def __str__(self):
-        path = [self.name]
+    @property
+    def ancestors(self):
+        path = []
         next_ancestor = self.parent
         while next_ancestor:
-            path.append(next_ancestor.name)
-            if isinstance(next_ancestor, Entry):
-                break
-            else:
-                next_ancestor = next_ancestor.parent
-        path.reverse()
-        return ' / '.join(path)
+            path.append(next_ancestor)
+            next_ancestor = next_ancestor.parent
+        return path
+
+    @property
+    def descendants(self):
+        descendants = set()
+        to_traverse = list(self.children.all())
+        while to_traverse:
+            descendants |= set(to_traverse)
+            next_to_traverse = []
+            for d in to_traverse:
+                next_to_traverse += d.children.all()
+            to_traverse = next_to_traverse
+        return descendants
+
+    def __str__(self):
+        ancestors = self.ancestors
+        ancestors.reverse()
+        ancestors.append(self)
+        return ' / '.join([a.name for a in ancestors])
 
 
 class Author(models.Model):
