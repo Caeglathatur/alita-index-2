@@ -7,7 +7,7 @@
         {% if entry.url %}</a>{% endif %}
         {% if entry.authors.all %}
             <div class="authors">
-                {{ entry.authors.all|join:', ' }}
+                {{ entry.authors_names|join:', ' }}
             </div>
         {% endif %}
         {% if entry.length_display %}

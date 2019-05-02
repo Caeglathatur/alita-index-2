@@ -1,7 +1,7 @@
 <div class="category">
     <{{ header }} id="{{ c.slug }}">{{ c.name }}</{{ header }}>
     <div class="category-entries">
-        {% for entry in c.entries.all %}
+        {% for entry in c.entries_visible %}
             {% include 'fragments/entry.html' %}
         {% endfor %}
     </div>

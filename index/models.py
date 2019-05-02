@@ -93,6 +93,10 @@ class Entry(BaseEntry, models.Model):
         return list(map(lambda c: c.name, self.categories.all()))
 
     @property
+    def authors_names(self):
+        return list(map(lambda c: c.name, self.authors.all()))
+
+    @property
     def created_rss(self):
         return self.created.strftime('%a, %d %b %Y %H:%M:%S %z')
 
@@ -259,6 +263,10 @@ class Category(models.Model):
                 next_to_traverse += d.children.all()
             to_traverse = next_to_traverse
         return descendants
+
+    @property
+    def entries_visible(self):
+        return self.entries.filter(is_visible=True)
 
     def __str__(self):
         ancestors = self.ancestors
