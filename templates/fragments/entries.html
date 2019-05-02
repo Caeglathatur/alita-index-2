@@ -1,0 +1,8 @@
+<div class="category">
+    <{{ header }}>{{ c.name }}</{{ header }}>
+    <div class="category-entries">
+        {% for entry in c.entries.all %}
+            {% include 'fragments/entry.html' %}
+        {% endfor %}
+    </div>
+</div>

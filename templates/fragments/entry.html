@@ -1,0 +1,29 @@
+<div class="entry">
+    <div class="header">
+        {% if entry.url %}<a href="{{ entry.url }}">{% endif %}
+            <div class="title">
+                {{ entry.title }}
+            </div>
+        {% if entry.url %}</a>{% endif %}
+        {% if entry.authors.all %}
+            <div class="authors">
+                {{ entry.authors.all|join:', ' }}
+            </div>
+        {% endif %}
+        {% if entry.length_display %}
+            <div class="length">
+                {{ entry.length_display }}
+            </div>
+        {% endif %}
+        {% if entry.tags.all %}
+            <div class="tags">
+                {% for tag in entry.tags.all %}
+                    <div class="tag">{{ tag.name }}</div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    </div>
+    {% if entry.description_html %}
+        <div class="description">{{ entry.description_html|safe }}</div>
+    {% endif %}
+</div>

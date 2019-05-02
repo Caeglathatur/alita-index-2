@@ -1,3 +1,4 @@
+import markdown
 from django.db import models
 
 
@@ -5,11 +6,13 @@ class Entry(models.Model):
 
     class Meta:
         verbose_name_plural = 'entries'
+        ordering = ['title']
 
     title = models.CharField(
         max_length=255,
     )
     description = models.TextField(
+        help_text='Supports Markdown.',
         blank=True,
     )
     url = models.URLField(
@@ -67,6 +70,18 @@ class Entry(models.Model):
     )
 
     @property
+    def description_html(self):
+        return markdown.markdown(self.description)
+
+    @property
+    def length_display(self):
+        if not self.length or not self.length_unit:
+            return None
+        unit = self.length_unit.name \
+            if self.length == 1 else self.length_unit.name_plural
+        return '{} {}'.format(str(self.length), unit)
+
+    @property
     def identifiers(self):
         return EntryIdentifier.objects.filter(entry=self)
 
@@ -78,11 +93,13 @@ class SubEntry(models.Model):
 
     class Meta:
         verbose_name_plural = 'sub entries'
+        ordering = ['title']
 
     title = models.CharField(
         max_length=255,
     )
     description = models.TextField(
+        help_text='Supports Markdown.',
         blank=True,
     )
     entry = models.ForeignKey(
@@ -121,6 +138,18 @@ class SubEntry(models.Model):
         # through_fields=('entry', 'type'),
         blank=True,
     )
+
+    @property
+    def description_html(self):
+        return markdown.markdown(self.description)
+
+    @property
+    def length_display(self):
+        if not self.length or not self.length_unit:
+            return None
+        unit = self.length_unit.name \
+            if self.length == 1 else self.length_unit.name_plural
+        return '{} {}'.format(str(self.length), unit)
 
     @property
     def identifiers(self):

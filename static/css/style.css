@@ -1,0 +1,133 @@
+:root {
+    --main-bg-color: #262626;
+    --light-bg-color: #333333;
+    --highlight-bg-color: #444444;
+    --text-color: #cccccc;
+    --text-color-faded: #666666;
+    --accent-color: #e770ff;
+    --border-radius: 3px;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--main-bg-color);
+    color: var(--text-color);
+}
+
+a:link, a:visited {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+a:hover, a:active {
+    color: white;
+}
+
+.content-box {
+    max-width: 700px;
+    min-width: 200px;
+    margin: 0 auto;
+    padding: 25px;
+}
+
+.logo {
+    width: 175px;
+    margin-top: 20px;
+    margin-bottom: 15px;
+    max-width: 100%;
+}
+
+#header {
+    background-color: var(--light-bg-color);
+}
+
+#header .content-box {
+    text-align: center;
+}
+
+#site-title {
+    text-transform: uppercase;
+    margin-top: 0.4em;
+    letter-spacing: 0.1em;
+}
+
+.browse-menu {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 40px;
+}
+
+.browse-menu li {
+    display: inline-block;
+}
+
+.browse-menu li a {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: var(--light-bg-color);
+    border-radius: var(--border-radius);
+}
+
+.browse-menu li a:hover {
+    background-color: var(--highlight-bg-color);
+}
+
+.entry {
+    display: block;
+    margin-bottom: 5px;
+    margin-top: 0px;
+    background-color: var(--light-bg-color);
+    border-radius: var(--border-radius);
+    position: relative;
+}
+
+.entry .header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    background-color: var(--light-bg-color);
+    border-radius: var(--border-radius);
+}
+
+.entry .header .title {
+    font-weight: bold;
+    vertical-align: middle;
+    margin: 10px 15px;
+}
+
+.entry .header > a {
+    display: block;
+}
+
+.entry .header .authors {
+    margin: 10px 15px;
+    font-style: italic;
+    font-size: 0.8em;
+}
+
+.entry .header .tags {
+    flex-grow: 1;
+    text-align: right;
+    margin: 10px 15px;
+    font-size: 0.8em;
+}
+
+.entry .header .tags .tag {
+    display: inline-block;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--text-color-faded);
+    color: var(--text-color-faded);
+    padding: 3px;
+    vertical-align: middle;
+}
+
+.entry .length {
+    margin: 10px 15px;
+    font-size: 0.8em;
+}
+
+.entry .description {
+    padding-left: 15px;
+    padding-right: 15px;
+    overflow: hidden;
+}

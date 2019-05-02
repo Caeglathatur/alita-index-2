@@ -1,0 +1,33 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+        <title>{% block title %}{% endblock title %}Alita Index</title>
+    </head>
+
+    <body>
+        <div id="wrapper">
+            <header id="header">
+                <div class="content-box">
+                    <img class="logo" src="{% static 'logo_f.svg' %}" alt="">
+                    <h1 id="site-title">Alita Index</h1>
+                    <p>Mostly anything of any significance relating to the manga and the movie about the battle angel.</p>
+                    <p><a>RSS</a> | <a>Markdown</a> | <a>API</a></p>
+                </div>
+            </header>
+            <main id="main">
+                <div class="content-box">
+                    {% block content %}{% endblock %}
+                </div>
+            </main>
+        </div>
+    </body>
+
+</html>
