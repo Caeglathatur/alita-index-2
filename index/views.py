@@ -25,11 +25,10 @@ class NewestView(ListView):
 
 
 class RssView(TemplateView):
-    # id = 'rss'
-    queryset = models.Entry.objects.filter(
-        is_visible=True).order_by('-created')
+    queryset = models.Entry.objects\
+        .filter(is_visible=True)\
+        .order_by('-created')
     template_name = 'index/rss.xml'
-    # context_object_name = 'entries'
 
     def get_context_data(self, *args, **kwargs):
         context = super().get_context_data(*args, **kwargs)
@@ -38,5 +37,7 @@ class RssView(TemplateView):
         return context
 
     def get(self, *args, **kwargs):
-        # super().get()
-        return self.render_to_response(self.get_context_data(), content_type='application/rss+xml; charset=utf-8')
+        return self.render_to_response(
+            self.get_context_data(),
+            content_type='application/rss+xml; charset=utf-8',
+        )
