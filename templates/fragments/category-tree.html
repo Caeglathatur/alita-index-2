@@ -1,0 +1,10 @@
+<ul>
+    {% for c in categories %}
+        <li>
+            <a href="#{{ c.slug }}">{{ c.name }}</a>
+            {% if c.children.all %}
+                {% include 'fragments/category-tree.html' with categories=c.children.all %}
+            {% endif %}
+        </li>
+    {% endfor %}
+</ul>

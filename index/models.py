@@ -227,6 +227,9 @@ class Category(models.Model):
         null=True,
         blank=True,
     )
+    slug = models.SlugField(
+        unique=True,
+    )
 
     @property
     def ancestors(self):

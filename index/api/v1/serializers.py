@@ -21,6 +21,7 @@ class CategorySerializer(serializers.ModelSerializer):
         model = models.Category
         fields = (
             'id',
+            'slug',
             'name',
             'parent',
             'children',
@@ -34,6 +35,7 @@ class CategoryTreeSerializer(serializers.ModelSerializer):
         model = models.Category
         fields = (
             'id',
+            'slug',
             'name',
             'parent',
             'children',

@@ -77,6 +77,12 @@ a:hover, a:active {
     color: var(--text-color);
 }
 
+.category-tree {
+    /* list-style: none; */
+    /* padding: 0; */
+    margin-bottom: 40px;
+}
+
 .entry {
     margin-bottom: 15px;
     margin-top: 0px;
