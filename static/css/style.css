@@ -61,15 +61,20 @@ a:hover, a:active {
     display: inline-block;
 }
 
-.browse-menu li a {
+.browse-menu li a:link, .browse-menu li a:visited {
     display: inline-block;
     padding: 10px 15px;
     background-color: var(--light-bg-color);
     border-radius: var(--border-radius);
 }
 
-.browse-menu li a:hover {
+.browse-menu li a:hover, .browse-menu li a:active {
     background-color: var(--highlight-bg-color);
+}
+
+.browse-menu li a.current {
+    background-color: var(--light-bg-color);
+    color: var(--text-color);
 }
 
 .entry {
@@ -136,7 +141,6 @@ a:hover, a:active {
     margin-bottom: 14.4px;
     font-size: 0.9em;
 }
-
 
 .sub-entry {
     margin-left: 25px;
