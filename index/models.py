@@ -12,8 +12,18 @@ class BaseEntry:
     def length_display(self):
         if not self.length or not self.length_unit:
             return None
+
         unit = self.length_unit.name \
             if self.length == 1 else self.length_unit.name_plural
+
+        if self.length_unit.name == 'word':
+            minutes = round(int(self.length / 200))  # avg human reading wpm
+            return '{} {} (~{:d} min)'.format(
+                str(self.length),
+                unit,
+                minutes,
+            )
+
         return '{} {}'.format(str(self.length), unit)
 
 
