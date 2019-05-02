@@ -2,7 +2,22 @@ import markdown
 from django.db import models
 
 
-class Entry(models.Model):
+class BaseEntry:
+
+    @property
+    def description_html(self):
+        return markdown.markdown(self.description)
+
+    @property
+    def length_display(self):
+        if not self.length or not self.length_unit:
+            return None
+        unit = self.length_unit.name \
+            if self.length == 1 else self.length_unit.name_plural
+        return '{} {}'.format(str(self.length), unit)
+
+
+class Entry(BaseEntry, models.Model):
 
     class Meta:
         verbose_name_plural = 'entries'
@@ -70,18 +85,6 @@ class Entry(models.Model):
     )
 
     @property
-    def description_html(self):
-        return markdown.markdown(self.description)
-
-    @property
-    def length_display(self):
-        if not self.length or not self.length_unit:
-            return None
-        unit = self.length_unit.name \
-            if self.length == 1 else self.length_unit.name_plural
-        return '{} {}'.format(str(self.length), unit)
-
-    @property
     def identifiers(self):
         return EntryIdentifier.objects.filter(entry=self)
 
@@ -89,7 +92,7 @@ class Entry(models.Model):
         return self.title
 
 
-class SubEntry(models.Model):
+class SubEntry(BaseEntry, models.Model):
 
     class Meta:
         verbose_name_plural = 'sub entries'
@@ -138,18 +141,6 @@ class SubEntry(models.Model):
         # through_fields=('entry', 'type'),
         blank=True,
     )
-
-    @property
-    def description_html(self):
-        return markdown.markdown(self.description)
-
-    @property
-    def length_display(self):
-        if not self.length or not self.length_unit:
-            return None
-        unit = self.length_unit.name \
-            if self.length == 1 else self.length_unit.name_plural
-        return '{} {}'.format(str(self.length), unit)
 
     @property
     def identifiers(self):

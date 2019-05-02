@@ -73,15 +73,14 @@ a:hover, a:active {
 }
 
 .entry {
-    display: block;
-    margin-bottom: 5px;
+    margin-bottom: 15px;
     margin-top: 0px;
     background-color: var(--light-bg-color);
     border-radius: var(--border-radius);
-    position: relative;
+    overflow: hidden;
 }
 
-.entry .header {
+.entry > .header {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -89,30 +88,30 @@ a:hover, a:active {
     border-radius: var(--border-radius);
 }
 
-.entry .header .title {
+.entry > .header .title {
     font-weight: bold;
     vertical-align: middle;
     margin: 10px 15px;
 }
 
-.entry .header > a {
+.entry > .header > a {
     display: block;
 }
 
-.entry .header .authors {
+.entry > .header .authors {
     margin: 10px 15px;
     font-style: italic;
     font-size: 0.8em;
 }
 
-.entry .header .tags {
+.entry > .header .tags {
     flex-grow: 1;
     text-align: right;
     margin: 10px 15px;
     font-size: 0.8em;
 }
 
-.entry .header .tags .tag {
+.entry > .header .tags .tag {
     display: inline-block;
     border-radius: var(--border-radius);
     border: 1px solid var(--text-color-faded);
@@ -121,13 +120,66 @@ a:hover, a:active {
     vertical-align: middle;
 }
 
-.entry .length {
+.entry > .header .length {
     margin: 10px 15px;
     font-size: 0.8em;
 }
 
-.entry .description {
+.entry > .description, .entry > .identifiers {
     padding-left: 15px;
     padding-right: 15px;
     overflow: hidden;
+    font-size: 0.9em;
+}
+
+.entry > .sub-entries {
+    margin-bottom: 14.4px;
+    font-size: 0.9em;
+}
+
+
+.sub-entry {
+    margin-left: 25px;
+    background-color: var(--light-bg-color);
+    border-radius: var(--border-radius);
+}
+
+.sub-entry p, .sub-entry ul, .sub-entry ol {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.sub-entry > .header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    background-color: var(--light-bg-color);
+    border-radius: var(--border-radius);
+}
+
+.sub-entry > .header .title {
+    font-weight: bold;
+    vertical-align: middle;
+    margin: 5px 15px;
+}
+
+.sub-entry > .header > a {
+    display: block;
+}
+
+.sub-entry > .header .length {
+    margin: 5px 15px;
+    font-size: 0.8em;
+}
+
+.sub-entry > .description, .sub-entry > .identifiers {
+    padding-left: 15px;
+    padding-right: 15px;
+    overflow: hidden;
+    font-size: 0.9em;
+}
+
+.identifiers ul {
+    list-style: none;
+    padding: 0;
 }

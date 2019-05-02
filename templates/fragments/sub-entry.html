@@ -1,0 +1,33 @@
+<div class="sub-entry">
+    <div class="header">
+        {% if sub.url %}<a href="{{ sub.url }}">{% endif %}
+            <div class="title">
+                {{ sub.title }}
+            </div>
+        {% if sub.url %}</a>{% endif %}
+        {% if sub.length_display %}
+            <div class="length">
+                {{ sub.length_display }}
+            </div>
+        {% endif %}
+    </div>
+    {% if sub.description_html %}
+        <div class="description">{{ sub.description_html|safe }}</div>
+    {% endif %}
+    {% if sub.identifiers %}
+        <div class="identifiers">
+            <ul>
+                {% for id in sub.identifiers %}
+                    <li>{{ id.type.name }}: {{ id.value }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% endif %}
+    {% if sub.children.all %}
+        <div class="sub-entries">
+            {% for sub in sub.children.all %}
+                {% include 'fragments/sub-entry.html' %}
+            {% endfor %}
+        </div>
+    {% endif %}
+</div>

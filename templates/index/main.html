@@ -3,7 +3,7 @@
 {% block title %}{% endblock title %}
 
 {% block content %}
-    {% include 'index/browse-menu.html' %}
+    {% include 'fragments/browse-menu.html' %}
     {% for c in categories %}
         {% include 'fragments/entries.html' with header='h2' %}
         {% for c in c.children.all %}

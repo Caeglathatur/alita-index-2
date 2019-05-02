@@ -26,4 +26,20 @@
     {% if entry.description_html %}
         <div class="description">{{ entry.description_html|safe }}</div>
     {% endif %}
+    {% if entry.identifiers %}
+        <div class="identifiers">
+            <ul>
+                {% for id in entry.identifiers %}
+                    <li>{{ id.type.name }}: {{ id.value }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% endif %}
+    {% if entry.children.all %}
+        <div class="sub-entries">
+            {% for sub in entry.children.all %}
+                {% include 'fragments/sub-entry.html' %}
+            {% endfor %}
+        </div>
+    {% endif %}
 </div>
