@@ -92,6 +92,10 @@ class Entry(BaseEntry, models.Model):
     def categories_names(self):
         return list(map(lambda c: c.name, self.categories.all()))
 
+    @property
+    def created_rss(self):
+        return self.created.strftime('%a, %d %b %Y %H:%M:%S %z')
+
     def __str__(self):
         return self.title
 

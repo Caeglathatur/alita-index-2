@@ -21,5 +21,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('index-api/', include('index.api.urls')),
     path('newest/', views.NewestView.as_view(), name='newest'),
+    path('rss/', views.RssView.as_view(), name='rss'),
     path('', views.CategoriesView.as_view(), name='categories'),
 ]

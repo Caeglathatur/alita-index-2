@@ -1,3 +1,16 @@
-{% for e in entries %}
-    {% include 'fragments/entry.html' with entry=e %}
-{% endfor %}
+<?xml version="1.0"?>
+<rss version="2.0">
+    <channel>
+        <title>Alita Index</title>
+        <link>https://www.alita-index.com/</link>
+        <description>Mostly anything of any significance relating to the manga and the movie about the battle angel.</description>
+        {% for e in entries %}
+            <item>
+                <title>{{ e.title }}</title>
+                {% if e.url %}<link>{{ e.url }}</link>{% endif %}
+                {% if e.description_html %}<description>{{ e.description_html }}</description>{% endif %}
+                <pubDate>{{ e.created_rss }}</pubDate>
+            </item>
+        {% endfor %}
+    </channel>
+</rss>

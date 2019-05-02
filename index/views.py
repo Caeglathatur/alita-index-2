@@ -22,3 +22,21 @@ class NewestView(ListView):
         is_visible=True).order_by('-created')
     template_name = 'index/newest.html'
     context_object_name = 'entries'
+
+
+class RssView(TemplateView):
+    # id = 'rss'
+    queryset = models.Entry.objects.filter(
+        is_visible=True).order_by('-created')
+    template_name = 'index/rss.xml'
+    # context_object_name = 'entries'
+
+    def get_context_data(self, *args, **kwargs):
+        context = super().get_context_data(*args, **kwargs)
+        context['entries'] = models.Entry.objects.filter(
+            is_visible=True).order_by('-created')
+        return context
+
+    def get(self, *args, **kwargs):
+        # super().get()
+        return self.render_to_response(self.get_context_data(), content_type='application/rss+xml; charset=utf-8')
