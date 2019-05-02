@@ -88,6 +88,10 @@ class Entry(BaseEntry, models.Model):
     def identifiers(self):
         return EntryIdentifier.objects.filter(entry=self)
 
+    @property
+    def categories_names(self):
+        return list(map(lambda c: c.name, self.categories.all()))
+
     def __str__(self):
         return self.title
 

@@ -83,6 +83,11 @@ a:hover, a:active {
     margin-bottom: 40px;
 }
 
+.added-note {
+    font-size: 0.8em;
+    color: var(--text-color-faded);
+}
+
 .entry {
     margin-bottom: 15px;
     margin-top: 0px;
