@@ -20,5 +20,6 @@ from index import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('index-api/', include('index.api.urls')),
-    path('', views.CategoriesView.as_view()),
+    path('newest/', views.NewestView.as_view(), name='newest'),
+    path('', views.CategoriesView.as_view(), name='categories'),
 ]

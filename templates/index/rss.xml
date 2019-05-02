@@ -1,0 +1,3 @@
+{% for e in entries %}
+    {% include 'fragments/entry.html' with entry=e %}
+{% endfor %}

@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block title %}Newest Entries - {% endblock title %}
+
+{% block content %}
+    {% include 'fragments/browse-menu.html' %}
+    {% for e in entries %}
+        {% include 'fragments/entry.html' with entry=e %}
+    {% endfor %}
+{% endblock content %}

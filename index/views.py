@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic import TemplateView
+from django.views.generic import TemplateView, ListView
 
 from . import models
 
@@ -14,3 +14,11 @@ class CategoriesView(TemplateView):
             parent__isnull=True,
         )
         return context
+
+
+class NewestView(ListView):
+    id = 'newest'
+    queryset = models.Entry.objects.filter(
+        is_visible=True).order_by('-created')
+    template_name = 'index/newest.html'
+    context_object_name = 'entries'

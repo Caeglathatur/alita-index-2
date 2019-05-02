@@ -1,6 +1,6 @@
 <nav>
     <ul class="browse-menu">
-        <li><a href="" class="{% if view.id == 'categories' %}current{% endif %}">Categories</a></li>
-        <li><a href="">New</a></li>
+        <li><a href="{% url 'categories' %}" class="{% if view.id == 'categories' %}current{% endif %}">Categories</a></li>
+        <li><a href="{% url 'newest' %}" class="{% if view.id == 'newest' %}current{% endif %}">Newest</a></li>
     </ul>
 </nav>
