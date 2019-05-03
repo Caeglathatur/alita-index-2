@@ -1,6 +1,8 @@
 from django.db.models import FilteredRelation, Q
+from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import views
 from rest_framework.decorators import action
+from rest_framework.filters import OrderingFilter, SearchFilter
 from rest_framework.mixins import (CreateModelMixin, DestroyModelMixin,
                                    ListModelMixin, RetrieveModelMixin,
                                    UpdateModelMixin)
@@ -57,7 +59,13 @@ class EntryViewSet(
 ):
     serializer_class = serializers.EntrySerializer
     permission_classes = (IsAdminUser | ReadOnly,)
+    filter_backends = (
+        DjangoFilterBackend,
+        OrderingFilter,
+        SearchFilter,
+    )
     filterset_class = filters.EntryFilterSet
+    search_fields = ('title', 'description', 'url')
 
     def get_queryset(self):
         qs = models.Entry.objects.filter(is_visible=True)
@@ -91,6 +99,11 @@ class CategoryViewSet(
 ):
     serializer_class = serializers.CategoryTreeSerializer
     permission_classes = (IsAdminUser | ReadOnly,)
+    filter_backends = (
+        OrderingFilter,
+        SearchFilter,
+    )
+    search_fields = ('name', 'slug')
 
     def get_queryset(self):
         qs = models.Category.objects.all()
@@ -110,6 +123,11 @@ class IdentifierTypeViewSet(
     queryset = models.IdentifierType.objects.all()
     serializer_class = serializers.IdentifierTypeSerializer
     permission_classes = (IsAdminUser | ReadOnly,)
+    filter_backends = (
+        OrderingFilter,
+        SearchFilter,
+    )
+    search_fields = ('name',)
 
 
 class LengthUnitViewSet(
@@ -123,6 +141,11 @@ class LengthUnitViewSet(
     queryset = models.LengthUnit.objects.all()
     serializer_class = serializers.LengthUnitSerializer
     permission_classes = (IsAdminUser | ReadOnly,)
+    filter_backends = (
+        OrderingFilter,
+        SearchFilter,
+    )
+    search_fields = ('name', 'name_plural')
 
 
 class TagViewSet(
@@ -136,6 +159,11 @@ class TagViewSet(
     queryset = models.Tag.objects.all()
     serializer_class = serializers.TagSerializer
     permission_classes = (IsAdminUser | ReadOnly,)
+    filter_backends = (
+        OrderingFilter,
+        SearchFilter,
+    )
+    search_fields = ('name',)
 
 
 class AuthorViewSet(
@@ -152,3 +180,8 @@ class AuthorViewSet(
     )).filter(visible_entries__isnull=False).distinct()
     serializer_class = serializers.AuthorSerializer
     permission_classes = (IsAdminUser | ReadOnly,)
+    filter_backends = (
+        OrderingFilter,
+        SearchFilter,
+    )
+    search_fields = ('name', 'discriminator', 'url')
