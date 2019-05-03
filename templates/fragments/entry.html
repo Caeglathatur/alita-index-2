@@ -1,4 +1,11 @@
 <div class="entry">
+    {% if entry.tags.all %}
+        <div class="tags">
+            {% for tag in entry.tags.all %}
+                <div class="tag">{{ tag.name }}</div>
+            {% endfor %}
+        </div>
+    {% endif %}
     <div class="header">
         {% if entry.url %}<a href="{{ entry.url }}">{% endif %}
             <div class="title">
@@ -13,13 +20,6 @@
         {% if entry.length_display %}
             <div class="length">
                 {{ entry.length_display }}
-            </div>
-        {% endif %}
-        {% if entry.tags.all %}
-            <div class="tags">
-                {% for tag in entry.tags.all %}
-                    <div class="tag">{{ tag.name }}</div>
-                {% endfor %}
             </div>
         {% endif %}
     </div>

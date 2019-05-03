@@ -78,8 +78,6 @@ a:hover, a:active {
 }
 
 .category-tree {
-    /* list-style: none; */
-    /* padding: 0; */
     margin-bottom: 40px;
 }
 
@@ -120,14 +118,14 @@ a:hover, a:active {
     font-size: 0.8em;
 }
 
-.entry > .header .tags {
-    flex-grow: 1;
+.entry > .tags {
+    float: right;
     text-align: right;
     margin: 10px 15px;
     font-size: 0.8em;
 }
 
-.entry > .header .tags .tag {
+.entry > .tags .tag {
     display: inline-block;
     border-radius: var(--border-radius);
     border: 1px solid var(--text-color-faded);
