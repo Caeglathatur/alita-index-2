@@ -1,3 +1,4 @@
+from django.db.models import FilteredRelation, Q
 from rest_framework import views
 from rest_framework.decorators import action
 from rest_framework.mixins import (CreateModelMixin, DestroyModelMixin,
@@ -14,10 +15,16 @@ from .permissions import ReadOnly
 
 
 class IndexAPIRootView(views.APIView):
+    """Lists the URLs of provided list views. Detail views are not listed."""
+
     def get(self, request):
         return Response({
             'entry-list-url': reverse_lazy('entry-list', request=request),
-            'author-url': reverse_lazy(
+            'entry-list-by-category-url': reverse_lazy(
+                'entry-list-by-category',
+                request=request,
+            ),
+            'author-list-url': reverse_lazy(
                 'author-list',
                 request=request,
             ),
@@ -25,15 +32,15 @@ class IndexAPIRootView(views.APIView):
                 'category-list',
                 request=request,
             ),
-            'tag-url': reverse_lazy(
+            'tag-list-url': reverse_lazy(
                 'tag-list',
                 request=request,
             ),
-            'identifier-type-url': reverse_lazy(
+            'identifier-type-list-url': reverse_lazy(
                 'identifier-type-list',
                 request=request,
             ),
-            'length-unit-url': reverse_lazy(
+            'length-unit-list-url': reverse_lazy(
                 'length-unit-list',
                 request=request,
             ),
@@ -56,8 +63,17 @@ class EntryViewSet(
         qs = models.Entry.objects.filter(is_visible=True)
         return qs
 
-    @action(url_path='by-category', detail=False, methods=['get'])
-    def by_category(self, request):
+    @action(
+        url_path='by-category',
+        url_name='list-by-category',
+        detail=False,
+        methods=['get'],
+    )
+    def list_by_category(self, request):
+        """Lists all entries as they are organized in the category tree. The
+        same entry may appear in multiple categories.
+        """
+
         root_cats = models.Category.objects.filter(
             parent__isnull=True).order_by('name')
         print(root_cats)
@@ -130,6 +146,9 @@ class AuthorViewSet(
     # UpdateModelMixin,
     GenericViewSet,
 ):
-    queryset = models.Author.objects.filter(entries__isnull=False)
+    queryset = models.Author.objects.annotate(visible_entries=FilteredRelation(
+        'entries',
+        condition=Q(entries__is_visible=True),
+    )).filter(visible_entries__isnull=False).distinct()
     serializer_class = serializers.AuthorSerializer
     permission_classes = (IsAdminUser | ReadOnly,)

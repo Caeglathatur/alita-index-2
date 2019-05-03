@@ -120,10 +120,6 @@ class EntrySerializer(serializers.ModelSerializer):
     identifiers = EntryIdentifierSerializer(many=True, read_only=True)
     children = SubEntrySerializer(allow_null=True, many=True)
     length_unit = LengthUnitSerializer()
-    # media_type = serializers.CharField(
-    #     source='media_type.name',
-    #     allow_null=True,
-    # )
 
     class Meta:
         model = models.Entry
@@ -132,7 +128,6 @@ class EntrySerializer(serializers.ModelSerializer):
             'title',
             'description',
             'url',
-            # 'media_type',
             'length',
             'length_unit',
             'created',
@@ -146,8 +141,11 @@ class EntrySerializer(serializers.ModelSerializer):
 
 
 class CategoryTreeEntrySerializer(serializers.ModelSerializer):
-    entries = EntrySerializer(source='entries_visible',
-                              many=True, allow_null=True)
+    entries = EntrySerializer(
+        source='entries_visible',
+        many=True,
+        allow_null=True,
+    )
     children = RecursiveField(many=True, allow_null=True)
 
     class Meta:

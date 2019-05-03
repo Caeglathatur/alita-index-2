@@ -44,13 +44,6 @@ class Entry(BaseEntry, models.Model):
         verbose_name='URL',
         blank=True,
     )
-    # media_type = models.ForeignKey(
-    #     'MediaType',
-    #     related_name='entries',
-    #     on_delete=models.SET_NULL,
-    #     null=True,
-    #     blank=True,
-    # )
     length = models.PositiveIntegerField(
         null=True,
         blank=True,

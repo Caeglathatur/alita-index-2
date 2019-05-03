@@ -3,7 +3,7 @@ from django_filters import rest_framework as filters
 from ... import models
 
 
-class ListOrFilter(filters.Filter):
+class ListIntersectionFilter(filters.Filter):
 
     def __init__(self, arg_name, *args, **kwargs):
         self.arg_name = arg_name
@@ -25,7 +25,7 @@ class ListOrFilter(filters.Filter):
         return queryset
 
 
-class ListAndFilter(filters.Filter):
+class ListUnionFilter(filters.Filter):
 
     def __init__(self, arg_name, *args, **kwargs):
         self.arg_name = arg_name
@@ -70,6 +70,26 @@ class CategoryListFilter(filters.Filter):
 
 
 class EntryFilterSet(filters.FilterSet):
-    category = CategoryListFilter()
-    tag = ListOrFilter(arg_name='tag', field_name='tags')
-    author = ListAndFilter(arg_name='author', field_name='authors')
+    category = CategoryListFilter(
+        help_text='Category <code>id</code> to filter by. Entries in the '
+        'child categories of the specified category will be included.'
+        '<br><br>Multiple values are supported by repeating the parameter '
+        'with different values. The result will be the union (OR) of the '
+        'filters.',
+    )
+    tag = ListIntersectionFilter(
+        arg_name='tag',
+        field_name='tags',
+        help_text='Tag <code>id</code> to filter by.'
+        '<br><br>Multiple values are supported by repeating the parameter '
+        'with different values. The result will be the intersection (AND) of '
+        'the filters.',
+    )
+    author = ListUnionFilter(
+        arg_name='author',
+        field_name='authors',
+        help_text='Author <code>id</code> to filter by.'
+        '<br><br>Multiple values are supported by repeating the parameter '
+        'with different values. The result will be the union (OR) of the '
+        'filters.',
+    )
