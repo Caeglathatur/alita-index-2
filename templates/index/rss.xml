@@ -8,7 +8,24 @@
             <item>
                 <title>{{ e.title }}</title>
                 {% if e.url %}<link>{{ e.url }}</link>{% endif %}
-                {% if e.description_html %}<description>{{ e.description_html }}</description>{% endif %}
+                <description>
+                    {% if e.authors_names %}&lt;p&gt;{{ e.authors_names|join:', ' }}&lt;/p&gt;{% endif %}
+                    {{ e.description_html }}
+                    {% if e.identifiers %}
+                        &lt;ul&gt;
+                            {% for id in e.identifiers %}
+                                &lt;li&gt;{{ id.type.name }}: {{ id.value }}&lt;/li&gt;
+                            {% endfor %}
+                        &lt;/ul&gt;
+                    {% endif %}
+                    {% if e.children.all %}
+                        &lt;ul&gt;
+                            {% for s in e.children.all %}
+                                {% include 'fragments/sub-entry-rss.xml' %}
+                            {% endfor %}
+                        &lt;/ul&gt;
+                    {% endif %}
+                </description>
                 <pubDate>{{ e.created_rss }}</pubDate>
             </item>
         {% endfor %}
