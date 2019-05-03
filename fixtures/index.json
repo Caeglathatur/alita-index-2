@@ -1594,28 +1594,32 @@
         "model": "index.tag",
         "pk": 1,
         "fields": {
-            "name": "Official"
+            "name": "Official",
+            "color": null
         }
     },
     {
         "model": "index.tag",
         "pk": 2,
         "fields": {
-            "name": "Manga"
+            "name": "Manga",
+            "color": "#ce5454"
         }
     },
     {
         "model": "index.tag",
         "pk": 3,
         "fields": {
-            "name": "Movie"
+            "name": "Movie",
+            "color": "#c065d2"
         }
     },
     {
         "model": "index.tag",
         "pk": 4,
         "fields": {
-            "name": "OVA"
+            "name": "OVA",
+            "color": "#4fb18b"
         }
     },
     {

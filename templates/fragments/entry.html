@@ -2,7 +2,7 @@
     {% if entry.tags.all %}
         <div class="tags">
             {% for tag in entry.tags.all %}
-                <div class="tag">{{ tag.name }}</div>
+                <div class="tag" style="{% if tag.color %}border-color: {{ tag.color }}; color: {{ tag.color }};{% endif %}">{{ tag.name }}</div>
             {% endfor %}
         </div>
     {% endif %}

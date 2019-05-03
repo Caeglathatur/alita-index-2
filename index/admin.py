@@ -85,12 +85,15 @@ class AuthorAdmin(admin.ModelAdmin):
         'discriminator',
         'url',
     )
-    pass
 
 
 @admin.register(models.Tag)
 class TagAdmin(admin.ModelAdmin):
-    pass
+    list_display = (
+        '__str__',
+        'id',
+        'color',
+    )
 
 
 @admin.register(models.LengthUnit)
