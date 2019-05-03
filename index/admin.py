@@ -26,6 +26,18 @@ class EntryAdmin(admin.ModelAdmin):
     list_display = (
         '__str__',
         'id',
+        'is_visible',
+        'created',
+    )
+    list_filter = (
+        'is_visible',
+        'tags',
+        'categories',
+        'authors',
+    )
+    search_fields = (
+        'title',
+        'descrption',
     )
 
 
