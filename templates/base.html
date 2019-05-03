@@ -7,6 +7,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="shortcut icon" href="{% static 'img/favicon2.png' %}">
         <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
         <link rel="stylesheet" href="{% static 'css/style.css' %}">
         <title>{% block title %}{% endblock title %}Alita Index</title>
@@ -16,7 +17,7 @@
         <div id="wrapper">
             <header id="header">
                 <div class="content-box">
-                    <img class="logo" src="{% static 'logo_f.svg' %}" alt="">
+                    <img class="logo" src="{% static 'img/logo.svg' %}" alt="">
                     <h1 id="site-title">Alita Index</h1>
                     <p>Mostly anything of any significance relating to the manga and the movie about the battle angel.</p>
                     <p><a type="application/rss+xml" href="{% url 'rss' %}">RSS</a> | <a href="{% url 'markdown' %}">Markdown</a> | <a href="{% url 'api-docs:docs-index' %}">API</a></p>
