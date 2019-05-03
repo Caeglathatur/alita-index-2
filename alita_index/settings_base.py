@@ -25,6 +25,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
+    'django.contrib.flatpages',
     'rest_framework',
     'django_filters',
     'alita_index.users',
@@ -39,6 +41,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware',
 ]
 
 ROOT_URLCONF = 'alita_index.urls'
@@ -60,6 +63,8 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'alita_index.wsgi.application'
+
+SITE_ID = 1
 
 
 # Password validation

@@ -51,6 +51,18 @@ a:hover, a:active {
     letter-spacing: 0.1em;
 }
 
+.main-nav ul {
+    list-style: none;
+}
+
+.main-nav ul li {
+    display: inline-block;
+}
+
+.main-nav ul li a {
+    padding: 5px 10px;
+}
+
 .browse-menu {
     list-style: none;
     padding: 0;

@@ -1,4 +1,6 @@
 {% load static %}
+{% load flatpages %}
+{% get_flatpages as flatpages %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -20,7 +22,17 @@
                     <img class="logo" src="{% static 'img/logo.svg' %}" alt="">
                     <h1 id="site-title">Alita Index</h1>
                     <p>Mostly anything of any significance relating to the manga and the movie about the battle angel.</p>
-                    <p><a type="application/rss+xml" href="{% url 'rss' %}">RSS</a> | <a href="{% url 'markdown' %}">Markdown</a> | <a href="{% url 'api-docs:docs-index' %}">API</a></p>
+                    <nav class="main-nav">
+                        <ul>
+                            <li><a href="/">Browse</a></li>
+                            {% for page in flatpages %}
+                                <li><a href="{{ page.url }}">{{ page.title }}</a></li>
+                            {% endfor %}
+                            <li><a type="application/rss+xml" href="{% url 'rss' %}">RSS</a></li>
+                            <li><a href="{% url 'markdown' %}">Markdown</a></li>
+                            <li><a href="{% url 'api-docs:docs-index' %}">API</a></li>
+                        </ul>
+                    </nav>
                 </div>
             </header>
             <main id="main">
@@ -30,11 +42,5 @@
             </main>
         </div>
     </body>
-
-    <footer>
-        <div class="content-box">
-            <p>Listed items are not necessarily endorsed.</p>
-        </div>
-    </footer>
 
 </html>
