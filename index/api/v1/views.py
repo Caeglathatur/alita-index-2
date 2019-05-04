@@ -57,6 +57,14 @@ class EntryViewSet(
     # UpdateModelMixin,
     GenericViewSet,
 ):
+    """
+    list:
+    Lists entries that are in the index.
+
+    retrieve:
+    Returns a single entry from the index.
+    """
+
     serializer_class = serializers.EntrySerializer
     permission_classes = (IsAdminUser | ReadOnly,)
     filter_backends = (
@@ -78,8 +86,8 @@ class EntryViewSet(
         methods=['get'],
     )
     def list_by_category(self, request):
-        """Lists all entries as they are organized in the category tree. The
-        same entry may appear in multiple categories.
+        """Lists all entries in the index as they are organized in the category
+        tree. The same entry may appear in multiple categories.
         """
 
         root_cats = models.Category.objects.filter(
@@ -97,6 +105,14 @@ class CategoryViewSet(
     # UpdateModelMixin,
     GenericViewSet,
 ):
+    """
+    list:
+    Lists categories to which entries can belong as a tree structure.
+
+    retrieve:
+    Returns a single category and its children as a tree structure.
+    """
+
     serializer_class = serializers.CategoryTreeSerializer
     permission_classes = (IsAdminUser | ReadOnly,)
     filter_backends = (
@@ -120,6 +136,14 @@ class IdentifierTypeViewSet(
     # UpdateModelMixin,
     GenericViewSet,
 ):
+    """
+    list:
+    Lists identifier types.
+
+    retrieve:
+    Returns a single identifier type.
+    """
+
     queryset = models.IdentifierType.objects.all()
     serializer_class = serializers.IdentifierTypeSerializer
     permission_classes = (IsAdminUser | ReadOnly,)
@@ -138,6 +162,14 @@ class LengthUnitViewSet(
     # UpdateModelMixin,
     GenericViewSet,
 ):
+    """
+    list:
+    Lists length units used to describe the lengths of entries.
+
+    retrieve:
+    Returns a single length unit used to describe the lengths of entries.
+    """
+
     queryset = models.LengthUnit.objects.all()
     serializer_class = serializers.LengthUnitSerializer
     permission_classes = (IsAdminUser | ReadOnly,)
@@ -156,6 +188,14 @@ class TagViewSet(
     # UpdateModelMixin,
     GenericViewSet,
 ):
+    """
+    list:
+    Lists tags.
+
+    retrieve:
+    Returns a single tag.
+    """
+
     queryset = models.Tag.objects.all()
     serializer_class = serializers.TagSerializer
     permission_classes = (IsAdminUser | ReadOnly,)
@@ -174,6 +214,14 @@ class AuthorViewSet(
     # UpdateModelMixin,
     GenericViewSet,
 ):
+    """
+    list:
+    Lists authors who have at least one entry in the index.
+
+    retrieve:
+    Returns a single author who has at least one entry in the index.
+    """
+
     queryset = models.Author.objects.annotate(visible_entries=FilteredRelation(
         'entries',
         condition=Q(entries__is_visible=True),
