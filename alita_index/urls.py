@@ -22,6 +22,6 @@ urlpatterns = [
     path('index-api/', include('index.api.urls')),
     path('newest/', views.NewestView.as_view(), name='newest'),
     path('rss/', views.RssView.as_view(), name='rss'),
-    path('markdown/', views.MarkdownView.as_view(), name='markdown'),
+    path('alita-index.md', views.MarkdownView.as_view(), name='markdown'),
     path('', views.CategoriesView.as_view(), name='categories'),
 ]
