@@ -19,6 +19,8 @@ from .permissions import ReadOnly
 class IndexAPIRootView(views.APIView):
     """Lists the URLs of provided list views. Detail views are not listed."""
 
+    permission_classes = (IsAdminUser | ReadOnly,)
+
     def get(self, request):
         return Response({
             'entry-list-url': reverse_lazy('entry-list', request=request),
