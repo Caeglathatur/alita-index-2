@@ -1,6 +1,5 @@
 &lt;li&gt;
     &lt;p&gt;{% if s.url %}&lt;a href="{{ s.url }}"&gt;{{ s.title }}&lt;/a&gt;{% else %}{{ s.title }}{% endif %}&lt;/p&gt;
-    {% if s.authors_names %}&lt;p&gt;{{ s.authors_names|join:', ' }}&lt;/p&gt;{% endif %}
     {% if s.description_html %} {{ s.description_html }}{% endif %}
     {% for id in s.identifiers %}&lt;p&gt;{{ id.type.name }}: {{ id.value }}&lt;/p&gt;{% endfor %}
     {% if s.children.all %}

@@ -14,7 +14,13 @@
         {% if entry.url %}</a>{% endif %}
         {% if entry.authors.all %}
             <div class="authors">
-                {{ entry.authors_names|join:', ' }}
+                {% for a in entry.authors.all %}
+                    {% if a.url %}
+                        <a href="{{ a.url }}">{{ a.name }}</a>{% if not forloop.last %},{% endif %}
+                    {% else %}
+                        {{ a.name }}{% if not forloop.last %},{% endif %}
+                    {% endif %}
+                {% endfor %}
             </div>
         {% endif %}
         {% if entry.length_display %}

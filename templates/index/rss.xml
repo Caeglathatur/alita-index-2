@@ -9,7 +9,17 @@
                 <title>{{ e.title }}</title>
                 {% if e.url %}<link>{{ e.url }}</link>{% endif %}
                 <description>
-                    {% if e.authors_names %}&lt;p&gt;{{ e.authors_names|join:', ' }}&lt;/p&gt;{% endif %}
+                    {% if e.authors.all %}
+                        &lt;p&gt;
+                            {% for a in e.authors.all %}
+                                {% if a.url %}
+                                    &lt;a href="{{ a.url }}"&gt;{{ a.name }}&lt;/a&gt;{% if not forloop.last %},{% endif %}
+                                {% else %}
+                                    {{ a.name }}{% if not forloop.last %},{% endif %}
+                                {% endif %}
+                            {% endfor %}
+                        &lt;/p&gt;
+                    {% endif %}
                     {{ e.description_html }}
                     {% if e.identifiers %}
                         &lt;ul&gt;
