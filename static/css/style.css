@@ -1,3 +1,8 @@
+@font-face {
+    font-family: "Roboto Regular";
+    src: url("/static/fonts/Roboto-Regular-webfont.woff") format("woff");
+}
+
 :root {
     --main-bg-color: #262626;
     --light-bg-color: #333333;
@@ -9,7 +14,7 @@
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Roboto Regular", Arial, Helvetica, sans-serif;
     background-color: var(--main-bg-color);
     color: var(--text-color);
     line-height: 1.7em;
