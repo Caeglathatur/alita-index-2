@@ -210,3 +210,9 @@ a:hover, a:active {
     list-style: none;
     padding: 0;
 }
+
+.footer {
+    text-align: center;
+    font-size: 0.9em;
+    line-height: 1.5em;
+}
