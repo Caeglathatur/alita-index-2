@@ -12,6 +12,7 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     background-color: var(--main-bg-color);
     color: var(--text-color);
+    line-height: 1.7em;
 }
 
 a:link, a:visited {
@@ -104,6 +105,7 @@ a:hover, a:active {
     background-color: var(--light-bg-color);
     border-radius: var(--border-radius);
     overflow: hidden;
+    line-height: 1em;
 }
 
 .entry > .header {
@@ -133,8 +135,8 @@ a:hover, a:active {
 .entry > .tags {
     float: right;
     text-align: right;
-    margin: 10px 15px;
-    font-size: 0.8em;
+    margin: 8px 15px;
+    font-size: 0.75em;
 }
 
 .entry > .tags .tag {
@@ -142,7 +144,7 @@ a:hover, a:active {
     border-radius: var(--border-radius);
     border: 1px solid var(--text-color-faded);
     color: var(--text-color-faded);
-    padding: 3px;
+    padding: 1px 3px;
     vertical-align: middle;
 }
 

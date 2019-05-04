@@ -29,7 +29,7 @@ class RssView(TemplateView):
     def get_context_data(self, *args, **kwargs):
         context = super().get_context_data(*args, **kwargs)
         context['entries'] = models.Entry.objects.filter(
-            is_visible=True).order_by('-created')
+            is_visible=True).order_by('created')
         return context
 
     def get(self, *args, **kwargs):
