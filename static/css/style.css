@@ -61,6 +61,7 @@ a:hover, a:active {
 
 .main-nav ul {
     list-style: none;
+    padding: 0;
 }
 
 .main-nav ul li {
