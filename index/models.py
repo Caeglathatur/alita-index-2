@@ -1,6 +1,8 @@
 import markdown
 from django.db import models
 
+from . import utils
+
 
 class BaseEntry:
 
@@ -12,19 +14,18 @@ class BaseEntry:
     def length_display(self):
         if not self.length or not self.length_unit:
             return None
-
-        unit = self.length_unit.name \
-            if self.length == 1 else self.length_unit.name_plural
-
+        if self.length_unit.name == 'second':
+            return utils.format_seconds(self.length)
+        if self.length_unit.name == 'minute':
+            return utils.format_minutes(self.length)
         if self.length_unit.name == 'word':
-            minutes = round(int(self.length / 200))  # avg human reading wpm
-            return '{} {} (~{:d} min)'.format(
-                str(self.length),
-                unit,
-                minutes,
-            )
-
-        return '{} {}'.format(str(self.length), unit)
+            return utils.format_word_count(self.length)
+        return '{} {}'.format(
+            str(self.length),
+            self.length_unit.name
+            if self.length == 1
+            else self.length_unit.name_plural,
+        )
 
 
 class Entry(BaseEntry, models.Model):
