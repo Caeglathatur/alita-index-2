@@ -100,6 +100,7 @@ class SubEntrySerializer(serializers.ModelSerializer):
     identifiers = EntryIdentifierSerializer(many=True, read_only=True)
     children = RecursiveField(allow_null=True, many=True)
     length_unit = LengthUnitSerializer()
+    length_display = serializers.CharField(allow_null=True)
 
     class Meta:
         model = models.Entry
@@ -109,6 +110,7 @@ class SubEntrySerializer(serializers.ModelSerializer):
             'url',
             'length',
             'length_unit',
+            'length_display',
             'identifiers',
             'children',
         )
@@ -121,6 +123,7 @@ class EntrySerializer(serializers.ModelSerializer):
     identifiers = EntryIdentifierSerializer(many=True, read_only=True)
     children = SubEntrySerializer(allow_null=True, many=True)
     length_unit = LengthUnitSerializer()
+    length_display = serializers.CharField(allow_null=True)
 
     class Meta:
         model = models.Entry
@@ -131,6 +134,7 @@ class EntrySerializer(serializers.ModelSerializer):
             'url',
             'length',
             'length_unit',
+            'length_display',
             'created',
             'updated',
             'categories',
