@@ -14,14 +14,23 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import include, path
+
+from contact_form.views import ContactFormView, ContactFormSuccessView
 from index import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('contact/', ContactFormView.as_view(), name='contact'),
+    path(
+        'contact/success/',
+        ContactFormSuccessView.as_view(),
+        name='contact-success',
+    ),
     path('index-api/', include('index.api.urls')),
     path('newest/', views.NewestView.as_view(), name='newest'),
     path('rss/', views.RssView.as_view(), name='rss'),
     path('alita-index.md', views.MarkdownView.as_view(), name='markdown'),
+    path('captcha/', include('captcha.urls')),
     path('', views.CategoriesView.as_view(), name='categories'),
 ]

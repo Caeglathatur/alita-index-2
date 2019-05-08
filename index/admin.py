@@ -37,7 +37,7 @@ class EntryAdmin(admin.ModelAdmin):
     )
     search_fields = (
         'title',
-        'descrption',
+        'description',
     )
 
 

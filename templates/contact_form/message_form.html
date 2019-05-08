@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}Suggestions &amp; Feedback - {% endblock title %}
+
+{% block content %}
+    <h1>Suggestions &amp; Feedback</h1>
+    <p>Through this form you can suggest new entries for the index or send us other feedback. Keep in mind that the form is anonymous (we actively do not want to handle your personal information), so we won't be able to reply to you.</p>
+    <form action="{% url 'contact' %}" method="POST">
+        {% csrf_token %}
+        {% for field in form %}
+            <div class="field-wrapper">
+                {{ field.errors }}
+                {{ field.label_tag }}<br>{{ field }}
+                {% if field.help_text %}
+                    <p class="help">{{ field.help_text|safe }}</p>
+                {% endif %}
+            </div>
+        {% endfor %}
+        <input type="submit" value="Submit">
+    </form>
+{% endblock content %}

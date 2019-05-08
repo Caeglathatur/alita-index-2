@@ -29,8 +29,10 @@ INSTALLED_APPS = [
     'django.contrib.flatpages',
     'rest_framework',
     'django_filters',
+    'captcha',
     'alita_index.users',
     'index',
+    'contact_form',
 ]
 
 MIDDLEWARE = [
@@ -112,3 +114,7 @@ STATICFILES_DIRS = [
 
 
 API_DOCS_TITLE = 'Alita Index REST API Reference'
+
+
+# CAPTCHA_BACKGROUND_COLOR = '#262626'
+# CAPTCHA_FOREGROUND_COLOR = '#cccccc'

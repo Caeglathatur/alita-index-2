@@ -224,3 +224,12 @@ a:hover, a:active {
     font-size: 0.9em;
     line-height: 1.5em;
 }
+
+.field-wrapper {
+    margin-bottom: 12px;
+}
+
+.captcha {
+    display: block;
+    margin-bottom: 5px;
+}

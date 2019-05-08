@@ -28,6 +28,7 @@
                             {% for page in flatpages %}
                             <li><a href="{{ page.url }}">{{ page.title }}</a></li>
                             {% endfor %}
+                            <li><a href="{% url 'contact' %}">Suggestions</a></li>
                             <li><a href="{% url 'markdown' %}">Markdown</a></li>
                             <li><a type="application/rss+xml" href="{% url 'rss' %}">RSS</a></li>
                             <li><a href="{% url 'api-docs:docs-index' %}">API</a></li>
