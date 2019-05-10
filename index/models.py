@@ -14,6 +14,8 @@ class BaseEntry:
     def length_display(self):
         if not self.length or not self.length_unit:
             return None
+        # We make no assmuptions about what IDs these units have in the DB.
+        # Therefore we identify them by name.
         if self.length_unit.name == 'second':
             return utils.format_seconds(self.length)
         if self.length_unit.name == 'minute':
