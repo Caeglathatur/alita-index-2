@@ -43,9 +43,17 @@ h1 {
 }
 
 .logo {
-    width: 175px;
-    margin-top: 20px;
+    display: block;
+    overflow: hidden;
+    margin: 0 auto;
     margin-bottom: 15px;
+    margin-top: 20px;
+    width: 175px;
+    max-width: 100%;
+}
+
+.logo img {
+    width: 175px;
     max-width: 100%;
 }
 
@@ -61,6 +69,10 @@ h1 {
     text-transform: uppercase;
     margin-top: 0.4em;
     letter-spacing: 0.1em;
+}
+
+#site-title a {
+    color: var(--text-color);
 }
 
 .main-nav ul {
