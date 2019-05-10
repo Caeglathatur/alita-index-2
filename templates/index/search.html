@@ -8,5 +8,7 @@
     {% for e, hits in entries %}
         <p class="entry-note">In <i>{{ e.categories_names|join:', ' }}</i>:</p>
         {% include 'fragments/entry.html' with entry=e %}
+    {% empty %}
+        <p>No results. Do you think something is missing? <a href="{% url 'contact' %}">Let us know</a>!</p>
     {% endfor %}
 {% endblock content %}
