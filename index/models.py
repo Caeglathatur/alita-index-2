@@ -94,7 +94,7 @@ class Entry(BaseEntry, models.Model):
 
     @property
     def categories_names(self):
-        return list(map(lambda c: c.name, self.categories.all()))
+        return list(map(lambda c: c.path_str, self.categories.all()))
 
     @property
     def authors_names(self):
@@ -162,6 +162,18 @@ class SubEntry(BaseEntry, models.Model):
     def identifiers(self):
         return SubEntryIdentifier.objects.filter(sub_entry=self)
 
+    @property
+    def entry_traversed(self):
+        if self.entry:
+            return self.entry
+        next_ancestor = self.parent
+        while next_ancestor:
+            if isinstance(next_ancestor, Entry):
+                break
+            else:
+                next_ancestor = next_ancestor.parent or next_ancestor.entry
+        return next_ancestor
+
     def __str__(self):
         path = [self.title]
         next_ancestor = self.parent or self.entry
@@ -212,6 +224,10 @@ class SubEntryIdentifier(models.Model):
     value = models.CharField(
         max_length=255,
     )
+
+    @property
+    def entry(self):
+        return self.sub_entry.entry_traversed
 
     def __str__(self):
         return self.value
@@ -272,11 +288,22 @@ class Category(models.Model):
     def entries_visible(self):
         return self.entries.filter(is_visible=True)
 
-    def __str__(self):
+    @property
+    def entries_visible_traversed(self):
+        entries = set(self.entries_visible)
+        for child in self.children.all():
+            entries |= set(child.entries_visible_traversed)
+        return list(entries)
+
+    @property
+    def path_str(self):
         ancestors = self.ancestors
         ancestors.reverse()
         ancestors.append(self)
         return ' / '.join([a.name for a in ancestors])
+
+    def __str__(self):
+        return self.path_str
 
 
 class Author(models.Model):
@@ -301,6 +328,10 @@ class Author(models.Model):
         blank=True,
     )
 
+    @property
+    def entries_visible(self):
+        return self.entries.filter(is_visible=True)
+
     def __str__(self):
         return self.name
 
@@ -316,6 +347,10 @@ class Tag(models.Model):
         blank=True,
         default=None,
     )
+
+    @property
+    def entries_visible(self):
+        return self.entries.filter(is_visible=True)
 
     def __str__(self):
         return self.name

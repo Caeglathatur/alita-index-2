@@ -29,6 +29,7 @@ urlpatterns = [
     ),
     path('index-api/', include('index.api.urls')),
     path('newest/', views.NewestView.as_view(), name='newest'),
+    path('search/', views.SearchView.as_view(), name='search'),
     path('rss/', views.RssView.as_view(), name='rss'),
     path('alita-index.md', views.MarkdownView.as_view(), name='markdown'),
     path('captcha/', include('captcha.urls')),

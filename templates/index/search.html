@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block title %}Search Results - {% endblock title %}
+
+{% block content %}
+    {% include 'fragments/browse-menu.html' %}
+    <h1>Search Results for "{{ query }}"</h1>
+    {% for e, hits in entries %}
+        <p class="entry-note">In <i>{{ e.categories_names|join:', ' }}</i>:</p>
+        {% include 'fragments/entry.html' with entry=e %}
+    {% endfor %}
+{% endblock content %}

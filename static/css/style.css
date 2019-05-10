@@ -31,6 +31,10 @@ a:hover, a:active {
     color: white;
 }
 
+h1 {
+    line-height: 1.3em;
+}
+
 .content-box {
     max-width: 700px;
     min-width: 200px;
@@ -73,27 +77,52 @@ a:hover, a:active {
 }
 
 .browse-menu {
-    list-style: none;
-    padding: 0;
     margin-bottom: 40px;
+    display: block;
+    overflow: hidden;
 }
 
-.browse-menu li {
-    display: inline-block;
+.browse-menu .search {
+    float: right;
+    width: 400px;
+    max-width: 100%;
 }
 
-.browse-menu li a:link, .browse-menu li a:visited {
+.browse-menu .search form {
+    display: inline;
+}
+
+.browse-menu .search input[type=search] {
+    margin: 2.5px;
+    padding: 10px 15px;
+    width: 300px;
+    max-width: 100%;
+    line-height: 27.5px;
+    border-radius: var(--border-radius);
+    border: none;
+    color: var(--text-color);
+    background-color: var(--highlight-bg-color)
+
+}
+
+.browse-menu a:link, .browse-menu a:visited, .browse-menu .search input[type=submit] {
+    margin: 2.5px;
     display: inline-block;
     padding: 10px 15px;
     background-color: var(--light-bg-color);
     border-radius: var(--border-radius);
+    border: none;
+    color: var(--accent-color);
+    line-height: 27.5px;
+    cursor: pointer;
 }
 
-.browse-menu li a:hover, .browse-menu li a:active {
+.browse-menu a:hover, .browse-menu a:active, .browse-menu .search input[type=submit]:hover {
     background-color: var(--highlight-bg-color);
+    color: white;
 }
 
-.browse-menu li a.current {
+.browse-menu a.current {
     background-color: var(--light-bg-color);
     color: var(--text-color);
 }
@@ -102,7 +131,7 @@ a:hover, a:active {
     margin-bottom: 40px;
 }
 
-.added-note {
+.entry-note {
     font-size: 0.8em;
     color: var(--text-color-faded);
 }

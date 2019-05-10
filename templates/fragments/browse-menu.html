@@ -1,6 +1,9 @@
-<nav>
-    <ul class="browse-menu">
-        <li><a href="{% url 'categories' %}" class="{% if view.id == 'categories' %}current{% endif %}">Categories</a></li>
-        <li><a href="{% url 'newest' %}" class="{% if view.id == 'newest' %}current{% endif %}">Newest</a></li>
-    </ul>
+<nav class="browse-menu">
+    <a href="{% url 'categories' %}" class="{% if view.id == 'categories' %}current{% endif %}">Categories</a>
+    <a href="{% url 'newest' %}" class="{% if view.id == 'newest' %}current{% endif %}">Newest</a>
+    <div class="search">
+        <form action="{% url 'search' %}" method="get">
+            <input type="search" placeholder="Search the index..." name="q" id="search-query" required value="{{ query }}"><input type="submit" value="Search" class="{% if view.id == 'search' %}current{% endif %}">
+        </form>
+    </div>
 </nav>

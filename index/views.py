@@ -1,6 +1,6 @@
-from django.views.generic import TemplateView, ListView
+from django.views.generic import ListView, TemplateView
 
-from . import models
+from . import models, search
 
 
 class CategoriesView(TemplateView):
@@ -21,6 +21,21 @@ class NewestView(ListView):
         is_visible=True).order_by('-created')
     template_name = 'index/newest.html'
     context_object_name = 'entries'
+
+
+class SearchView(TemplateView):
+    id = 'search'
+    template_name = 'index/search.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+
+        query = self.request.GET.get('q', '')
+        results = search.search_entries(query)
+
+        context['query'] = query
+        context['entries'] = results
+        return context
 
 
 class RssView(TemplateView):

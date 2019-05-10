@@ -94,7 +94,6 @@ class EntryViewSet(
 
         root_cats = models.Category.objects.filter(
             parent__isnull=True).order_by('name')
-        print(root_cats)
         s = serializers.CategoryTreeEntrySerializer(root_cats, many=True)
         return Response(s.data)
 
