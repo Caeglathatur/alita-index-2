@@ -5,7 +5,7 @@
 {% block content %}
     {% include 'fragments/browse-menu.html' %}
     {% for e in entries %}
-        <p class="entry-note">{{ e.created|date:'Y-m-d H:i O' }} in <i>{{ e.categories_names|join:', ' }}</i>:</p>
+        <p class="entry-note">{{ e.created|date:'Y-m-d H:i T' }} in <i>{{ e.categories_names|join:', ' }}</i>:</p>
         {% include 'fragments/entry.html' with entry=e %}
     {% endfor %}
 {% endblock content %}
