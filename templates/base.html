@@ -9,6 +9,8 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta name="description" content="Alita Index is a database cataloguing material relating to Yukito Kishiro's manga Gunnm / Battle Angel Alita, as well as James Cameron's and Robert Rodríguez’s movie Alita: Battle Angel.">
+        <meta name="keywords" content="alita,battle angel,index,database,links">
         <link rel="shortcut icon" href="{% static 'img/favicon.png' %}">
         <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
         <link rel="stylesheet" href="{% static 'css/style.css' %}">
@@ -19,14 +21,14 @@
         <div id="wrapper">
             <header id="header">
                 <div class="content-box">
-                    <img class="logo" src="{% static 'img/logo.svg' %}" alt="">
+                    <img class="logo" src="{% static 'img/logo.svg' %}">
                     <h1 id="site-title">Alita Index</h1>
                     <p>Mostly anything of any significance relating to the manga and the movie about the battle angel.</p>
                     <nav class="main-nav">
                         <ul>
                             <li><a href="/">Browse</a></li>
                             {% for page in flatpages %}
-                            <li><a href="{{ page.url }}">{{ page.title }}</a></li>
+                                <li><a href="{{ page.url }}">{{ page.title }}</a></li>
                             {% endfor %}
                             <li><a href="{% url 'contact' %}">Suggestions</a></li>
                             <li><a href="{% url 'markdown' %}">Markdown</a></li>
@@ -36,21 +38,21 @@
                     </nav>
                 </div>
             </header>
-            <main id="main">
+            <main id="main" role="main">
                 <div class="content-box">
                     {% block content %}{% endblock %}
                 </div>
             </main>
-        </div>
-        <footer class="footer">
-            <div class="content-box">
-                <p>
-                    Copyright &copy; 2019 Alita Index
-                    <br>The provided data are licensed under <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode.txt">CC0 1.0</a>.
-                    <br>This site barely uses cookies. <a href="/about/#cookies">More information</a>.
-                </p>
-            </div>
-        </footer>
+            <footer class="footer">
+                <div class="content-box">
+                    <p>
+                        Copyright &copy; 2019 Alita Index
+                        <br>The provided data are licensed under <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode.txt">CC0 1.0</a>.
+                        <br>This site barely uses cookies. <a href="/about/#cookies">More information</a>.
+                    </p>
+                </div>
+            </footer>
+        </div> <!-- wrapper -->
     </body>
 
 </html>
