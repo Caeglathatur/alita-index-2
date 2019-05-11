@@ -50,5 +50,10 @@ router.register(
 
 urlpatterns = [
     path('', views.IndexAPIRootView.as_view()),
+    path(
+        'entries/search/',
+        views.EntrySearchView.as_view(),
+        name='entries-search-list',
+    ),
 ]
 urlpatterns += router.urls

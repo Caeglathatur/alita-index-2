@@ -16,6 +16,8 @@ You should have received a copy of the GNU Affero General Public License
 along with Alita Index.  If not, see <https://www.gnu.org/licenses/>.
 """
 
+import coreapi
+import coreschema
 from django.db.models import FilteredRelation, Q
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import views
@@ -27,9 +29,10 @@ from rest_framework.mixins import (CreateModelMixin, DestroyModelMixin,
 from rest_framework.permissions import IsAdminUser
 from rest_framework.response import Response
 from rest_framework.reverse import reverse_lazy
+from rest_framework.schemas import AutoSchema
 from rest_framework.viewsets import GenericViewSet
 
-from ... import models
+from ... import models, search
 from . import filters, serializers
 from .permissions import ReadOnly
 
@@ -113,6 +116,40 @@ class EntryViewSet(
         root_cats = models.Category.objects.filter(
             parent__isnull=True).order_by('name')
         s = serializers.CategoryTreeEntrySerializer(root_cats, many=True)
+        return Response(s.data)
+
+
+class EntrySearchView(views.APIView):
+    permission_classes = (IsAdminUser | ReadOnly,)
+    schema = AutoSchema(manual_fields=[
+        coreapi.Field(
+            'q',
+            required=False,
+            location='query',
+            schema=coreschema.String(
+                description=(
+                    'Search query consisting of space-separated terms.'
+                ),
+            ),
+        ),
+    ])
+
+    def get(self, request, format=None):
+        """Lists entries based on search query. The results are ordered in
+        descending order by the number of matching search terms.
+
+        Unlike the <code>search</code> query param of other entry views (which
+        is very shallow), this view performs a full text search in entries, sub
+        entries, authors, categories, tags and identifiers.
+        """
+
+        query = self.request.GET.get('q', '')
+        results = search.search_entries(query)
+        results = list(map(
+            lambda e: e[0],
+            results,
+        ))
+        s = serializers.EntrySerializer(results, many=True)
         return Response(s.data)
 
 

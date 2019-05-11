@@ -156,6 +156,6 @@ def search_entries(query):
         hits,
     ))
     # Sort by hit count and entry title
-    hits = sorted(hits, key=lambda e: (e[1], e[0].title), reverse=True)
+    hits = sorted(hits, key=lambda e: e[1], reverse=True)
 
     return hits
