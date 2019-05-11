@@ -12,15 +12,15 @@
     {% endif %}
 
     {% for c in categories %}
-        {% include 'fragments/entries.html' with header='h2' %}
+        {% include 'fragments/category.html' with header='h2' %}
         {% for c in c.children.all %}
-            {% include 'fragments/entries.html' with header='h3' %}
+            {% include 'fragments/category.html' with header='h3' %}
             {% for c in c.children.all %}
-                {% include 'fragments/entries.html' with header='h4' %}
+                {% include 'fragments/category.html' with header='h4' %}
                 {% for c in c.children.all %}
-                    {% include 'fragments/entries.html' with header='h5' %}
+                    {% include 'fragments/category.html' with header='h5' %}
                     {% for c in c.children.all %}
-                        {% include 'fragments/entries.html' with header='h6' %}
+                        {% include 'fragments/category.html' with header='h6' %}
                     {% endfor %}
                 {% endfor %}
             {% endfor %}
