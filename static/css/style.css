@@ -35,6 +35,14 @@ h1 {
     line-height: 1.3em;
 }
 
+input, textarea, select {
+    background-color: var(--highlight-bg-color);
+    border: none;
+    border-radius: var(--border-radius);
+    color: var(--text-color);
+    padding: 10px;
+}
+
 .content-box {
     max-width: 700px;
     min-width: 200px;
