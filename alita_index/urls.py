@@ -23,18 +23,14 @@ from contact_form.views import ContactFormView, ContactFormSuccessView
 from index import views
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('contact/', ContactFormView.as_view(), name='contact'),
-    path(
-        'contact/success/',
-        ContactFormSuccessView.as_view(),
-        name='contact-success',
-    ),
-    path('index-api/', include('index.api.urls')),
-    path('newest/', views.NewestView.as_view(), name='newest'),
-    path('search/', views.SearchView.as_view(), name='search'),
-    path('rss/', views.RssView.as_view(), name='rss'),
-    path('alita-index.md', views.MarkdownView.as_view(), name='markdown'),
-    path('captcha/', include('captcha.urls')),
-    path('', views.CategoriesView.as_view(), name='categories'),
+    path("admin/", admin.site.urls),
+    path("contact/", ContactFormView.as_view(), name="contact"),
+    path("contact/success/", ContactFormSuccessView.as_view(), name="contact-success"),
+    path("index-api/", include("index.api.urls")),
+    path("newest/", views.NewestView.as_view(), name="newest"),
+    path("search/", views.SearchView.as_view(), name="search"),
+    path("rss/", views.RssView.as_view(), name="rss"),
+    path("alita-index.md", views.MarkdownView.as_view(), name="markdown"),
+    path("captcha/", include("captcha.urls")),
+    path("", views.CategoriesView.as_view(), name="categories"),
 ]

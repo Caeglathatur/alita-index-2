@@ -23,7 +23,6 @@ from . import utils
 
 
 class BaseEntry:
-
     @property
     def description_html(self):
         return markdown.markdown(self.description)
@@ -34,76 +33,44 @@ class BaseEntry:
             return None
         # We make no assmuptions about what IDs these units have in the DB.
         # Therefore we identify them by name.
-        if self.length_unit.name == 'second':
+        if self.length_unit.name == "second":
             return utils.format_seconds(self.length)
-        if self.length_unit.name == 'minute':
+        if self.length_unit.name == "minute":
             return utils.format_minutes(self.length)
-        if self.length_unit.name == 'word':
+        if self.length_unit.name == "word":
             return utils.format_word_count(self.length)
-        return '{} {}'.format(
+        return "{} {}".format(
             str(self.length),
-            self.length_unit.name
-            if self.length == 1
-            else self.length_unit.name_plural,
+            self.length_unit.name if self.length == 1 else self.length_unit.name_plural,
         )
 
 
 class Entry(BaseEntry, models.Model):
-
     class Meta:
-        verbose_name_plural = 'entries'
-        ordering = ['title']
+        verbose_name_plural = "entries"
+        ordering = ["title"]
 
-    title = models.CharField(
-        max_length=255,
-    )
-    description = models.TextField(
-        help_text='Supports Markdown.',
-        blank=True,
-    )
-    url = models.URLField(
-        verbose_name='URL',
-        blank=True,
-    )
-    length = models.PositiveIntegerField(
-        null=True,
-        blank=True,
-    )
+    title = models.CharField(max_length=255)
+    description = models.TextField(help_text="Supports Markdown.", blank=True)
+    url = models.URLField(verbose_name="URL", blank=True)
+    length = models.PositiveIntegerField(null=True, blank=True)
     length_unit = models.ForeignKey(
-        'LengthUnit',
-        related_name='entries',
+        "LengthUnit",
+        related_name="entries",
         on_delete=models.SET_NULL,
         null=True,
         blank=True,
     )
-    created = models.DateTimeField(
-        auto_now_add=True,
-    )
-    updated = models.DateTimeField(
-        auto_now=True,
-    )
-    is_visible = models.BooleanField(
-        default=False,
-    )
-    categories = models.ManyToManyField(
-        'Category',
-        related_name='entries',
-        blank=True,
-    )
-    authors = models.ManyToManyField(
-        'Author',
-        related_name='entries',
-        blank=True,
-    )
-    tags = models.ManyToManyField(
-        'Tag',
-        related_name='entries',
-        blank=True,
-    )
+    created = models.DateTimeField(auto_now_add=True)
+    updated = models.DateTimeField(auto_now=True)
+    is_visible = models.BooleanField(default=False)
+    categories = models.ManyToManyField("Category", related_name="entries", blank=True)
+    authors = models.ManyToManyField("Author", related_name="entries", blank=True)
+    tags = models.ManyToManyField("Tag", related_name="entries", blank=True)
     identifier_types = models.ManyToManyField(
-        'IdentifierType',
-        related_name='entries',
-        through='EntryIdentifier',
+        "IdentifierType",
+        related_name="entries",
+        through="EntryIdentifier",
         # through_fields=('entry', 'type'),
         blank=True,
     )
@@ -122,58 +89,38 @@ class Entry(BaseEntry, models.Model):
 
     @property
     def created_rss(self):
-        return self.created.strftime('%a, %d %b %Y %H:%M:%S %z')
+        return self.created.strftime("%a, %d %b %Y %H:%M:%S %z")
 
     def __str__(self):
         return self.title
 
 
 class SubEntry(BaseEntry, models.Model):
-
     class Meta:
-        verbose_name_plural = 'sub entries'
-        ordering = ['title']
+        verbose_name_plural = "sub entries"
+        ordering = ["title"]
 
-    title = models.CharField(
-        max_length=255,
-    )
-    description = models.TextField(
-        help_text='Supports Markdown.',
-        blank=True,
-    )
+    title = models.CharField(max_length=255)
+    description = models.TextField(help_text="Supports Markdown.", blank=True)
     entry = models.ForeignKey(
-        Entry,
-        on_delete=models.CASCADE,
-        related_name='children',
-        null=True,
-        blank=True,
+        Entry, on_delete=models.CASCADE, related_name="children", null=True, blank=True
     )
     parent = models.ForeignKey(
-        'self',
-        on_delete=models.CASCADE,
-        related_name='children',
-        null=True,
-        blank=True,
+        "self", on_delete=models.CASCADE, related_name="children", null=True, blank=True
     )
-    url = models.URLField(
-        verbose_name='URL',
-        blank=True,
-    )
-    length = models.PositiveIntegerField(
-        null=True,
-        blank=True,
-    )
+    url = models.URLField(verbose_name="URL", blank=True)
+    length = models.PositiveIntegerField(null=True, blank=True)
     length_unit = models.ForeignKey(
-        'LengthUnit',
-        related_name='sub_entries',
+        "LengthUnit",
+        related_name="sub_entries",
         on_delete=models.SET_NULL,
         null=True,
         blank=True,
     )
     identifier_types = models.ManyToManyField(
-        'IdentifierType',
-        related_name='sub_entries',
-        through='SubEntryIdentifier',
+        "IdentifierType",
+        related_name="sub_entries",
+        through="SubEntryIdentifier",
         # through_fields=('entry', 'type'),
         blank=True,
     )
@@ -204,46 +151,28 @@ class SubEntry(BaseEntry, models.Model):
             else:
                 next_ancestor = next_ancestor.parent or next_ancestor.entry
         path.reverse()
-        return ' / '.join(path)
+        return " / ".join(path)
 
 
 class EntryIdentifier(models.Model):
-
     class Meta:
-        verbose_name_plural = 'entry identifiers'
+        verbose_name_plural = "entry identifiers"
 
-    entry = models.ForeignKey(
-        Entry,
-        on_delete=models.CASCADE,
-    )
-    type = models.ForeignKey(
-        'IdentifierType',
-        on_delete=models.CASCADE,
-    )
-    value = models.CharField(
-        max_length=255,
-    )
+    entry = models.ForeignKey(Entry, on_delete=models.CASCADE)
+    type = models.ForeignKey("IdentifierType", on_delete=models.CASCADE)
+    value = models.CharField(max_length=255)
 
     def __str__(self):
         return self.value
 
 
 class SubEntryIdentifier(models.Model):
-
     class Meta:
-        verbose_name_plural = 'sub entry identifiers'
+        verbose_name_plural = "sub entry identifiers"
 
-    sub_entry = models.ForeignKey(
-        SubEntry,
-        on_delete=models.CASCADE,
-    )
-    type = models.ForeignKey(
-        'IdentifierType',
-        on_delete=models.CASCADE,
-    )
-    value = models.CharField(
-        max_length=255,
-    )
+    sub_entry = models.ForeignKey(SubEntry, on_delete=models.CASCADE)
+    type = models.ForeignKey("IdentifierType", on_delete=models.CASCADE)
+    value = models.CharField(max_length=255)
 
     @property
     def entry(self):
@@ -254,34 +183,26 @@ class SubEntryIdentifier(models.Model):
 
 
 class IdentifierType(models.Model):
-    name = models.CharField(
-        max_length=150,
-        unique=True,
-    )
+    name = models.CharField(max_length=150, unique=True)
 
     def __str__(self):
         return self.name
 
 
 class Category(models.Model):
-
     class Meta:
-        verbose_name_plural = 'categories'
-        ordering = ['name']
+        verbose_name_plural = "categories"
+        ordering = ["name"]
 
-    name = models.CharField(
-        max_length=150,
-    )
+    name = models.CharField(max_length=150)
     parent = models.ForeignKey(
-        'self',
+        "self",
         on_delete=models.SET_NULL,
-        related_name='children',
+        related_name="children",
         null=True,
         blank=True,
     )
-    slug = models.SlugField(
-        unique=True,
-    )
+    slug = models.SlugField(unique=True)
 
     @property
     def ancestors(self):
@@ -320,33 +241,30 @@ class Category(models.Model):
         ancestors = self.ancestors
         ancestors.reverse()
         ancestors.append(self)
-        return ' / '.join([a.name for a in ancestors])
+        return " / ".join([a.name for a in ancestors])
 
     def __str__(self):
         return self.path_str
 
 
 class Author(models.Model):
-
     class Meta:
         constraints = [
             models.UniqueConstraint(
-                fields=['name', 'discriminator'], name='unique_person')
+                fields=["name", "discriminator"], name="unique_person"
+            )
         ]
 
-    name = models.CharField(
-        max_length=255,
-    )
+    name = models.CharField(max_length=255)
     discriminator = models.CharField(
         help_text=(
-            'Used for distinguishing two people with the same name. '
-            'Human-readable and visible to users.'),
+            "Used for distinguishing two people with the same name. "
+            "Human-readable and visible to users."
+        ),
         max_length=255,
         blank=True,
     )
-    url = models.URLField(
-        blank=True,
-    )
+    url = models.URLField(blank=True)
 
     @property
     def entries_visible(self):
@@ -357,15 +275,9 @@ class Author(models.Model):
 
 
 class Tag(models.Model):
-    name = models.CharField(
-        max_length=150,
-    )
+    name = models.CharField(max_length=150)
     color = models.CharField(
-        help_text='CSS color.',
-        max_length=50,
-        null=True,
-        blank=True,
-        default=None,
+        help_text="CSS color.", max_length=50, null=True, blank=True, default=None
     )
 
     @property
@@ -377,13 +289,8 @@ class Tag(models.Model):
 
 
 class LengthUnit(models.Model):
-    name = models.CharField(
-        help_text='Singular.',
-        max_length=150,
-    )
-    name_plural = models.CharField(
-        max_length=150,
-    )
+    name = models.CharField(help_text="Singular.", max_length=150)
+    name_plural = models.CharField(max_length=150)
 
     def __str__(self):
         return self.name

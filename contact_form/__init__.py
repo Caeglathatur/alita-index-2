@@ -1,1 +1,1 @@
-default_app_config = 'contact_form.apps.ContactFormConfig'
+default_app_config = "contact_form.apps.ContactFormConfig"

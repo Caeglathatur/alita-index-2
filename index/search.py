@@ -20,31 +20,21 @@ from . import models
 
 
 search_fields = {
-    'Entry': [
-        'title',
-        'description',
+    "Entry": [
+        "title",
+        "description",
         # 'url',
     ],
-    'SubEntry': [
-        'title',
-        'description',
+    "SubEntry": [
+        "title",
+        "description",
         # 'url',
     ],
-    'Category': [
-        'name',
-    ],
-    'Tag': [
-        'name',
-    ],
-    'Author': [
-        'name',
-    ],
-    'EntryIdentifier': [
-        'value',
-    ],
-    'SubEntryIdentifier': [
-        'value',
-    ],
+    "Category": ["name"],
+    "Tag": ["name"],
+    "Author": ["name"],
+    "EntryIdentifier": ["value"],
+    "SubEntryIdentifier": ["value"],
 }
 
 
@@ -74,7 +64,7 @@ def search_entries(query):
 
     # Search in entries
     for e in entries:
-        for field in search_fields['Entry']:
+        for field in search_fields["Entry"]:
             if not hasattr(e, field):
                 continue
             content = getattr(e, field).lower()
@@ -84,7 +74,7 @@ def search_entries(query):
 
     # Search in sub entries
     for s in sub_entries:
-        for field in search_fields['SubEntry']:
+        for field in search_fields["SubEntry"]:
             if not hasattr(s, field):
                 continue
             content = getattr(s, field).lower()
@@ -94,7 +84,7 @@ def search_entries(query):
 
     # Search in categories
     for c in categories:
-        for field in search_fields['Category']:
+        for field in search_fields["Category"]:
             if not hasattr(c, field):
                 continue
             content = getattr(c, field).lower()
@@ -105,7 +95,7 @@ def search_entries(query):
 
     # Search in authors
     for a in authors:
-        for field in search_fields['Author']:
+        for field in search_fields["Author"]:
             if not hasattr(a, field):
                 continue
             content = getattr(a, field).lower()
@@ -116,7 +106,7 @@ def search_entries(query):
 
     # Search in tags
     for t in tags:
-        for field in search_fields['Category']:
+        for field in search_fields["Category"]:
             if not hasattr(t, field):
                 continue
             content = getattr(t, field).lower()
@@ -127,7 +117,7 @@ def search_entries(query):
 
     # Search in entry identifiers
     for i in entry_identifiers:
-        for field in search_fields['EntryIdentifier']:
+        for field in search_fields["EntryIdentifier"]:
             if not hasattr(i, field):
                 continue
             content = getattr(i, field).lower()
@@ -137,7 +127,7 @@ def search_entries(query):
 
     # Search in sub entry identifiers
     for i in sub_entry_identifiers:
-        for field in search_fields['SubEntryIdentifier']:
+        for field in search_fields["SubEntryIdentifier"]:
             if not hasattr(i, field):
                 continue
             content = getattr(i, field).lower()
@@ -146,15 +136,9 @@ def search_entries(query):
                     add_hit(hits, i.entry, term)
 
     # Only return visible entries
-    hits = list(filter(
-        lambda e: e[0].is_visible,
-        hits.items(),
-    ))
+    hits = list(filter(lambda e: e[0].is_visible, hits.items()))
     # Replace hit sets with hit counts
-    hits = list(map(
-        lambda e: (e[0], len(e[1])),
-        hits,
-    ))
+    hits = list(map(lambda e: (e[0], len(e[1])), hits))
     # Sort by hit count and entry title
     hits = sorted(hits, key=lambda e: e[1], reverse=True)
 

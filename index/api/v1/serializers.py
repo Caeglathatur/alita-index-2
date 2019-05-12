@@ -22,28 +22,15 @@ from rest_framework_recursive.fields import RecursiveField
 
 
 class AuthorSerializer(serializers.ModelSerializer):
-
     class Meta:
         model = models.Author
-        fields = (
-            'id',
-            'name',
-            'discriminator',
-            'url',
-        )
+        fields = ("id", "name", "discriminator", "url")
 
 
 class CategorySerializer(serializers.ModelSerializer):
-
     class Meta:
         model = models.Category
-        fields = (
-            'id',
-            'slug',
-            'name',
-            'parent',
-            'children',
-        )
+        fields = ("id", "slug", "name", "parent", "children")
 
 
 class CategoryTreeSerializer(serializers.ModelSerializer):
@@ -51,34 +38,19 @@ class CategoryTreeSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = models.Category
-        fields = (
-            'id',
-            'slug',
-            'name',
-            'parent',
-            'children',
-        )
+        fields = ("id", "slug", "name", "parent", "children")
 
 
 class TagSerializer(serializers.ModelSerializer):
-
     class Meta:
         model = models.Tag
-        fields = (
-            'id',
-            'name',
-            'color',
-        )
+        fields = ("id", "name", "color")
 
 
 class IdentifierTypeSerializer(serializers.ModelSerializer):
-
     class Meta:
         model = models.IdentifierType
-        fields = (
-            'id',
-            'name',
-        )
+        fields = ("id", "name")
 
 
 class EntryIdentifierSerializer(serializers.ModelSerializer):
@@ -86,10 +58,7 @@ class EntryIdentifierSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = models.EntryIdentifier
-        fields = (
-            'type',
-            'value',
-        )
+        fields = ("type", "value")
 
 
 class SubEntryIdentifierSerializer(serializers.ModelSerializer):
@@ -97,21 +66,13 @@ class SubEntryIdentifierSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = models.SubEntryIdentifier
-        fields = (
-            'type',
-            'value',
-        )
+        fields = ("type", "value")
 
 
 class LengthUnitSerializer(serializers.ModelSerializer):
-
     class Meta:
         model = models.LengthUnit
-        fields = (
-            'id',
-            'name',
-            'name_plural',
-        )
+        fields = ("id", "name", "name_plural")
 
 
 class SubEntrySerializer(serializers.ModelSerializer):
@@ -123,14 +84,14 @@ class SubEntrySerializer(serializers.ModelSerializer):
     class Meta:
         model = models.Entry
         fields = (
-            'title',
-            'description',
-            'url',
-            'length',
-            'length_unit',
-            'length_display',
-            'identifiers',
-            'children',
+            "title",
+            "description",
+            "url",
+            "length",
+            "length_unit",
+            "length_display",
+            "identifiers",
+            "children",
         )
 
 
@@ -146,37 +107,27 @@ class EntrySerializer(serializers.ModelSerializer):
     class Meta:
         model = models.Entry
         fields = (
-            'id',
-            'title',
-            'description',
-            'url',
-            'length',
-            'length_unit',
-            'length_display',
-            'created',
-            'updated',
-            'categories',
-            'authors',
-            'tags',
-            'identifiers',
-            'children',
+            "id",
+            "title",
+            "description",
+            "url",
+            "length",
+            "length_unit",
+            "length_display",
+            "created",
+            "updated",
+            "categories",
+            "authors",
+            "tags",
+            "identifiers",
+            "children",
         )
 
 
 class CategoryTreeEntrySerializer(serializers.ModelSerializer):
-    entries = EntrySerializer(
-        source='entries_visible',
-        many=True,
-        allow_null=True,
-    )
+    entries = EntrySerializer(source="entries_visible", many=True, allow_null=True)
     children = RecursiveField(many=True, allow_null=True)
 
     class Meta:
         model = models.Category
-        fields = (
-            'id',
-            'name',
-            'parent',
-            'entries',
-            'children',
-        )
+        fields = ("id", "name", "parent", "entries", "children")

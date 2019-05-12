@@ -20,10 +20,13 @@ from django.conf import settings
 from django.urls import include, path
 from rest_framework.documentation import include_docs_urls
 
-title = settings.API_DOCS_TITLE if hasattr(
-    settings, 'API_DOCS_TITLE') else 'Index REST API Reference'
+title = (
+    settings.API_DOCS_TITLE
+    if hasattr(settings, "API_DOCS_TITLE")
+    else "Index REST API Reference"
+)
 
 urlpatterns = [
-    path('docs/', include_docs_urls(title=title, permission_classes=[])),
-    path('v1/', include('index.api.v1.urls', namespace='v1')),
+    path("docs/", include_docs_urls(title=title, permission_classes=[])),
+    path("v1/", include("index.api.v1.urls", namespace="v1")),
 ]
