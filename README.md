@@ -2,7 +2,8 @@ Alita Index
 ===========
 
 Source code for [www.alita-index.com](https://www.alita-index.com/). Written in
-Python 3 with Django and Django REST framework.
+Python 3 with Django and Django REST framework. The code is formatted using
+[Black](https://github.com/python/black).
 
 Dependencies (Ubuntu): `python3 python3-dev libz-dev libjpeg-dev libfreetype6-dev`
 
