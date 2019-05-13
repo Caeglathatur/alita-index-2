@@ -86,7 +86,7 @@ class EntryViewSet(
     permission_classes = (IsAdminUser | ReadOnly,)
     filter_backends = (DjangoFilterBackend, OrderingFilter, SearchFilter)
     filterset_class = filters.EntryFilterSet
-    search_fields = ("title", "description", "url")
+    search_fields = ("title", "description", "url", "keywords")
 
     def get_queryset(self):
         qs = models.Entry.objects.filter(is_visible=True)
@@ -128,8 +128,8 @@ class EntrySearchView(views.APIView):
         descending order by the number of matching search terms.
 
         Unlike the <code>search</code> query param of other entry views (which
-        is very shallow), this view performs a full text search in entries, sub
-        entries, authors, categories, tags and identifiers.
+        is very shallow), this view performs a full text search across relationships
+        (entries, sub entries, authors, categories, tags and identifiers).
         """
 
         query = self.request.GET.get("q", "")

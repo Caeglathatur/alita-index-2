@@ -55,7 +55,9 @@ class Entry(BaseEntry, models.Model):
     keywords = models.TextField(
         help_text=(
             "Space-separated keywords to improve text search. Normally not directly "
-            "visible in the UI, but is returned in the API."
+            "visible in the UI, but is returned in the API. Adding keywords that occur "
+            "anywhere else (e.g. title, desc., URL, tags, categ., authors, sub "
+            "entries) is redundant."
         ),
         blank=True,
     )
