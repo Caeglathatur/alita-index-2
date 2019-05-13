@@ -52,6 +52,13 @@ class Entry(BaseEntry, models.Model):
 
     title = models.CharField(max_length=255)
     description = models.TextField(help_text="Supports Markdown.", blank=True)
+    keywords = models.TextField(
+        help_text=(
+            "Space-separated keywords to improve text search. Normally not directly "
+            "visible in the UI, but is returned in the API."
+        ),
+        blank=True,
+    )
     url = models.URLField(verbose_name="URL", blank=True)
     length = models.PositiveIntegerField(null=True, blank=True)
     length_unit = models.ForeignKey(

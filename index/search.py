@@ -20,19 +20,11 @@ from . import models
 
 
 search_fields = {
-    "Entry": [
-        "title",
-        "description",
-        # 'url',
-    ],
-    "SubEntry": [
-        "title",
-        "description",
-        # 'url',
-    ],
+    "Entry": ["title", "description", "url", "keywords"],
+    "SubEntry": ["title", "description", "url"],
     "Category": ["name"],
     "Tag": ["name"],
-    "Author": ["name"],
+    "Author": ["name", "url"],
     "EntryIdentifier": ["value"],
     "SubEntryIdentifier": ["value"],
 }

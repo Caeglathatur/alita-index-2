@@ -110,6 +110,7 @@ class EntrySerializer(serializers.ModelSerializer):
             "id",
             "title",
             "description",
+            "keywords",
             "url",
             "length",
             "length_unit",
