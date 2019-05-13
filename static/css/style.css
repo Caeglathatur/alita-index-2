@@ -67,6 +67,20 @@ input, textarea, select {
 
 #header {
     background-color: var(--light-bg-color);
+    background-image: url('/static/img/tiphares.svg');
+    background-position: -475px -399px;
+    background-position: calc(50% - 330px) -399px;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+@media only screen and (max-width: 700px) {
+    #header {       
+        background-position: 51% -399px;
+        /* background-position: 50% 50%; */
+        /* background-position: 50% -425px; */
+        /* background-position: 50% -320px; */
+    }
 }
 
 #header .content-box {
