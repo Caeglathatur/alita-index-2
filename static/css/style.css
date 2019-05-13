@@ -177,6 +177,7 @@ input, textarea, select {
     font-weight: bold;
     vertical-align: middle;
     margin: 10px 15px;
+    line-height: 1.3em;
 }
 
 .entry > .header > a {
@@ -245,6 +246,7 @@ input, textarea, select {
     font-weight: bold;
     vertical-align: middle;
     margin: 5px 15px;
+    line-height: 1.3em;
 }
 
 .sub-entry > .header > a {
