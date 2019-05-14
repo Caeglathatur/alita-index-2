@@ -82,10 +82,11 @@ class SubEntrySerializer(serializers.ModelSerializer):
     length_display = serializers.CharField(allow_null=True)
 
     class Meta:
-        model = models.Entry
+        model = models.SubEntry
         fields = (
             "title",
             "description",
+            "order",
             "url",
             "length",
             "length_unit",
