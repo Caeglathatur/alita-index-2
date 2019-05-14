@@ -32,7 +32,7 @@ class Message(models.Model):
 
 class Subject(models.Model):
     class Meta:
-        ordering = ["order"]
+        ordering = ["order", "name"]
 
     name = models.CharField(max_length=150)
     order = models.IntegerField(null=True, blank=True)

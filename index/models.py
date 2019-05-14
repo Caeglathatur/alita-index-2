@@ -107,10 +107,11 @@ class Entry(BaseEntry, models.Model):
 class SubEntry(BaseEntry, models.Model):
     class Meta:
         verbose_name_plural = "sub entries"
-        ordering = ["title"]
+        ordering = ["order", "title"]
 
     title = models.CharField(max_length=255)
     description = models.TextField(help_text="Supports Markdown.", blank=True)
+    order = models.IntegerField(null=True, blank=True)
     entry = models.ForeignKey(
         Entry, on_delete=models.CASCADE, related_name="children", null=True, blank=True
     )
