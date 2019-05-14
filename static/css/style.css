@@ -72,6 +72,7 @@ input, textarea, select {
     background-position: calc(50% - 330px) -399px;
     background-repeat: no-repeat;
     background-attachment: fixed;
+    background-size: 1439.15px auto;
 }
 
 @media only screen and (max-width: 700px) {
