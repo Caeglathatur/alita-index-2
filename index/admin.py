@@ -36,12 +36,19 @@ class SubEntryIdentifierInline(admin.TabularInline):
     extra = 1
 
 
+def keyword_count(obj):
+    return len(obj.keywords.split())
+
+
+keyword_count.short_description = "Keywords"
+
+
 @admin.register(models.Entry)
 class EntryAdmin(admin.ModelAdmin):
     inlines = (EntryIdentifierInline, SubEntryInline)
-    list_display = ("__str__", "id", "is_visible", "created")
+    list_display = ("__str__", "id", "is_visible", keyword_count, "created", "updated")
     list_filter = ("is_visible", "tags", "categories", "authors")
-    search_fields = ("title", "description")
+    search_fields = ("title", "description", "keywords")
 
 
 @admin.register(models.SubEntry)
