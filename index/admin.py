@@ -73,7 +73,7 @@ class IdentifierTypeAdmin(admin.ModelAdmin):
 
 @admin.register(models.Category)
 class CategoryAdmin(admin.ModelAdmin):
-    pass
+    list_display = ("__str__", "slug", "keywords", "id")
 
 
 @admin.register(models.Author)
