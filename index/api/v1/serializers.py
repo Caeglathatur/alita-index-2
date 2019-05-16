@@ -30,7 +30,7 @@ class AuthorSerializer(serializers.ModelSerializer):
 class CategorySerializer(serializers.ModelSerializer):
     class Meta:
         model = models.Category
-        fields = ("id", "slug", "name", "parent", "children")
+        fields = ("id", "name", "slug", "keywords", "parent", "children")
 
 
 class CategoryTreeSerializer(serializers.ModelSerializer):
@@ -38,7 +38,7 @@ class CategoryTreeSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = models.Category
-        fields = ("id", "slug", "name", "parent", "children")
+        fields = ("id", "name", "slug", "keywords", "parent", "children")
 
 
 class TagSerializer(serializers.ModelSerializer):
@@ -132,4 +132,4 @@ class CategoryTreeEntrySerializer(serializers.ModelSerializer):
 
     class Meta:
         model = models.Category
-        fields = ("id", "name", "parent", "entries", "children")
+        fields = ("id", "name", "slug", "keywords", "parent", "entries", "children")

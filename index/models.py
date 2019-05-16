@@ -213,6 +213,14 @@ class Category(models.Model):
         blank=True,
     )
     slug = models.SlugField(unique=True)
+    keywords = models.TextField(
+        help_text=(
+            "Space-separated keywords to improve text search. Normally not directly "
+            "visible in the UI, but is returned in the API. Adding keywords that occur "
+            "in the title or parents is redundant."
+        ),
+        blank=True,
+    )
 
     @property
     def ancestors(self):

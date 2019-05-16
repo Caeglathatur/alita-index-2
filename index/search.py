@@ -22,7 +22,7 @@ from . import models
 search_fields = {
     "Entry": ["title", "description", "url", "keywords"],
     "SubEntry": ["title", "description", "url"],
-    "Category": ["name"],
+    "Category": ["name", "keywords"],
     "Tag": ["name"],
     "Author": ["name", "url"],
     "EntryIdentifier": ["value"],
