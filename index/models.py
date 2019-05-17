@@ -299,10 +299,14 @@ class Author(models.Model):
 
 
 class Tag(models.Model):
+    class Meta:
+        ordering = ["order", "name"]
+
     name = models.CharField(max_length=150)
     color = models.CharField(
         help_text="CSS color.", max_length=50, null=True, blank=True, default=None
     )
+    order = models.IntegerField(null=True, blank=True)
 
     @property
     def entries_visible(self):

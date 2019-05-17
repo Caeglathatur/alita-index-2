@@ -83,7 +83,7 @@ class AuthorAdmin(admin.ModelAdmin):
 
 @admin.register(models.Tag)
 class TagAdmin(admin.ModelAdmin):
-    list_display = ("__str__", "id", "color")
+    list_display = ("__str__", "order", "color", "id")
 
 
 @admin.register(models.LengthUnit)
