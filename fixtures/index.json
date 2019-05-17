@@ -5,11 +5,12 @@
         "fields": {
             "title": "Battle Angel Alita",
             "description": "[Comprehensive list of volumes](https://en.wikipedia.org/wiki/List_of_Battle_Angel_Alita_chapters#Battle_Angel_Alita).",
+            "keywords": "",
             "url": "",
             "length": 9,
             "length_unit": 1,
             "created": "2019-05-02T21:03:25.414Z",
-            "updated": "2019-05-02T22:34:33.335Z",
+            "updated": "2019-05-16T18:20:24.092Z",
             "is_visible": true,
             "categories": [
                 2
@@ -29,11 +30,12 @@
         "fields": {
             "title": "Battle Angel Alita: Holy Night & Other Stories",
             "description": "",
+            "keywords": "",
             "url": "",
             "length": null,
             "length_unit": null,
             "created": "2019-05-02T21:05:47.232Z",
-            "updated": "2019-05-02T21:25:01.697Z",
+            "updated": "2019-05-16T18:20:29.874Z",
             "is_visible": true,
             "categories": [
                 2
@@ -53,11 +55,12 @@
         "fields": {
             "title": "Battle Angel Alita: Last Order",
             "description": "",
+            "keywords": "",
             "url": "",
             "length": null,
             "length_unit": null,
             "created": "2019-05-02T21:06:46.428Z",
-            "updated": "2019-05-02T22:34:18.352Z",
+            "updated": "2019-05-16T18:20:35.422Z",
             "is_visible": true,
             "categories": [
                 2
@@ -77,11 +80,12 @@
         "fields": {
             "title": "Battle Angel Alita: Mars Chronicle",
             "description": "[Comprehensive list of volumes](https://en.wikipedia.org/wiki/List_of_Battle_Angel_Alita_chapters#Battle_Angel_Alita:_Mars_Chronicle).",
+            "keywords": "",
             "url": "",
             "length": null,
             "length_unit": null,
             "created": "2019-05-02T21:10:30.191Z",
-            "updated": "2019-05-02T22:34:27.852Z",
+            "updated": "2019-05-16T18:20:41.591Z",
             "is_visible": true,
             "categories": [
                 2
@@ -101,11 +105,12 @@
         "fields": {
             "title": "Alita: Battle Angel - The Official Movie Novelization",
             "description": "",
+            "keywords": "story stories",
             "url": "",
             "length": null,
             "length_unit": null,
             "created": "2019-05-02T21:28:08.966Z",
-            "updated": "2019-05-02T21:28:08.966Z",
+            "updated": "2019-05-14T16:19:11.954Z",
             "is_visible": true,
             "categories": [
                 3
@@ -125,11 +130,12 @@
         "fields": {
             "title": "Alita: Battle Angel - Iron City",
             "description": "",
+            "keywords": "story stories novelization",
             "url": "",
             "length": null,
             "length_unit": null,
             "created": "2019-05-02T21:33:45.650Z",
-            "updated": "2019-05-02T21:33:45.650Z",
+            "updated": "2019-05-14T16:19:43.553Z",
             "is_visible": true,
             "categories": [
                 3
@@ -149,11 +155,12 @@
         "fields": {
             "title": "Alita: Battle Angel - Dr Ido's Journal",
             "description": "",
+            "keywords": "concept design story stories",
             "url": "",
             "length": 127,
             "length_unit": 2,
             "created": "2019-05-02T21:37:21.699Z",
-            "updated": "2019-05-02T21:37:21.699Z",
+            "updated": "2019-05-14T16:19:31.828Z",
             "is_visible": true,
             "categories": [
                 3
@@ -173,11 +180,12 @@
         "fields": {
             "title": "Alita: Battle Angel - The Art and Making of the Movie",
             "description": "",
+            "keywords": "concept design",
             "url": "",
             "length": 232,
             "length_unit": 2,
             "created": "2019-05-02T21:48:45.098Z",
-            "updated": "2019-05-02T21:48:45.098Z",
+            "updated": "2019-05-14T16:17:46.152Z",
             "is_visible": true,
             "categories": [
                 3
@@ -197,11 +205,12 @@
         "fields": {
             "title": "Alita: Battle Angel (Original Motion Picture Soundtrack)",
             "description": "",
+            "keywords": "film score",
             "url": "",
             "length": null,
             "length_unit": null,
             "created": "2019-05-02T21:54:13.184Z",
-            "updated": "2019-05-02T21:57:10.665Z",
+            "updated": "2019-05-14T16:26:30.548Z",
             "is_visible": true,
             "categories": [
                 4
@@ -221,11 +230,12 @@
         "fields": {
             "title": "Alita's Theme",
             "description": "Composed for the movie, but was not used in its purest form in the movie.",
+            "keywords": "strings orchestral symphony soundtrack film score",
             "url": "https://youtu.be/HLfloz6NWwQ?t=419",
             "length": 171,
             "length_unit": 4,
             "created": "2019-05-02T22:00:45.268Z",
-            "updated": "2019-05-02T22:01:06.730Z",
+            "updated": "2019-05-14T16:21:20.801Z",
             "is_visible": true,
             "categories": [
                 4
@@ -244,11 +254,12 @@
         "fields": {
             "title": "Battle Angel (OVA) soundtracks",
             "description": "[Wikipedia article](https://en.wikipedia.org/wiki/Battle_Angel_(OVA)#Soundtracks).",
+            "keywords": "film score original video animation",
             "url": "",
             "length": null,
             "length_unit": null,
             "created": "2019-05-02T22:03:25.428Z",
-            "updated": "2019-05-02T22:03:41.016Z",
+            "updated": "2019-05-14T16:27:12.956Z",
             "is_visible": true,
             "categories": [
                 4
@@ -266,11 +277,12 @@
         "fields": {
             "title": "Battle Angel",
             "description": "Original video animation. 1993. [Wikipedia article](https://en.wikipedia.org/wiki/Battle_Angel_(OVA)).",
+            "keywords": "anime animated",
             "url": "",
             "length": 1,
             "length_unit": 5,
             "created": "2019-05-02T22:12:46.451Z",
-            "updated": "2019-05-02T22:12:46.451Z",
+            "updated": "2019-05-15T18:14:44.509Z",
             "is_visible": true,
             "categories": [
                 5
@@ -288,6 +300,7 @@
         "fields": {
             "title": "Movie accounts",
             "description": "",
+            "keywords": "",
             "url": "",
             "length": null,
             "length_unit": null,
@@ -310,11 +323,12 @@
         "fields": {
             "title": "Legends Never Die",
             "description": "A music video with movie clips that is actually pretty good.",
+            "keywords": "",
             "url": "https://www.youtube.com/watch?v=G0yCiaxMcfo",
-            "length": 557,
+            "length": 235,
             "length_unit": 4,
             "created": "2019-05-02T22:27:39.876Z",
-            "updated": "2019-05-02T22:30:19.854Z",
+            "updated": "2019-05-05T00:36:26.481Z",
             "is_visible": true,
             "categories": [
                 5
@@ -332,12 +346,13 @@
         "pk": 15,
         "fields": {
             "title": "Junkie XL's \"Alita: Battle Angel\" video series",
-            "description": "The composer himself talks about the film score of *Alita: Battle Angel*.",
-            "url": "https://www.youtube.com/playlist?list=PLvuwMx8BoqdUbGDPgm2aqtbBpjug11iFc",
-            "length": 169,
-            "length_unit": 6,
+            "description": "The composer himself talks about the film score of *Alita: Battle Angel*. [Playlist](https://www.youtube.com/playlist?list=PLvuwMx8BoqdUbGDPgm2aqtbBpjug11iFc).",
+            "keywords": "soundtrack",
+            "url": "",
+            "length": 10146,
+            "length_unit": 4,
             "created": "2019-05-02T22:30:09.828Z",
-            "updated": "2019-05-02T23:55:22.549Z",
+            "updated": "2019-05-16T19:53:53.419Z",
             "is_visible": true,
             "categories": [
                 4,
@@ -355,13 +370,14 @@
         "model": "index.entry",
         "pk": 16,
         "fields": {
-            "title": "ABA Reddit Show",
-            "description": "",
-            "url": "https://abaredditshow.podbean.com/",
+            "title": "Alita Battle Angel Reddit Show",
+            "description": "*Alita: Battle Angel* film analysis and discussion, primarily based on [r/alitabattleangel](https://www.reddit.com/r/alitabattleangel/) on Reddit. [RSS feed](https://rss.castbox.fm/everest/9f8a546a8fa24be1899dbcf73c0150d6.xml).",
+            "keywords": "subreddits discussions aba",
+            "url": "https://castbox.fm/channel/id2125116",
             "length": null,
             "length_unit": null,
             "created": "2019-05-02T22:36:30.326Z",
-            "updated": "2019-05-02T22:36:30.326Z",
+            "updated": "2019-05-17T22:05:07.065Z",
             "is_visible": true,
             "categories": [
                 7
@@ -374,13 +390,14 @@
         "model": "index.entry",
         "pk": 17,
         "fields": {
-            "title": "Alita: Battle Angel on Framestore's website",
+            "title": "\"Alita: Battle Angel\" on Framestore's website",
             "description": "Article about Framestore's visual effects work (such as the motorball stadium, motorball players, Zalem and cityscapes) for *Alita: Battle Angel*. Contains links to additional articles.",
+            "keywords": "",
             "url": "https://www.framestore.com/work/alita-battle-angel",
             "length": 887,
             "length_unit": 7,
             "created": "2019-05-02T22:40:54.681Z",
-            "updated": "2019-05-02T22:40:54.681Z",
+            "updated": "2019-05-12T23:46:59.701Z",
             "is_visible": true,
             "categories": [
                 9
@@ -397,6 +414,7 @@
         "fields": {
             "title": "Iron Maiden",
             "description": "Article in [Cinefex issue 163](https://www.cinefex.com/backissues/issue163.htm) (Feb 2019) about the visual effects of *Alita: Battle Angel*. Targeted to VFX professionals.",
+            "keywords": "",
             "url": "",
             "length": 21,
             "length_unit": 2,
@@ -420,11 +438,12 @@
         "fields": {
             "title": "Weta Digital\u2019s Remarkable Face Pipeline: Alita Battle Angel",
             "description": "Article on fxguide.com describing technologies and techniques used to create and animate Alita's face.",
+            "keywords": "interview",
             "url": "https://www.fxguide.com/featured/weta-digitals-remarkable-face-pipeline-alita-battle-angel/",
             "length": 4283,
             "length_unit": 7,
             "created": "2019-05-02T22:58:00.031Z",
-            "updated": "2019-05-02T22:58:00.031Z",
+            "updated": "2019-05-13T16:08:23.862Z",
             "is_visible": true,
             "categories": [
                 9
@@ -443,6 +462,7 @@
         "fields": {
             "title": "Dylan Devine's essays",
             "description": "",
+            "keywords": "",
             "url": "",
             "length": null,
             "length_unit": null,
@@ -466,11 +486,12 @@
         "fields": {
             "title": "Discord server \"Gunnm/Battle Angel: Alita\"",
             "description": "As of May 2019 very active with about 600 members from all around the world.",
+            "keywords": "chats chatting voip voice over vc discussions memes news",
             "url": "https://discord.gg/BNj2rUP",
             "length": null,
             "length_unit": null,
             "created": "2019-05-02T23:08:19.348Z",
-            "updated": "2019-05-03T00:16:13.219Z",
+            "updated": "2019-05-15T18:17:48.002Z",
             "is_visible": true,
             "categories": [
                 10
@@ -485,6 +506,7 @@
         "fields": {
             "title": "Facebook group \"Alita: Battle Angel\"",
             "description": "",
+            "keywords": "",
             "url": "https://www.facebook.com/groups/209407343095593/",
             "length": null,
             "length_unit": null,
@@ -504,6 +526,7 @@
         "fields": {
             "title": "Facebook group \"Alita: Battle Angel's Army\"",
             "description": "",
+            "keywords": "",
             "url": "https://www.facebook.com/groups/396667764422707/",
             "length": null,
             "length_unit": null,
@@ -523,11 +546,12 @@
         "fields": {
             "title": "reddit.com/r/alitabattleangel",
             "description": "",
+            "keywords": "subreddits discussions memes news",
             "url": "https://www.reddit.com/r/alitabattleangel/",
             "length": null,
             "length_unit": null,
             "created": "2019-05-02T23:18:32.042Z",
-            "updated": "2019-05-03T00:16:32.016Z",
+            "updated": "2019-05-15T18:18:19.607Z",
             "is_visible": true,
             "categories": [
                 10
@@ -542,11 +566,12 @@
         "fields": {
             "title": "reddit.com/r/Gunnm",
             "description": "",
+            "keywords": "subreddits discussions memes news",
             "url": "https://www.reddit.com/r/Gunnm/",
             "length": null,
             "length_unit": null,
             "created": "2019-05-02T23:18:56.345Z",
-            "updated": "2019-05-03T00:16:37.247Z",
+            "updated": "2019-05-15T18:18:26.087Z",
             "is_visible": true,
             "categories": [
                 10
@@ -561,11 +586,12 @@
         "fields": {
             "title": "ArtStation search for \"alita\"",
             "description": "",
+            "keywords": "professional",
             "url": "https://www.artstation.com/search?q=alita",
             "length": null,
             "length_unit": null,
             "created": "2019-05-02T23:21:59.808Z",
-            "updated": "2019-05-03T00:17:23.879Z",
+            "updated": "2019-05-16T14:11:37.641Z",
             "is_visible": true,
             "categories": [
                 11
@@ -580,11 +606,12 @@
         "fields": {
             "title": "DeviantArt tags",
             "description": "Nonexhaustive list: [#alita](https://www.deviantart.com/tag/alita),\r\n[#alitabattleangel](https://www.deviantart.com/tag/alitabattleangel),\r\n[#battleangelalita](https://www.deviantart.com/tag/battleangelalita),\r\n[#gally](https://www.deviantart.com/tag/gally),\r\n[#gunnm](https://www.deviantart.com/tag/gunnm)",
+            "keywords": "",
             "url": "",
             "length": null,
             "length_unit": null,
             "created": "2019-05-02T23:23:09.180Z",
-            "updated": "2019-05-03T00:17:29.030Z",
+            "updated": "2019-05-16T14:11:46.603Z",
             "is_visible": true,
             "categories": [
                 11
@@ -597,13 +624,14 @@
         "model": "index.entry",
         "pk": 28,
         "fields": {
-            "title": "Reddit searches for \"fan art\"",
+            "title": "Fan art on Reddit",
             "description": "All-time top voted.",
+            "keywords": "subreddits",
             "url": "",
             "length": null,
             "length_unit": null,
             "created": "2019-05-02T23:25:07.898Z",
-            "updated": "2019-05-03T00:17:35.452Z",
+            "updated": "2019-05-16T14:12:01.563Z",
             "is_visible": true,
             "categories": [
                 11
@@ -618,11 +646,12 @@
         "fields": {
             "title": "Writefriend99's fan fiction",
             "description": "",
+            "keywords": "story stories",
             "url": "https://pastebin.com/u/writefriend99",
             "length": null,
             "length_unit": null,
             "created": "2019-05-02T23:29:31.878Z",
-            "updated": "2019-05-02T23:29:31.878Z",
+            "updated": "2019-05-13T16:05:55.512Z",
             "is_visible": true,
             "categories": [
                 12
@@ -640,12 +669,13 @@
         "pk": 30,
         "fields": {
             "title": "Vitaly Bulgarov's concept art for \"Alita: Battle Angel\"",
-            "description": "[1](https://www.instagram.com/p/BueyI6BB3lt/),\r\n[2](https://www.instagram.com/p/BupHU2tBzIz/),\r\n[3](https://www.instagram.com/p/Bu7DqUMhKXv/),\r\n[4](https://www.instagram.com/p/BvM8DoqlM3_/),\r\n[5](https://www.instagram.com/p/BvkQmZTBd7u/),\r\n[6](https://www.instagram.com/p/BwIcYckBNSz/)",
+            "description": "[1](https://www.instagram.com/p/BueyI6BB3lt/),\r\n[2](https://www.instagram.com/p/BupHU2tBzIz/),\r\n[3](https://www.instagram.com/p/Bu7DqUMhKXv/),\r\n[4](https://www.instagram.com/p/BvM8DoqlM3_/),\r\n[5](https://www.instagram.com/p/BvkQmZTBd7u/),\r\n[6](https://www.instagram.com/p/BwIcYckBNSz/),\r\n[7](https://www.instagram.com/p/BxA4kj9BbK1/)\r\n\r\nHe keeps posting new ones, so check out [his profile](https://www.instagram.com/vitalybulgarov/) as well.",
+            "keywords": "designs zbrush sculpting moi3d rendering keyshot vfx visual effects graphics",
             "url": "",
             "length": null,
             "length_unit": null,
             "created": "2019-05-02T23:32:26.177Z",
-            "updated": "2019-05-03T00:18:30.114Z",
+            "updated": "2019-05-15T18:13:33.979Z",
             "is_visible": true,
             "categories": [
                 13
@@ -664,6 +694,7 @@
         "fields": {
             "title": "Alita Battle Angel",
             "description": "Fan-made.",
+            "keywords": "",
             "url": "https://www.youtube.com/channel/UChZ2hQPWPQAlDTk-67z2Pww",
             "length": null,
             "length_unit": null,
@@ -685,11 +716,12 @@
         "fields": {
             "title": "Doc Ido",
             "description": "",
+            "keywords": "news",
             "url": "https://www.youtube.com/channel/UCqeFRqda27r7IZfUsxkg1hw",
             "length": null,
             "length_unit": null,
             "created": "2019-05-02T23:36:54.885Z",
-            "updated": "2019-05-02T23:38:06.712Z",
+            "updated": "2019-05-15T18:21:39.426Z",
             "is_visible": true,
             "categories": [
                 14
@@ -706,11 +738,12 @@
         "fields": {
             "title": "GenX Strikes Back",
             "description": "",
+            "keywords": "news",
             "url": "https://www.youtube.com/channel/UCiE0u9MQFw1lFn7PWqgA9DQ",
             "length": null,
             "length_unit": null,
             "created": "2019-05-02T23:37:31.011Z",
-            "updated": "2019-05-02T23:38:12.848Z",
+            "updated": "2019-05-15T18:21:54.762Z",
             "is_visible": true,
             "categories": [
                 14
@@ -727,6 +760,7 @@
         "fields": {
             "title": "JAYA nice day",
             "description": "",
+            "keywords": "",
             "url": "https://www.youtube.com/channel/UCuya22CZB8CVdM_osO2i9zw",
             "length": null,
             "length_unit": null,
@@ -748,6 +782,7 @@
         "fields": {
             "title": "TheLast300",
             "description": "",
+            "keywords": "",
             "url": "https://www.youtube.com/channel/UCRtAIk7o92YXDcbxgKk8rMQ",
             "length": null,
             "length_unit": null,
@@ -769,6 +804,7 @@
         "fields": {
             "title": "StarOfElyon",
             "description": "",
+            "keywords": "",
             "url": "https://www.youtube.com/channel/UC1jFLGc_OVIcAOaMKOXYxVw",
             "length": null,
             "length_unit": null,
@@ -790,11 +826,12 @@
         "fields": {
             "title": "Alita: Battle Angel - Biblical Symbolism and Themes",
             "description": "",
+            "keywords": "bible religion mythology mythological",
             "url": "https://www.youtube.com/watch?v=NNIWiCY2HmY",
-            "length": 24,
-            "length_unit": 6,
+            "length": 1455,
+            "length_unit": 4,
             "created": "2019-05-02T23:50:24.577Z",
-            "updated": "2019-05-02T23:50:24.577Z",
+            "updated": "2019-05-17T22:01:08.569Z",
             "is_visible": true,
             "categories": [
                 5
@@ -813,11 +850,12 @@
         "fields": {
             "title": "Alita- Battle Angel is More Important Than You Think",
             "description": "",
+            "keywords": "",
             "url": "",
             "length": null,
             "length_unit": null,
             "created": "2019-05-02T23:53:15.469Z",
-            "updated": "2019-05-02T23:53:15.469Z",
+            "updated": "2019-05-05T00:42:05.481Z",
             "is_visible": true,
             "categories": [
                 5
@@ -837,6 +875,7 @@
         "fields": {
             "title": "Dynamite Neko's \"Battle Angel Alita\" let's read",
             "description": "",
+            "keywords": "",
             "url": "https://www.youtube.com/playlist?list=PLPWUQIdNDVU5NN1Pv85CtcgYTybDSZxZB",
             "length": null,
             "length_unit": null,
@@ -860,11 +899,12 @@
         "fields": {
             "title": "PROTECC ALITA",
             "description": "",
+            "keywords": "protecting",
             "url": "",
             "length": null,
             "length_unit": null,
             "created": "2019-05-02T23:58:11.632Z",
-            "updated": "2019-05-02T23:58:24.618Z",
+            "updated": "2019-05-17T22:02:33.958Z",
             "is_visible": true,
             "categories": [
                 5
@@ -878,11 +918,710 @@
         }
     },
     {
+        "model": "index.entry",
+        "pk": 41,
+        "fields": {
+            "title": "Installation Seven",
+            "description": "",
+            "keywords": "",
+            "url": "https://www.youtube.com/channel/UCTLIhUpHPyp48jG8WPU36UA",
+            "length": null,
+            "length_unit": null,
+            "created": "2019-05-04T15:05:43.949Z",
+            "updated": "2019-05-04T15:05:43.949Z",
+            "is_visible": true,
+            "categories": [
+                14
+            ],
+            "authors": [
+                21
+            ],
+            "tags": []
+        }
+    },
+    {
+        "model": "index.entry",
+        "pk": 42,
+        "fields": {
+            "title": "Battle Angel Alita on Yukitopia",
+            "description": "*Yukitopia* is Yukito Kishiro's official website.",
+            "keywords": "",
+            "url": "",
+            "length": null,
+            "length_unit": null,
+            "created": "2019-05-04T15:32:17.185Z",
+            "updated": "2019-05-10T10:19:06.954Z",
+            "is_visible": true,
+            "categories": [
+                15
+            ],
+            "authors": [
+                1
+            ],
+            "tags": [
+                1,
+                2
+            ]
+        }
+    },
+    {
+        "model": "index.entry",
+        "pk": 43,
+        "fields": {
+            "title": "The Kudos! List",
+            "description": "Culture references within *Battle Angel Alita*.",
+            "keywords": "catalogue directory index",
+            "url": "http://www.nick15.com/kudos.html",
+            "length": null,
+            "length_unit": null,
+            "created": "2019-05-04T15:36:00.288Z",
+            "updated": "2019-05-15T18:20:57.481Z",
+            "is_visible": true,
+            "categories": [
+                15
+            ],
+            "authors": [],
+            "tags": [
+                2
+            ]
+        }
+    },
+    {
+        "model": "index.entry",
+        "pk": 44,
+        "fields": {
+            "title": "GURPS Gunnm",
+            "description": "Gunnm for the \"Generic Universal Role-Playing System\".",
+            "keywords": "rpg",
+            "url": "http://gunnm.sioc.org/index.en.php",
+            "length": null,
+            "length_unit": null,
+            "created": "2019-05-04T15:40:45.686Z",
+            "updated": "2019-05-13T16:04:53.193Z",
+            "is_visible": true,
+            "categories": [
+                18
+            ],
+            "authors": [
+                23
+            ],
+            "tags": [
+                2
+            ]
+        }
+    },
+    {
+        "model": "index.entry",
+        "pk": 45,
+        "fields": {
+            "title": "Battle Angel Alita Wiki",
+            "description": "",
+            "keywords": "wikipedia encyclopedia gunnm",
+            "url": "https://battleangel.fandom.com/",
+            "length": null,
+            "length_unit": null,
+            "created": "2019-05-05T14:55:01.387Z",
+            "updated": "2019-05-15T18:26:11.844Z",
+            "is_visible": true,
+            "categories": [
+                15
+            ],
+            "authors": [],
+            "tags": [
+                2,
+                3,
+                4
+            ]
+        }
+    },
+    {
+        "model": "index.entry",
+        "pk": 46,
+        "fields": {
+            "title": "Shop Fox Movies",
+            "description": "Official *Alita: Battle Angel* merch. Clothing, scale figures, mugs etc.",
+            "keywords": "clothes fashion mini epics vinyl phones cases notebooks damascus blade props",
+            "url": "https://shop.foxmovies.com/collections/alita",
+            "length": null,
+            "length_unit": null,
+            "created": "2019-05-06T10:36:07.564Z",
+            "updated": "2019-05-15T16:48:37.426Z",
+            "is_visible": true,
+            "categories": [
+                16
+            ],
+            "authors": [],
+            "tags": [
+                1,
+                3
+            ]
+        }
+    },
+    {
+        "model": "index.entry",
+        "pk": 47,
+        "fields": {
+            "title": "Weta Workshop",
+            "description": "Most notably props \"crafted from the designs of Weta Digital \u2013 the visual effects team behind Alita: Battle Angel\", e.g. the damascus blade.",
+            "keywords": "scale figures mini epics vinyl",
+            "url": "https://www.wetanz.com/brands/alita-battle-angel",
+            "length": null,
+            "length_unit": null,
+            "created": "2019-05-06T10:38:55.105Z",
+            "updated": "2019-05-15T15:41:54.753Z",
+            "is_visible": true,
+            "categories": [
+                16
+            ],
+            "authors": [],
+            "tags": [
+                1,
+                3
+            ]
+        }
+    },
+    {
+        "model": "index.entry",
+        "pk": 48,
+        "fields": {
+            "title": "Sideshow",
+            "description": "Alita statues and scale figure.",
+            "keywords": "",
+            "url": "https://www.sideshow.com/brands/alita-battle-angel",
+            "length": null,
+            "length_unit": null,
+            "created": "2019-05-06T10:44:20.669Z",
+            "updated": "2019-05-06T10:44:20.669Z",
+            "is_visible": true,
+            "categories": [
+                16
+            ],
+            "authors": [],
+            "tags": [
+                3
+            ]
+        }
+    },
+    {
+        "model": "index.entry",
+        "pk": 49,
+        "fields": {
+            "title": "Redbubble",
+            "description": "Mostly shirts, but also other ABA/BAA merch.",
+            "keywords": "clothes clothing fashion",
+            "url": "https://www.redbubble.com/shop/alita",
+            "length": null,
+            "length_unit": null,
+            "created": "2019-05-06T10:46:57.217Z",
+            "updated": "2019-05-15T15:34:49.971Z",
+            "is_visible": true,
+            "categories": [
+                16
+            ],
+            "authors": [],
+            "tags": [
+                2,
+                3
+            ]
+        }
+    },
+    {
+        "model": "index.entry",
+        "pk": 50,
+        "fields": {
+            "title": "Mushroom Doll Sewing Pattern",
+            "description": "Original sewing pattern for the stuffed mushroom doll that appears in *Alita: Battle Angel*.",
+            "keywords": "crafting crafts fabric",
+            "url": "https://dollsanddaydreams.com/products/mushroom_babies_sewing_pattern",
+            "length": null,
+            "length_unit": null,
+            "created": "2019-05-07T10:24:17.793Z",
+            "updated": "2019-05-14T16:56:55.812Z",
+            "is_visible": true,
+            "categories": [
+                16
+            ],
+            "authors": [],
+            "tags": [
+                3
+            ]
+        }
+    },
+    {
+        "model": "index.entry",
+        "pk": 51,
+        "fields": {
+            "title": "Behind The Scenes on ALITA BATTLE ANGEL - Movie B-Roll & Bloopers",
+            "description": "Includes behind-the-scenes footage from a deleted scene at [4:21](https://www.youtube.com/watch?v=timN6rZJPDw&t=261). The scene is in the official movie novelization.",
+            "keywords": "",
+            "url": "https://www.youtube.com/watch?v=timN6rZJPDw",
+            "length": 646,
+            "length_unit": 4,
+            "created": "2019-05-10T10:13:00.808Z",
+            "updated": "2019-05-10T10:15:06.179Z",
+            "is_visible": true,
+            "categories": [
+                5
+            ],
+            "authors": [],
+            "tags": [
+                3
+            ]
+        }
+    },
+    {
+        "model": "index.entry",
+        "pk": 52,
+        "fields": {
+            "title": "Change.org petition for \"Alita: Battle Angel\" sequel",
+            "description": "",
+            "keywords": "fallen avenging trilogy sequels",
+            "url": "https://www.change.org/p/robert-rodriguez-alita-battle-angel-part-2",
+            "length": null,
+            "length_unit": null,
+            "created": "2019-05-10T10:42:28.596Z",
+            "updated": "2019-05-15T18:23:32.484Z",
+            "is_visible": true,
+            "categories": [
+                13
+            ],
+            "authors": [],
+            "tags": [
+                3
+            ]
+        }
+    },
+    {
+        "model": "index.entry",
+        "pk": 53,
+        "fields": {
+            "title": "Battle Angel Alita Gunnm Stuff",
+            "description": "A fan's BAA collection on display.",
+            "keywords": "",
+            "url": "http://gunnm.weebly.com/",
+            "length": null,
+            "length_unit": null,
+            "created": "2019-05-10T10:46:56.921Z",
+            "updated": "2019-05-10T10:46:56.921Z",
+            "is_visible": true,
+            "categories": [
+                17
+            ],
+            "authors": [],
+            "tags": [
+                2,
+                3,
+                4
+            ]
+        }
+    },
+    {
+        "model": "index.entry",
+        "pk": 54,
+        "fields": {
+            "title": "askdrten.com/alita/",
+            "description": "",
+            "keywords": "",
+            "url": "https://askdrten.com/alita/",
+            "length": null,
+            "length_unit": null,
+            "created": "2019-05-10T10:54:49.884Z",
+            "updated": "2019-05-10T10:54:49.884Z",
+            "is_visible": true,
+            "categories": [
+                17
+            ],
+            "authors": [],
+            "tags": [
+                3
+            ]
+        }
+    },
+    {
+        "model": "index.entry",
+        "pk": 55,
+        "fields": {
+            "title": "Battle Angel Alita / Gunnm Paraphernalia",
+            "description": "",
+            "keywords": "",
+            "url": "https://shogiwar.webs.com/Gunnm_Paraphernalia/index.html",
+            "length": null,
+            "length_unit": null,
+            "created": "2019-05-10T11:01:11.290Z",
+            "updated": "2019-05-10T11:01:11.290Z",
+            "is_visible": true,
+            "categories": [
+                17
+            ],
+            "authors": [],
+            "tags": [
+                2
+            ]
+        }
+    },
+    {
+        "model": "index.entry",
+        "pk": 56,
+        "fields": {
+            "title": "Vladdie99",
+            "description": "",
+            "keywords": "",
+            "url": "https://www.youtube.com/channel/UC4Q2oMBGEyR0cSYdAcky6mA",
+            "length": null,
+            "length_unit": null,
+            "created": "2019-05-10T11:33:27.417Z",
+            "updated": "2019-05-10T11:33:27.417Z",
+            "is_visible": true,
+            "categories": [
+                14
+            ],
+            "authors": [
+                24
+            ],
+            "tags": []
+        }
+    },
+    {
+        "model": "index.entry",
+        "pk": 57,
+        "fields": {
+            "title": "Queen Studios Collectibles",
+            "description": "Will sell Alita merch at some point according to [this post](https://www.facebook.com/QueenStudiosCollectibles/photos/a.1026287120882301/1199278150249863/). Allegedly 1:1 busts and 1:5 scale figures of Alita.",
+            "keywords": "",
+            "url": "https://www.facebook.com/QueenStudiosCollectibles/",
+            "length": null,
+            "length_unit": null,
+            "created": "2019-05-10T13:26:27.172Z",
+            "updated": "2019-05-12T20:11:07.287Z",
+            "is_visible": true,
+            "categories": [
+                16
+            ],
+            "authors": [],
+            "tags": [
+                3
+            ]
+        }
+    },
+    {
+        "model": "index.entry",
+        "pk": 58,
+        "fields": {
+            "title": "Gunnm: Martian Memory",
+            "description": "Game from 1998 for PlayStation 1. [Wikipedia article](https://en.wikipedia.org/wiki/Gunnm:_Martian_Memory).",
+            "keywords": "",
+            "url": "",
+            "length": null,
+            "length_unit": null,
+            "created": "2019-05-12T09:53:47.291Z",
+            "updated": "2019-05-14T16:00:32.791Z",
+            "is_visible": true,
+            "categories": [
+                18
+            ],
+            "authors": [],
+            "tags": [
+                1,
+                2
+            ]
+        }
+    },
+    {
+        "model": "index.entry",
+        "pk": 59,
+        "fields": {
+            "title": "GitHub organization \"Alita: Battle Angel\"",
+            "description": "For programmers/developers/tinkerers.",
+            "keywords": "software programming development open source code coding free collaboration collaborative project diy technology computers computing",
+            "url": "https://github.com/alita-battle-angel/",
+            "length": null,
+            "length_unit": null,
+            "created": "2019-05-12T09:56:33.894Z",
+            "updated": "2019-05-14T14:42:38.253Z",
+            "is_visible": true,
+            "categories": [
+                13
+            ],
+            "authors": [],
+            "tags": []
+        }
+    },
+    {
+        "model": "index.entry",
+        "pk": 60,
+        "fields": {
+            "title": "ALITA \u2013 BATTLE ANGEL: Raymond Chen \u2013 VFX Supervisor \u2013 DNEG",
+            "description": "Art of VFX article. \"DNEG worked on the bar fight sequence, pickup street Motorball sequence, a Motorball locker room sequence, the Amok cyborg / Ido daughter flashback sequence, and well as smaller groups of shots in a number of other sequences.\"",
+            "keywords": "interview",
+            "url": "https://www.artofvfx.com/alita-battle-angel-raymond-chen-vfx-supervisor-dneg/",
+            "length": 1913,
+            "length_unit": 7,
+            "created": "2019-05-12T10:04:28.473Z",
+            "updated": "2019-05-13T16:08:47.003Z",
+            "is_visible": true,
+            "categories": [
+                9
+            ],
+            "authors": [
+                25
+            ],
+            "tags": [
+                3
+            ]
+        }
+    },
+    {
+        "model": "index.entry",
+        "pk": 61,
+        "fields": {
+            "title": "Alita: Unbreakable Warrior",
+            "description": "Indie RPG action game under development.",
+            "keywords": "role playing pc",
+            "url": "https://alitaunbreakablewarrior.github.io/",
+            "length": null,
+            "length_unit": null,
+            "created": "2019-05-12T10:14:16.096Z",
+            "updated": "2019-05-14T16:55:56.855Z",
+            "is_visible": true,
+            "categories": [
+                18
+            ],
+            "authors": [],
+            "tags": []
+        }
+    },
+    {
+        "model": "index.entry",
+        "pk": 62,
+        "fields": {
+            "title": "Alita: Battle Angel: The Abridged Script",
+            "description": "Parody movie script.",
+            "keywords": "funny humor humour",
+            "url": "https://www.the-editing-room.com/alita-battle-angel.html",
+            "length": 2367,
+            "length_unit": 7,
+            "created": "2019-05-12T16:19:56.020Z",
+            "updated": "2019-05-13T16:04:05.799Z",
+            "is_visible": true,
+            "categories": [
+                13
+            ],
+            "authors": [
+                26
+            ],
+            "tags": [
+                3
+            ]
+        }
+    },
+    {
+        "model": "index.entry",
+        "pk": 63,
+        "fields": {
+            "title": "Etsy",
+            "description": "",
+            "keywords": "",
+            "url": "https://www.etsy.com/market/battle_angel_alita",
+            "length": null,
+            "length_unit": null,
+            "created": "2019-05-12T19:58:24.023Z",
+            "updated": "2019-05-12T19:59:30.472Z",
+            "is_visible": true,
+            "categories": [
+                16
+            ],
+            "authors": [],
+            "tags": [
+                2,
+                3
+            ]
+        }
+    },
+    {
+        "model": "index.entry",
+        "pk": 64,
+        "fields": {
+            "title": "Official website for \"Alita: Battle Angel\"",
+            "description": "",
+            "keywords": "",
+            "url": "https://www.foxmovies.com/movies/alita-battle-angel",
+            "length": null,
+            "length_unit": null,
+            "created": "2019-05-12T22:36:00.583Z",
+            "updated": "2019-05-12T22:36:44.060Z",
+            "is_visible": true,
+            "categories": [
+                15
+            ],
+            "authors": [],
+            "tags": [
+                1,
+                3
+            ]
+        }
+    },
+    {
+        "model": "index.entry",
+        "pk": 65,
+        "fields": {
+            "title": "'Alita: Battle Angel' Star Rosa Salazar on Transforming Into a Digital Cyborg Character",
+            "description": "/Film interview with Rosa Salazar.",
+            "keywords": "",
+            "url": "https://www.slashfilm.com/rosa-salazar-interview-alita/",
+            "length": 2747,
+            "length_unit": 7,
+            "created": "2019-05-13T15:07:57.904Z",
+            "updated": "2019-05-15T16:48:08.945Z",
+            "is_visible": true,
+            "categories": [
+                8
+            ],
+            "authors": [
+                27
+            ],
+            "tags": [
+                3
+            ]
+        }
+    },
+    {
+        "model": "index.entry",
+        "pk": 66,
+        "fields": {
+            "title": "Trailers for \"Alita: Battle Angel\"",
+            "description": "",
+            "keywords": "ad spot promotion promote teaser",
+            "url": "",
+            "length": null,
+            "length_unit": null,
+            "created": "2019-05-14T14:13:46.935Z",
+            "updated": "2019-05-14T14:34:24.647Z",
+            "is_visible": true,
+            "categories": [
+                5
+            ],
+            "authors": [],
+            "tags": [
+                1,
+                3
+            ]
+        }
+    },
+    {
+        "model": "index.entry",
+        "pk": 67,
+        "fields": {
+            "title": "Alita Battle Angel: Sequel Speculation",
+            "description": "Contains manga spoilers and some long intros. More recent videos may be missing from this entry and the playlist. [Playlist](https://www.youtube.com/playlist?list=PLvuwMx8BoqdUeBykxNsRT9vX9Lea8k6UM).",
+            "keywords": "discussions analysis",
+            "url": "",
+            "length": 11043,
+            "length_unit": 4,
+            "created": "2019-05-15T12:48:25.065Z",
+            "updated": "2019-05-16T19:54:09.410Z",
+            "is_visible": true,
+            "categories": [
+                5
+            ],
+            "authors": [
+                15
+            ],
+            "tags": [
+                3
+            ]
+        }
+    },
+    {
+        "model": "index.entry",
+        "pk": 68,
+        "fields": {
+            "title": "PEAK TAICHI X ALITA running shoes",
+            "description": "",
+            "keywords": "clothing clothes sneakers fashion sports",
+            "url": "https://www.chinasportshop.com/peak-taichi-x-alita-battle-angel-new-tech-smart-running-shoes",
+            "length": null,
+            "length_unit": null,
+            "created": "2019-05-15T15:32:45.269Z",
+            "updated": "2019-05-15T15:33:53.270Z",
+            "is_visible": true,
+            "categories": [
+                16
+            ],
+            "authors": [],
+            "tags": [
+                3
+            ]
+        }
+    },
+    {
+        "model": "index.entry",
+        "pk": 69,
+        "fields": {
+            "title": "Damascus Apparel Alita Battle Angel Limited Edition T-shirt",
+            "description": "",
+            "keywords": "t-shirts",
+            "url": "https://damascusapparel.com/products/alita-battle-angel-limited-edition",
+            "length": null,
+            "length_unit": null,
+            "created": "2019-05-16T19:23:00.155Z",
+            "updated": "2019-05-16T19:23:00.155Z",
+            "is_visible": true,
+            "categories": [
+                16
+            ],
+            "authors": [],
+            "tags": [
+                3
+            ]
+        }
+    },
+    {
+        "model": "index.entry",
+        "pk": 70,
+        "fields": {
+            "title": "Archive of Our Own",
+            "description": "",
+            "keywords": "",
+            "url": "https://archiveofourown.org/tags/Alita:%20Battle%20Angel%20(2019)/works",
+            "length": null,
+            "length_unit": null,
+            "created": "2019-05-16T19:35:57.147Z",
+            "updated": "2019-05-16T19:35:57.147Z",
+            "is_visible": true,
+            "categories": [
+                12
+            ],
+            "authors": [],
+            "tags": []
+        }
+    },
+    {
+        "model": "index.entry",
+        "pk": 71,
+        "fields": {
+            "title": "FanFiction.net",
+            "description": "",
+            "keywords": "",
+            "url": "https://www.fanfiction.net/movie/Alita-Battle-Angel/",
+            "length": null,
+            "length_unit": null,
+            "created": "2019-05-16T19:37:42.083Z",
+            "updated": "2019-05-16T19:37:42.083Z",
+            "is_visible": true,
+            "categories": [
+                12
+            ],
+            "authors": [],
+            "tags": []
+        }
+    },
+    {
         "model": "index.subentry",
         "pk": 1,
         "fields": {
             "title": "Original edition",
             "description": "[Comprehensive list of volumes](https://en.wikipedia.org/wiki/List_of_Battle_Angel_Alita_chapters#Battle_Angel_Alita:_Last_Order).",
+            "order": 1,
             "entry": 3,
             "parent": null,
             "url": "",
@@ -896,6 +1635,7 @@
         "fields": {
             "title": "Omnibus edition",
             "description": "[Comprehensive list of volumes](https://en.wikipedia.org/wiki/List_of_Battle_Angel_Alita_chapters#Battle_Angel_Alita:_Last_Order_Omnibus).",
+            "order": 2,
             "entry": 3,
             "parent": null,
             "url": "",
@@ -909,6 +1649,7 @@
         "fields": {
             "title": "Hardcover",
             "description": "",
+            "order": null,
             "entry": 5,
             "parent": null,
             "url": "",
@@ -922,6 +1663,7 @@
         "fields": {
             "title": "Paperback",
             "description": "",
+            "order": null,
             "entry": 5,
             "parent": null,
             "url": "",
@@ -935,6 +1677,7 @@
         "fields": {
             "title": "Hardcover",
             "description": "",
+            "order": null,
             "entry": 6,
             "parent": null,
             "url": "",
@@ -948,6 +1691,7 @@
         "fields": {
             "title": "Paperback",
             "description": "",
+            "order": null,
             "entry": 6,
             "parent": null,
             "url": "",
@@ -961,6 +1705,7 @@
         "fields": {
             "title": "Standard edition",
             "description": "",
+            "order": null,
             "entry": 9,
             "parent": null,
             "url": "",
@@ -974,6 +1719,7 @@
         "fields": {
             "title": "Japanese edition",
             "description": "Includes two additional tracks.",
+            "order": null,
             "entry": 9,
             "parent": null,
             "url": "",
@@ -987,6 +1733,7 @@
         "fields": {
             "title": "CD",
             "description": "",
+            "order": null,
             "entry": null,
             "parent": 7,
             "url": "",
@@ -1000,6 +1747,7 @@
         "fields": {
             "title": "Vinyl",
             "description": "",
+            "order": null,
             "entry": null,
             "parent": 7,
             "url": "",
@@ -1013,6 +1761,7 @@
         "fields": {
             "title": "Gunnm: Image Album",
             "description": "",
+            "order": null,
             "entry": 11,
             "parent": null,
             "url": "",
@@ -1026,6 +1775,7 @@
         "fields": {
             "title": "Gunnm: Another Story",
             "description": "",
+            "order": null,
             "entry": 11,
             "parent": null,
             "url": "",
@@ -1039,6 +1789,7 @@
         "fields": {
             "title": "Facebook",
             "description": "",
+            "order": null,
             "entry": 13,
             "parent": null,
             "url": "https://www.facebook.com/AlitaMovie",
@@ -1052,6 +1803,7 @@
         "fields": {
             "title": "Instagram",
             "description": "",
+            "order": null,
             "entry": 13,
             "parent": null,
             "url": "https://www.instagram.com/AlitaMovie",
@@ -1065,6 +1817,7 @@
         "fields": {
             "title": "Twitter",
             "description": "",
+            "order": null,
             "entry": 13,
             "parent": null,
             "url": "https://twitter.com/AlitaMovie",
@@ -1078,6 +1831,7 @@
         "fields": {
             "title": "The Advent of Alita: Battle Angel, and the Culture War",
             "description": "",
+            "order": null,
             "entry": 20,
             "parent": null,
             "url": "https://www.writingislikelife.com/2019/03/the-advent-of-alita-battle-angel-and.html",
@@ -1091,6 +1845,7 @@
         "fields": {
             "title": "Alita, Avatar, Coraline and Why I Love James Cameron",
             "description": "",
+            "order": null,
             "entry": 20,
             "parent": null,
             "url": "https://www.writingislikelife.com/2019/04/alita-avatar-coraline-and-why-i-love.html",
@@ -1102,8 +1857,9 @@
         "model": "index.subentry",
         "pk": 18,
         "fields": {
-            "title": "r/alitabattleangel",
+            "title": "r/alitabattleangel search \"fan art\"",
             "description": "",
+            "order": 3,
             "entry": 28,
             "parent": null,
             "url": "https://www.reddit.com/r/alitabattleangel/search?q=fan+art&restrict_sr=on&sort=top&t=all",
@@ -1115,8 +1871,9 @@
         "model": "index.subentry",
         "pk": 19,
         "fields": {
-            "title": "r/Gunnm",
+            "title": "r/Gunnm search \"fan art\"",
             "description": "",
+            "order": 2,
             "entry": 28,
             "parent": null,
             "url": "https://www.reddit.com/r/Gunnm/search?q=fan+art&restrict_sr=on&sort=top&t=all",
@@ -1130,11 +1887,12 @@
         "fields": {
             "title": "Part 1",
             "description": "Analysis of the manga and the character of Alita.",
+            "order": null,
             "entry": 38,
             "parent": null,
             "url": "https://www.youtube.com/watch?v=RJ6dBpT4JcE",
-            "length": 17,
-            "length_unit": 6
+            "length": 1023,
+            "length_unit": 4
         }
     },
     {
@@ -1143,11 +1901,12 @@
         "fields": {
             "title": "Part 2",
             "description": "Movie review.",
+            "order": null,
             "entry": 38,
             "parent": null,
             "url": "https://www.youtube.com/watch?v=cCiefCg1z-w",
-            "length": 24,
-            "length_unit": 6
+            "length": 1412,
+            "length_unit": 4
         }
     },
     {
@@ -1156,37 +1915,320 @@
         "fields": {
             "title": "Part 1",
             "description": "",
+            "order": null,
             "entry": 40,
             "parent": null,
             "url": "https://www.youtube.com/watch?v=RB8I7vSw1FI",
-            "length": 5,
-            "length_unit": 6
+            "length": 317,
+            "length_unit": 4
         }
     },
     {
         "model": "index.subentry",
         "pk": 23,
         "fields": {
-            "title": "Part 2: Why They HATE Alita",
+            "title": "Part 2 - Why They HATE Alita",
             "description": "",
+            "order": null,
             "entry": 40,
             "parent": null,
             "url": "https://www.youtube.com/watch?v=8eFxsVqffCg",
-            "length": 10,
-            "length_unit": 6
+            "length": 589,
+            "length_unit": 4
         }
     },
     {
         "model": "index.subentry",
         "pk": 24,
         "fields": {
-            "title": "Part 3",
-            "description": "Might exist at some point.",
+            "title": "Part 3 - ALITA'S ARMY, Why We LOVE Her",
+            "description": "",
+            "order": null,
             "entry": 40,
             "parent": null,
-            "url": "",
+            "url": "https://www.youtube.com/watch?v=Y8OOm5sZ9IQ",
+            "length": 605,
+            "length_unit": 4
+        }
+    },
+    {
+        "model": "index.subentry",
+        "pk": 25,
+        "fields": {
+            "title": "Battle Angel Alita",
+            "description": "",
+            "order": null,
+            "entry": 42,
+            "parent": null,
+            "url": "http://jajatom.moo.jp/E-top/Egunnm/gunnmtop.html",
             "length": null,
             "length_unit": null
+        }
+    },
+    {
+        "model": "index.subentry",
+        "pk": 26,
+        "fields": {
+            "title": "Battle Angel Alita: Last Order",
+            "description": "",
+            "order": null,
+            "entry": 42,
+            "parent": null,
+            "url": "http://jajatom.moo.jp/E-top/Egunnm/gunnmlo_top.html",
+            "length": null,
+            "length_unit": null
+        }
+    },
+    {
+        "model": "index.subentry",
+        "pk": 27,
+        "fields": {
+            "title": "3 - Battle Ready",
+            "description": "",
+            "order": null,
+            "entry": 66,
+            "parent": null,
+            "url": "https://www.youtube.com/watch?v=U3D2vmWD88w",
+            "length": 147,
+            "length_unit": 4
+        }
+    },
+    {
+        "model": "index.subentry",
+        "pk": 28,
+        "fields": {
+            "title": "2 - New Divide",
+            "description": "",
+            "order": null,
+            "entry": 66,
+            "parent": null,
+            "url": "https://www.youtube.com/watch?v=w7pYhpJaJW8",
+            "length": 152,
+            "length_unit": 4
+        }
+    },
+    {
+        "model": "index.subentry",
+        "pk": 29,
+        "fields": {
+            "title": "1 - Lullaby for a Soldier",
+            "description": "",
+            "order": null,
+            "entry": 66,
+            "parent": null,
+            "url": "https://www.youtube.com/watch?v=T2C0Rz6d0FM",
+            "length": 124,
+            "length_unit": 4
+        }
+    },
+    {
+        "model": "index.subentry",
+        "pk": 30,
+        "fields": {
+            "title": "4 - Rise (International)",
+            "description": "Arguably contains spoilers.",
+            "order": null,
+            "entry": 66,
+            "parent": null,
+            "url": "https://www.youtube.com/watch?v=puKWa8hrvA8",
+            "length": 138,
+            "length_unit": 4
+        }
+    },
+    {
+        "model": "index.subentry",
+        "pk": 31,
+        "fields": {
+            "title": "r/Gunnm flair \"FanArt\"",
+            "description": "",
+            "order": 1,
+            "entry": 28,
+            "parent": null,
+            "url": "https://old.reddit.com/r/Gunnm/search?sort=top&q=flair%3AFanArt&restrict_sr=on",
+            "length": null,
+            "length_unit": null
+        }
+    },
+    {
+        "model": "index.subentry",
+        "pk": 32,
+        "fields": {
+            "title": "Part 1",
+            "description": "",
+            "order": null,
+            "entry": 67,
+            "parent": null,
+            "url": "https://www.youtube.com/watch?v=2gZzj5NXgMI",
+            "length": 2115,
+            "length_unit": 4
+        }
+    },
+    {
+        "model": "index.subentry",
+        "pk": 33,
+        "fields": {
+            "title": "Part 2 - Desty Nova",
+            "description": "",
+            "order": null,
+            "entry": 67,
+            "parent": null,
+            "url": "https://www.youtube.com/watch?v=T3ZoEwloBiA",
+            "length": 2452,
+            "length_unit": 4
+        }
+    },
+    {
+        "model": "index.subentry",
+        "pk": 34,
+        "fields": {
+            "title": "Part 3 - Motorball",
+            "description": "",
+            "order": null,
+            "entry": 67,
+            "parent": null,
+            "url": "https://www.youtube.com/watch?v=vFO5XfcNGTE",
+            "length": 3122,
+            "length_unit": 4
+        }
+    },
+    {
+        "model": "index.subentry",
+        "pk": 35,
+        "fields": {
+            "title": "Part 4 - Zapan Arc in the 2nd Movie?",
+            "description": "",
+            "order": null,
+            "entry": 67,
+            "parent": null,
+            "url": "https://www.youtube.com/watch?v=tjmtlBWuS4s",
+            "length": 999,
+            "length_unit": 4
+        }
+    },
+    {
+        "model": "index.subentry",
+        "pk": 36,
+        "fields": {
+            "title": "Part 5 - Badlands Story Removed?",
+            "description": "",
+            "order": null,
+            "entry": 67,
+            "parent": null,
+            "url": "https://www.youtube.com/watch?v=iiK6r0oceqA",
+            "length": 1118,
+            "length_unit": 4
+        }
+    },
+    {
+        "model": "index.subentry",
+        "pk": 37,
+        "fields": {
+            "title": "Part 6 - Original Ending in Sequel?",
+            "description": "",
+            "order": null,
+            "entry": 67,
+            "parent": null,
+            "url": "https://www.youtube.com/watch?v=0Co6drDujck",
+            "length": 1231,
+            "length_unit": 4
+        }
+    },
+    {
+        "model": "index.subentry",
+        "pk": 38,
+        "fields": {
+            "title": "Alita's Theme",
+            "description": "",
+            "order": 1,
+            "entry": 15,
+            "parent": null,
+            "url": "https://www.youtube.com/watch?v=HLfloz6NWwQ",
+            "length": 1413,
+            "length_unit": 4
+        }
+    },
+    {
+        "model": "index.subentry",
+        "pk": 39,
+        "fields": {
+            "title": "Ending Theme",
+            "description": "",
+            "order": 2,
+            "entry": 15,
+            "parent": null,
+            "url": "https://www.youtube.com/watch?v=0cUrAgcKOuI",
+            "length": 1389,
+            "length_unit": 4
+        }
+    },
+    {
+        "model": "index.subentry",
+        "pk": 40,
+        "fields": {
+            "title": "Antagonist Themes",
+            "description": "",
+            "order": 3,
+            "entry": 15,
+            "parent": null,
+            "url": "https://www.youtube.com/watch?v=EI-j8dz450I",
+            "length": 1789,
+            "length_unit": 4
+        }
+    },
+    {
+        "model": "index.subentry",
+        "pk": 41,
+        "fields": {
+            "title": "Overlapping Themes",
+            "description": "",
+            "order": 4,
+            "entry": 15,
+            "parent": null,
+            "url": "https://www.youtube.com/watch?v=SGXYp7krs5c",
+            "length": 1298,
+            "length_unit": 4
+        }
+    },
+    {
+        "model": "index.subentry",
+        "pk": 42,
+        "fields": {
+            "title": "Action Themes",
+            "description": "",
+            "order": 5,
+            "entry": 15,
+            "parent": null,
+            "url": "https://www.youtube.com/watch?v=M8c1OIRxWbI",
+            "length": 1458,
+            "length_unit": 4
+        }
+    },
+    {
+        "model": "index.subentry",
+        "pk": 43,
+        "fields": {
+            "title": "Ido's Theme",
+            "description": "",
+            "order": 6,
+            "entry": 15,
+            "parent": null,
+            "url": "https://www.youtube.com/watch?v=Ik92oPGNjzs",
+            "length": 1423,
+            "length_unit": 4
+        }
+    },
+    {
+        "model": "index.subentry",
+        "pk": 44,
+        "fields": {
+            "title": "Answers to Your Questions About Alita: Battle Angel!",
+            "description": "",
+            "order": 7,
+            "entry": 15,
+            "parent": null,
+            "url": "https://www.youtube.com/watch?v=hkD1bAltqNg",
+            "length": 1369,
+            "length_unit": 4
         }
     },
     {
@@ -1290,7 +2332,8 @@
         "fields": {
             "name": "Books",
             "parent": null,
-            "slug": "books"
+            "slug": "books",
+            "keywords": "printed text"
         }
     },
     {
@@ -1299,7 +2342,8 @@
         "fields": {
             "name": "Yukito Kishiro's Original Manga",
             "parent": 1,
-            "slug": "books-original-manga"
+            "slug": "books-original-manga",
+            "keywords": "battle angel alita gunnm comics japanese"
         }
     },
     {
@@ -1308,7 +2352,8 @@
         "fields": {
             "name": "Movie-Related",
             "parent": 1,
-            "slug": "books-movie-related"
+            "slug": "books-movie-related",
+            "keywords": ""
         }
     },
     {
@@ -1317,7 +2362,8 @@
         "fields": {
             "name": "Music",
             "parent": null,
-            "slug": "music"
+            "slug": "music",
+            "keywords": "audio"
         }
     },
     {
@@ -1326,7 +2372,8 @@
         "fields": {
             "name": "Videos",
             "parent": null,
-            "slug": "videos"
+            "slug": "videos",
+            "keywords": ""
         }
     },
     {
@@ -1335,7 +2382,8 @@
         "fields": {
             "name": "Social Media",
             "parent": null,
-            "slug": "social-media"
+            "slug": "social-media",
+            "keywords": ""
         }
     },
     {
@@ -1344,7 +2392,8 @@
         "fields": {
             "name": "Podcasts",
             "parent": null,
-            "slug": "podcasts"
+            "slug": "podcasts",
+            "keywords": "audio"
         }
     },
     {
@@ -1353,16 +2402,18 @@
         "fields": {
             "name": "Articles",
             "parent": null,
-            "slug": "articles"
+            "slug": "articles",
+            "keywords": "media magazines publications text"
         }
     },
     {
         "model": "index.category",
         "pk": 9,
         "fields": {
-            "name": "VFX",
+            "name": "Visual Effects",
             "parent": 8,
-            "slug": "articles-vfx"
+            "slug": "articles-visual-effects",
+            "keywords": "vfx cgi"
         }
     },
     {
@@ -1371,7 +2422,8 @@
         "fields": {
             "name": "Communities",
             "parent": null,
-            "slug": "communities"
+            "slug": "communities",
+            "keywords": "social groups people fans"
         }
     },
     {
@@ -1380,7 +2432,8 @@
         "fields": {
             "name": "Fan Art",
             "parent": null,
-            "slug": "fan-art"
+            "slug": "fan-art",
+            "keywords": "artists painters paintings graphics images pictures photomanipulations"
         }
     },
     {
@@ -1389,7 +2442,8 @@
         "fields": {
             "name": "Fan Fiction",
             "parent": null,
-            "slug": "fan-fiction"
+            "slug": "fan-fiction",
+            "keywords": "writing text"
         }
     },
     {
@@ -1398,7 +2452,8 @@
         "fields": {
             "name": "Miscellaneous",
             "parent": null,
-            "slug": "miscellaneous"
+            "slug": "miscellaneous",
+            "keywords": "other uncategorized"
         }
     },
     {
@@ -1407,7 +2462,48 @@
         "fields": {
             "name": "YouTube Channels",
             "parent": 5,
-            "slug": "videos-youtube-channels"
+            "slug": "videos-youtube-channels",
+            "keywords": ""
+        }
+    },
+    {
+        "model": "index.category",
+        "pk": 15,
+        "fields": {
+            "name": "Websites",
+            "parent": null,
+            "slug": "websites",
+            "keywords": "webpages"
+        }
+    },
+    {
+        "model": "index.category",
+        "pk": 16,
+        "fields": {
+            "name": "Merchandise",
+            "parent": null,
+            "slug": "merchandise",
+            "keywords": "stuff products"
+        }
+    },
+    {
+        "model": "index.category",
+        "pk": 17,
+        "fields": {
+            "name": "Fansites",
+            "parent": 15,
+            "slug": "websites-fansites",
+            "keywords": ""
+        }
+    },
+    {
+        "model": "index.category",
+        "pk": 18,
+        "fields": {
+            "name": "Games",
+            "parent": null,
+            "slug": "games",
+            "keywords": ""
         }
     },
     {
@@ -1416,7 +2512,7 @@
         "fields": {
             "name": "Yukito Kishiro",
             "discriminator": "",
-            "url": ""
+            "url": "http://jajatom.moo.jp/E-top/frame.html"
         }
     },
     {
@@ -1450,9 +2546,9 @@
         "model": "index.author",
         "pk": 5,
         "fields": {
-            "name": "Tom Holkenborg",
+            "name": "Junkie XL / Tom Holkenborg",
             "discriminator": "",
-            "url": ""
+            "url": "http://www.junkiexl.com/"
         }
     },
     {
@@ -1591,11 +2687,66 @@
         }
     },
     {
+        "model": "index.author",
+        "pk": 21,
+        "fields": {
+            "name": "Installation Seven",
+            "discriminator": "",
+            "url": "https://www.youtube.com/channel/UCTLIhUpHPyp48jG8WPU36UA"
+        }
+    },
+    {
+        "model": "index.author",
+        "pk": 23,
+        "fields": {
+            "name": "Mark William Chase",
+            "discriminator": "",
+            "url": "https://mwchase.com/"
+        }
+    },
+    {
+        "model": "index.author",
+        "pk": 24,
+        "fields": {
+            "name": "Vladdie99",
+            "discriminator": "",
+            "url": "https://www.youtube.com/channel/UC4Q2oMBGEyR0cSYdAcky6mA"
+        }
+    },
+    {
+        "model": "index.author",
+        "pk": 25,
+        "fields": {
+            "name": "Vincent Frei",
+            "discriminator": "",
+            "url": ""
+        }
+    },
+    {
+        "model": "index.author",
+        "pk": 26,
+        "fields": {
+            "name": "Chris W.",
+            "discriminator": "",
+            "url": "https://www.the-editing-room.com/author/chrisw"
+        }
+    },
+    {
+        "model": "index.author",
+        "pk": 27,
+        "fields": {
+            "name": "Jack Giroux",
+            "discriminator": "",
+            "url": ""
+        }
+    },
+    {
         "model": "index.tag",
         "pk": 1,
         "fields": {
             "name": "Official",
-            "color": null
+            "color": null,
+            "order": 1
         }
     },
     {
@@ -1603,7 +2754,8 @@
         "pk": 2,
         "fields": {
             "name": "Manga",
-            "color": "#ce5454"
+            "color": "#ce5454",
+            "order": 2
         }
     },
     {
@@ -1611,7 +2763,8 @@
         "pk": 3,
         "fields": {
             "name": "Movie",
-            "color": "#c065d2"
+            "color": "#c065d2",
+            "order": 3
         }
     },
     {
@@ -1619,7 +2772,8 @@
         "pk": 4,
         "fields": {
             "name": "OVA",
-            "color": "#4fb18b"
+            "color": "#4fb18b",
+            "order": 4
         }
     },
     {
