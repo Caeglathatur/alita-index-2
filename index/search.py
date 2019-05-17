@@ -16,6 +16,8 @@ You should have received a copy of the GNU Affero General Public License
 along with Alita Index.  If not, see <https://www.gnu.org/licenses/>.
 """
 
+import math
+
 from . import models
 
 
@@ -30,23 +32,42 @@ search_fields = {
 }
 
 
-def add_hit(dict, key, term):
-    if key not in dict:
-        dict[key] = {term}
-    else:
-        dict[key].add(term)
+def add_hits(all_terms, scores, entry, term, inc):
+    if entry not in scores:
+        scores[entry] = {"hits": {t: 0 for t in all_terms}}
+    scores[entry]["hits"][term] += inc
 
 
 def search_entries(query):
-    """:returns: ordered list of (<Entry>, <number of unique hit terms>)"""
+    """Searches entries, ranks results with TF-IDF.
+
+    :returns: ordered list of (
+        <Entry>,
+        {
+            "hits": {<term>: <count>},
+            "tf": {<term>: <term freq score>},
+            "tfidf": {<term>: <term freq inverse doc freq score>},
+            "tfidf_sum": <sum of tfidf scores>,
+        }
+    )
+    """
 
     terms = query.lower().split()
     if not terms:
         return []
 
-    hits = {}  # {<Entry>: {<terms>}}
+    # {
+    #     <Entry>: {
+    #         "hits": {<term>: <count>},
+    #         "tf": {<term>: <term freq score>},
+    #         "tfidf": {<term>: <term freq inverse doc freq score>},
+    #         "tfidf_sum": <sum of tfidf scores>,
+    #     },
+    # }
+    scores = {}
 
     entries = models.Entry.objects.filter(is_visible=True)
+    N = entries.count()
     sub_entries = models.SubEntry.objects.all()
     categories = models.Category.objects.all()
     authors = models.Author.objects.all()
@@ -62,7 +83,7 @@ def search_entries(query):
             content = getattr(e, field).lower()
             for term in terms:
                 if term in content:
-                    add_hit(hits, e, term)
+                    add_hits(terms, scores, e, term, content.count(term))
 
     # Search in sub entries
     for s in sub_entries:
@@ -72,7 +93,9 @@ def search_entries(query):
             content = getattr(s, field).lower()
             for term in terms:
                 if term in content:
-                    add_hit(hits, s.entry_traversed, term)
+                    add_hits(
+                        terms, scores, s.entry_traversed, term, content.count(term)
+                    )
 
     # Search in categories
     for c in categories:
@@ -83,7 +106,7 @@ def search_entries(query):
             for term in terms:
                 if term in content:
                     for e in c.entries_visible_traversed:
-                        add_hit(hits, e, term)
+                        add_hits(terms, scores, e, term, content.count(term))
 
     # Search in authors
     for a in authors:
@@ -94,7 +117,7 @@ def search_entries(query):
             for term in terms:
                 if term in content:
                     for e in a.entries_visible:
-                        add_hit(hits, e, term)
+                        add_hits(terms, scores, e, term, content.count(term))
 
     # Search in tags
     for t in tags:
@@ -105,7 +128,7 @@ def search_entries(query):
             for term in terms:
                 if term in content:
                     for e in t.entries_visible:
-                        add_hit(hits, e, term)
+                        add_hits(terms, scores, e, term, content.count(term))
 
     # Search in entry identifiers
     for i in entry_identifiers:
@@ -115,7 +138,7 @@ def search_entries(query):
             content = getattr(i, field).lower()
             for term in terms:
                 if term in content:
-                    add_hit(hits, i.entry, term)
+                    add_hits(terms, scores, i.entry, term, content.count(term))
 
     # Search in sub entry identifiers
     for i in sub_entry_identifiers:
@@ -125,13 +148,48 @@ def search_entries(query):
             content = getattr(i, field).lower()
             for term in terms:
                 if term in content:
-                    add_hit(hits, i.entry, term)
+                    add_hits(terms, scores, i.entry, term, content.count(term))
+
+    entry_count_per_term = {}
+    for term in terms:
+        count = 0
+        for entry in scores:
+            if scores[entry]["hits"][term] > 0:
+                count += 1
+        entry_count_per_term[term] = count
+
+    idf_per_term = {}
+    for term in terms:
+        idf_per_term[term] = math.log(N / (1 + entry_count_per_term[term]))
+
+    for entry in scores:
+        scores[entry]["tf"] = tf(scores[entry]["hits"])
+
+    for entry in scores:
+        scores[entry]["tfidf"] = tfidf(idf_per_term, scores[entry]["tf"])
+        scores[entry]["tfidf_sum"] = sum(
+            [val for term, val in scores[entry]["tfidf"].items()]
+        )
 
     # Only return visible entries
-    hits = list(filter(lambda e: e[0].is_visible, hits.items()))
-    # Replace hit sets with hit counts
-    hits = list(map(lambda e: (e[0], len(e[1])), hits))
-    # Sort by hit count and entry title
-    hits = sorted(hits, key=lambda e: e[1], reverse=True)
+    scores = list(filter(lambda e: e[0].is_visible, scores.items()))
+    # Sort by title
+    scores = sorted(scores, key=lambda e: e[0].title)
+    # Sort by tfidf sum
+    scores = sorted(scores, key=lambda e: e[1]["tfidf_sum"], reverse=True)
 
-    return hits
+    return scores
+
+
+def tf(entry_hits):
+    tf = {}
+    for term, hits in entry_hits.items():
+        tf[term] = math.log(1 + hits)
+    return tf
+
+
+def tfidf(idf_per_term, entry_tf):
+    tfidf = {}
+    for term, tf in entry_tf.items():
+        tfidf[term] = tf * idf_per_term[term]
+    return tfidf
