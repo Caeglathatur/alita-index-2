@@ -1,1 +1,1 @@
-- {% if s.url %}[{{ s.title }}]({{ s.url }}){% else %}{{ s.title }}{% endif %}.{% if s.description %} {{ s.description }}{% endif %}{% if s.length_display %} {{ s.length_display }}.{% endif %}{% for id in s.identifiers %} {{ id.type.name }}: {{ id.value }}.{% endfor %}
+- {% if s.url %}[{{ s.title }}]({{ s.url }}){% else %}{{ s.title }}{% endif %}.{% if s.description_oneline %} {{ s.description_oneline }}{% endif %}{% if s.length_display %} {{ s.length_display }}.{% endif %}{% for id in s.identifiers %} {{ id.type.name }}: {{ id.value }}.{% endfor %}

@@ -28,6 +28,12 @@ class BaseEntry:
         return markdown.markdown(self.description)
 
     @property
+    def description_oneline(self):
+        return utils.remove_newlines(
+            self.description if self.description else ""
+        ).strip()
+
+    @property
     def length_display(self):
         if not self.length or not self.length_unit:
             return None

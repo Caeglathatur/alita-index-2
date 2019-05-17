@@ -16,6 +16,8 @@ You should have received a copy of the GNU Affero General Public License
 along with Alita Index.  If not, see <https://www.gnu.org/licenses/>.
 """
 
+import re
+
 
 def format_seconds(seconds):
     if seconds > 3600:
@@ -62,3 +64,10 @@ def format_word_count(word_count):
     return "{} {} (~{})".format(
         str(word_count), "word" if word_count == 1 else "words", format_minutes(minutes)
     )
+
+
+newlines_pattern = re.compile("[\n\r]+")
+
+
+def remove_newlines(str):
+    return newlines_pattern.sub(" ", str)
