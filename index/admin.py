@@ -43,11 +43,26 @@ def keyword_count(obj):
 keyword_count.short_description = "Keywords"
 
 
+def languages(obj):
+    return ", ".join([l.name for l in obj.languages.all()])
+
+
+keyword_count.short_description = "Languages"
+
+
 @admin.register(models.Entry)
 class EntryAdmin(admin.ModelAdmin):
     inlines = (EntryIdentifierInline, SubEntryInline)
-    list_display = ("__str__", "id", "is_visible", keyword_count, "created", "updated")
-    list_filter = ("is_visible", "tags", "categories", "authors")
+    list_display = (
+        "__str__",
+        "id",
+        "is_visible",
+        keyword_count,
+        languages,
+        "created",
+        "updated",
+    )
+    list_filter = ("is_visible", "tags", "categories", "languages", "authors")
     search_fields = ("title", "description", "keywords")
 
 
