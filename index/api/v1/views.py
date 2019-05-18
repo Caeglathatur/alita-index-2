@@ -62,6 +62,9 @@ class IndexAPIRootView(views.APIView):
                 "length-unit-list-url": reverse_lazy(
                     "length-unit-list", request=request
                 ),
+                "language-list-url": reverse_lazy(
+                    "language-list", request=request
+                ),
             }
         )
 
@@ -266,3 +269,25 @@ class AuthorViewSet(
     filter_backends = (OrderingFilter, SearchFilter)
     search_fields = ("name", "discriminator", "url")
 
+
+class LanguageViewSet(
+    ListModelMixin,
+    # CreateModelMixin,
+    # DestroyModelMixin,
+    RetrieveModelMixin,
+    # UpdateModelMixin,
+    GenericViewSet,
+):
+    """
+    list:
+    Lists languages.
+
+    retrieve:
+    Returns a single language.
+    """
+
+    queryset = models.Language.objects.all()
+    serializer_class = serializers.LanguageSerializer
+    permission_classes = (IsAdminUser | ReadOnly,)
+    filter_backends = (OrderingFilter, SearchFilter)
+    search_fields = ("name", "code")

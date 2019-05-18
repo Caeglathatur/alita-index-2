@@ -33,6 +33,7 @@ router.register(
 )
 router.register(r"tags", views.TagViewSet, basename="tag")
 router.register(r"authors", views.AuthorViewSet, basename="author")
+router.register(r"languages", views.LanguageViewSet, basename="language")
 
 urlpatterns = [
     path("", views.IndexAPIRootView.as_view()),

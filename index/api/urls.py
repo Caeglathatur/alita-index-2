@@ -21,8 +21,8 @@ from django.urls import include, path
 from rest_framework.documentation import include_docs_urls
 
 title = (
-    settings.API_DOCS_TITLE
-    if hasattr(settings, "API_DOCS_TITLE")
+    settings.INDEX_API_DOCS_TITLE
+    if hasattr(settings, "INDEX_API_DOCS_TITLE")
     else "Index REST API Reference"
 )
 

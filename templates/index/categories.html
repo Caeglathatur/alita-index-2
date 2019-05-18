@@ -10,15 +10,25 @@
             {% include 'fragments/category-tree.html' %}
         </nav>
         <form class="filters" action="{% url 'categories' %}" method="get">
-            {% comment %} <h3>Filters</h3> {% endcomment %}
-            <h4>Filter by tags</h4>
-            <p class="tags">
-                Match all selected<br>
-                {% for tag in tags %}
-                    <label><input type="checkbox" name="tag" value="{{ tag.id }}" {% if tag.id in tags_selected %}checked{% endif %}> {{ tag.name }}</label><br>
-                {% endfor %}
-                <label><input type="checkbox" name="tag" value="null" {% if 'null' in tags_selected %}checked{% endif %}> Untagged</label>
-            </p>
+            <h4>Filters &amp; Languages...</h4>
+            <div>
+                <p>
+                    <strong>Tags</strong> (match <strong>all</strong> selected)<br>
+                    {% for tag in tags %}
+                        <label><input type="checkbox" name="tag" value="{{ tag.id }}" {% if tag.id in tags_selected %}checked{% endif %}> {{ tag.name }}</label><br>
+                    {% endfor %}
+                    <label><input type="checkbox" name="tag" value="null" {% if 'null' in tags_selected %}checked{% endif %}> Untagged</label>
+                </p>
+            </div>
+            <div>
+                <p>
+                    <strong>Languages</strong> (match <strong>any</strong> selected)<br>
+                    {% for lang in langs %}
+                        <label><input type="checkbox" name="lang" value="{{ lang.code }}" {% if lang.code in langs_selected %}checked{% endif %}> {{ lang.name }}</label><br>
+                    {% endfor %}
+                    <label><input type="checkbox" name="lang" value="null" {% if 'null' in langs_selected %}checked{% endif %}> None / Not important</label>
+                </p>
+            </div>
             <div class="submit-row">
                 <input type="submit" value="Filter"> <a href="{% url 'categories' %}">Clear filters</a>
             </div>

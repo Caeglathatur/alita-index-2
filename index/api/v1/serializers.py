@@ -75,6 +75,12 @@ class LengthUnitSerializer(serializers.ModelSerializer):
         fields = ("id", "name", "name_plural")
 
 
+class LanguageSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = models.Language
+        fields = ("code", "name")
+
+
 class SubEntrySerializer(serializers.ModelSerializer):
     identifiers = EntryIdentifierSerializer(many=True, read_only=True)
     children = RecursiveField(allow_null=True, many=True)
@@ -101,6 +107,7 @@ class EntrySerializer(serializers.ModelSerializer):
     categories = CategorySerializer(many=True)
     tags = TagSerializer(many=True)
     identifiers = EntryIdentifierSerializer(many=True, read_only=True)
+    languages = LanguageSerializer(many=True, read_only=True)
     children = SubEntrySerializer(allow_null=True, many=True)
     length_unit = LengthUnitSerializer()
     length_display = serializers.CharField(allow_null=True)
@@ -122,6 +129,7 @@ class EntrySerializer(serializers.ModelSerializer):
             "authors",
             "tags",
             "identifiers",
+            "languages",
             "children",
         )
 

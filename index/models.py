@@ -89,6 +89,7 @@ class Entry(BaseEntry, models.Model):
         # through_fields=('entry', 'type'),
         blank=True,
     )
+    languages = models.ManyToManyField("Language", related_name="entries", blank=True)
 
     @property
     def identifiers(self):
@@ -319,6 +320,17 @@ class Tag(models.Model):
 class LengthUnit(models.Model):
     name = models.CharField(help_text="Singular.", max_length=150)
     name_plural = models.CharField(max_length=150)
+
+    def __str__(self):
+        return self.name
+
+
+class Language(models.Model):
+    class Meta:
+        ordering = ["name"]
+
+    code = models.CharField(primary_key=True, max_length=10)
+    name = models.CharField(max_length=50)
 
     def __str__(self):
         return self.name

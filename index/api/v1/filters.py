@@ -43,8 +43,9 @@ class ListIntersectionFilter(filters.Filter):
 
 
 class ListUnionFilter(filters.Filter):
-    def __init__(self, arg_name, *args, **kwargs):
+    def __init__(self, arg_name, type=None, *args, **kwargs):
         self.arg_name = arg_name
+        self.type = type
         return super().__init__(*args, **kwargs)
 
     def filter(self, queryset, value):
@@ -54,7 +55,8 @@ class ListUnionFilter(filters.Filter):
             return None
 
         values = request.GET.getlist(self.arg_name)
-        values = {int(item) for item in values if item.isdigit()}
+        if self.type == "int":
+            values = {int(item) for item in values if item.isdigit()}
 
         if values:
             lookup = "%s__in" % self.field_name
@@ -101,8 +103,16 @@ class EntryFilterSet(filters.FilterSet):
     )
     author = ListUnionFilter(
         arg_name="author",
+        type="int",
         field_name="authors",
         help_text="Author <code>id</code> to filter by."
+        "<br><br>Multiple values are supported by repeating the parameter with "
+        "different values. The result will be the union (OR) of the filters.",
+    )
+    lang = ListUnionFilter(
+        arg_name="lang",
+        field_name="languages",
+        help_text="Language <code>code</code> to filter by."
         "<br><br>Multiple values are supported by repeating the parameter with "
         "different values. The result will be the union (OR) of the filters.",
     )

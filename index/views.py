@@ -16,6 +16,7 @@ You should have received a copy of the GNU Affero General Public License
 along with Alita Index.  If not, see <https://www.gnu.org/licenses/>.
 """
 
+from django.conf import settings
 from django.views.generic import ListView, TemplateView
 
 from . import filters, models, search
@@ -42,6 +43,13 @@ class CategoriesView(TemplateView):
         ]
         if "null" in self.request.GET.getlist("tag"):
             context["tags_selected"].append("null")
+
+        context["langs"] = models.Language.objects.all()
+        context["langs_selected"] = self.request.GET.getlist("lang") or (
+            settings.INDEX_DEFAULT_LANG_FILTER
+            if hasattr(settings, "INDEX_DEFAULT_LANG_FILTER")
+            else []
+        )
 
         return context
 

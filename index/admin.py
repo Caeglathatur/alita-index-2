@@ -89,3 +89,8 @@ class TagAdmin(admin.ModelAdmin):
 @admin.register(models.LengthUnit)
 class LengthUnitAdmin(admin.ModelAdmin):
     pass
+
+
+@admin.register(models.Language)
+class LanguageAdmin(admin.ModelAdmin):
+    list_display = ("__str__", "code")

@@ -108,7 +108,8 @@ STATIC_URL = "/static/"
 STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
 
 
-API_DOCS_TITLE = "Alita Index REST API Reference"
+INDEX_API_DOCS_TITLE = "Alita Index REST API Reference"
+INDEX_DEFAULT_LANG_FILTER = ["en", "null"]
 
 
 CAPTCHA_BACKGROUND_COLOR = "#262626"

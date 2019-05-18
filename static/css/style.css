@@ -77,7 +77,7 @@ input, textarea, select {
 
 @media only screen and (max-width: 700px) {
     #header {       
-        background-position: 51% -399px;
+        background-position: 50.4% -399px;
         /* background-position: 50% 50%; */
         /* background-position: 50% -425px; */
         /* background-position: 50% -320px; */
@@ -167,14 +167,14 @@ input, textarea, select {
 .categories-options {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
+    flex-wrap: wrap-reverse;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: flex-end;
 }
 
 .categories-options .category-tree {
     margin-right: 25px;
-    margin-bottom: 40px;
+    margin-bottom: 25px;
     flex-grow: 3;
 }
 
@@ -183,16 +183,33 @@ input, textarea, select {
     background-color: var(--light-bg-color);
     border-radius: var(--border-radius);
     padding: 10px 15px;
-    margin-bottom: 40px;
+    margin: 2.5px;
+    margin-bottom: 25px;
+    max-height: 28px;
+    overflow: hidden;
+    transition-duration: 0.25s;
+    transition-property: max-height;
+    transition-timing-function: linear;
+}
+
+.categories-options .filters:hover,
+.categories-options .filters:focus-within,
+.categories-options .filters:active {
+    max-height: 1000px;
 }
 
 .filters h4 {
     margin: 0;
+    line-height: 28px;
+    cursor: pointer;
+    color: var(--accent-color);
 }
 
 .filters input[type=submit] {
     margin-right: 10px;
     cursor: pointer;
+    color: var(--accent-color);
+    font-weight: bold;
 }
 
 .entry-note {
