@@ -113,31 +113,33 @@ input, textarea, select {
 
 .browse-menu {
     margin-bottom: 40px;
-    display: block;
+    /* display: block; */
     overflow: hidden;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
 }
 
 .browse-menu .search {
-    float: right;
-    width: 400px;
-    max-width: 100%;
+    flex-grow: 1;
 }
 
 .browse-menu .search form {
-    display: inline;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
 }
 
 .browse-menu .search input[type=search] {
+    display: inline-block;
+    flex-grow: 1;
     margin: 2.5px;
     padding: 10px 15px;
-    width: 300px;
-    max-width: 100%;
     line-height: 27.5px;
     border-radius: var(--border-radius);
     border: none;
     color: var(--text-color);
-    background-color: var(--highlight-bg-color)
-
+    background-color: var(--highlight-bg-color);
 }
 
 .browse-menu a:link, .browse-menu a:visited, .browse-menu .search input[type=submit] {
@@ -162,8 +164,35 @@ input, textarea, select {
     color: var(--text-color);
 }
 
-.category-tree {
+.categories-options {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.categories-options .category-tree {
+    margin-right: 25px;
     margin-bottom: 40px;
+    flex-grow: 3;
+}
+
+.categories-options .filters {
+    flex-grow: 1;
+    background-color: var(--light-bg-color);
+    border-radius: var(--border-radius);
+    padding: 10px 15px;
+    margin-bottom: 40px;
+}
+
+.filters h4 {
+    margin: 0;
+}
+
+.filters input[type=submit] {
+    margin-right: 10px;
+    cursor: pointer;
 }
 
 .entry-note {

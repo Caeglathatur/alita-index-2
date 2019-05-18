@@ -3,7 +3,7 @@
     <a href="{% url 'newest' %}" class="{% if view.id == 'newest' %}current{% endif %}">Newest</a>
     <div class="search">
         <form action="{% url 'search' %}" method="get">
-            <input type="search" placeholder="Search the index..." name="q" id="search-query" required value="{{ query }}"><input type="submit" value="Search" class="{% if view.id == 'search' %}current{% endif %}">
+            <input type="search" placeholder="Search the index..." name="q" id="search-query" required value="{{ query }}" size="14"><input type="submit" value="Search" class="{% if view.id == 'search' %}current{% endif %}">
         </form>
     </div>
 </nav>

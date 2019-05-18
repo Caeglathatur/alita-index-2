@@ -18,7 +18,7 @@ along with Alita Index.  If not, see <https://www.gnu.org/licenses/>.
 
 from django.views.generic import ListView, TemplateView
 
-from . import models, search
+from . import filters, models, search
 
 
 class CategoriesView(TemplateView):
@@ -27,7 +27,22 @@ class CategoriesView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context["categories"] = models.Category.objects.filter(parent__isnull=True)
+
+        categories = models.Category.objects.filter(parent__isnull=True)
+        for cat in categories:
+            filters.filter_category_contents(cat, self.request)
+        categories = [
+            c for c in categories if c.entries_filtered or c.children_filtered
+        ]
+        context["categories"] = categories
+
+        context["tags"] = models.Tag.objects.all()
+        context["tags_selected"] = [
+            int(t) for t in self.request.GET.getlist("tag") if t.isdigit()
+        ]
+        if "null" in self.request.GET.getlist("tag"):
+            context["tags_selected"].append("null")
+
         return context
 
 
@@ -74,7 +89,15 @@ class MarkdownView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context["categories"] = models.Category.objects.filter(parent__isnull=True)
+
+        categories = models.Category.objects.filter(parent__isnull=True)
+        for cat in categories:
+            filters.filter_category_contents(cat, self.request)
+        categories = [
+            c for c in categories if c.entries_filtered or c.children_filtered
+        ]
+        context["categories"] = categories
+
         return context
 
     def get(self, *args, **kwargs):
