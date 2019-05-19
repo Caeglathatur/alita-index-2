@@ -8,6 +8,7 @@
     <div class="categories-options">
         <nav class="category-tree">
             {% if categories %}
+                {% if filters_are_active %}<p>Filters active - <a href="{% url 'categories' %}">Clear filters</a></p>{% endif %}
                 <p>Listing {{ entries_count }} entries in the following categories:</p>
                 {% include 'fragments/category-tree.html' %}
             {% else %}

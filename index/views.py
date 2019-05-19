@@ -54,6 +54,8 @@ class CategoriesView(TemplateView):
             else []
         )
 
+        context["filters_are_active"] = bool(self.request.GET)
+
         return context
 
 
