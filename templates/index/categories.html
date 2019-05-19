@@ -7,7 +7,13 @@
 
     <div class="categories-options">
         <nav class="category-tree">
-            {% include 'fragments/category-tree.html' %}
+            {% if categories %}
+                <p>Listing {{ entries_count }} entries in the following categories:</p>
+                {% include 'fragments/category-tree.html' %}
+            {% else %}
+                <p>No entries found. Perhaps the filtering is too narrow.</p>
+                <p><a href="{% url 'categories' %}">Clear filters</a></p>
+            {% endif %}
         </nav>
         <form class="filters" action="{% url 'categories' %}" method="get">
             <h4>Filters &amp; Languages...</h4>

@@ -36,6 +36,9 @@ class CategoriesView(TemplateView):
             c for c in categories if c.entries_filtered or c.children_filtered
         ]
         context["categories"] = categories
+        context["entries_count"] = sum(
+            [c.entries_filtered_traversed_count for c in categories]
+        )
 
         context["tags"] = models.Tag.objects.all()
         context["tags_selected"] = [

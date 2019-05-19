@@ -1,15 +1,10 @@
-{% if categories %}
-    <ul>
-        {% for c in categories %}
-            <li>
-                <a href="#{{ c.slug }}">{{ c.name }}</a>
-                {% if c.children_filtered %}
-                    {% include 'fragments/category-tree.html' with categories=c.children_filtered %}
-                {% endif %}
-            </li>
-        {% endfor %}
-    </ul>
-{% else %}
-    <p>No entries found. Perhaps the filtering is too narrow.</p>
-    <p><a href="{% url 'categories' %}">Clear filters</a></p>
-{% endif %}
+<ul>
+    {% for c in categories %}
+        <li>
+            <a href="#{{ c.slug }}">{{ c.name }}</a>
+            {% if c.children_filtered %}
+                {% include 'fragments/category-tree.html' with categories=c.children_filtered %}
+            {% endif %}
+        </li>
+    {% endfor %}
+</ul>
