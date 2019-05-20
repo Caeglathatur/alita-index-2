@@ -22,6 +22,13 @@ from django.views.generic import ListView, TemplateView
 from . import filters, models, search
 
 
+DEFAULT_LANG_FILTER = (
+    settings.INDEX_DEFAULT_LANG_FILTER
+    if hasattr(settings, "INDEX_DEFAULT_LANG_FILTER")
+    else []
+)
+
+
 class CategoriesView(TemplateView):
     id = "categories"
     template_name = "index/categories.html"
@@ -31,7 +38,7 @@ class CategoriesView(TemplateView):
 
         categories = models.Category.objects.filter(parent__isnull=True)
         for cat in categories:
-            filters.filter_category_contents(cat, self.request)
+            filters.filter_category_tree(cat, self.request, DEFAULT_LANG_FILTER)
         categories = [
             c for c in categories if c.entries_filtered or c.children_filtered
         ]
@@ -49,9 +56,7 @@ class CategoriesView(TemplateView):
 
         context["langs"] = models.Language.objects.all()
         context["langs_selected"] = self.request.GET.getlist("lang") or (
-            settings.INDEX_DEFAULT_LANG_FILTER
-            if hasattr(settings, "INDEX_DEFAULT_LANG_FILTER")
-            else []
+            DEFAULT_LANG_FILTER
         )
 
         context["filters_are_active"] = bool(self.request.GET)
@@ -105,7 +110,7 @@ class MarkdownView(TemplateView):
 
         categories = models.Category.objects.filter(parent__isnull=True)
         for cat in categories:
-            filters.filter_category_contents(cat, self.request)
+            filters.filter_category_tree(cat, self.request, DEFAULT_LANG_FILTER)
         categories = [
             c for c in categories if c.entries_filtered or c.children_filtered
         ]

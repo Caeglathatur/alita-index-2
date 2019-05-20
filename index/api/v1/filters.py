@@ -89,14 +89,16 @@ class CategoryListFilter(filters.Filter):
 
 class EntryFilterSet(filters.FilterSet):
     category = CategoryListFilter(
+        label="Filter by category",
         help_text="Category <code>id</code> to filter by. Entries in the "
         "child categories of the specified category will be included."
         "<br><br>Multiple values are supported by repeating the parameter with "
-        "different values. The result will be the union (OR) of the filters."
+        "different values. The result will be the union (OR) of the filters.",
     )
     tag = ListIntersectionFilter(
         arg_name="tag",
         field_name="tags",
+        label="Filter by tag",
         help_text="Tag <code>id</code> to filter by."
         "<br><br>Multiple values are supported by repeating the parameter with "
         "different values. The result will be the intersection (AND) of the filters.",
@@ -105,6 +107,7 @@ class EntryFilterSet(filters.FilterSet):
         arg_name="author",
         type="int",
         field_name="authors",
+        label="Filter by author",
         help_text="Author <code>id</code> to filter by."
         "<br><br>Multiple values are supported by repeating the parameter with "
         "different values. The result will be the union (OR) of the filters.",
@@ -112,6 +115,7 @@ class EntryFilterSet(filters.FilterSet):
     lang = ListUnionFilter(
         arg_name="lang",
         field_name="languages",
+        label="Filter by language",
         help_text="Language <code>code</code> to filter by."
         "<br><br>Multiple values are supported by repeating the parameter with "
         "different values. The result will be the union (OR) of the filters.",

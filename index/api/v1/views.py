@@ -20,16 +20,9 @@ import coreapi
 import coreschema
 from django.db.models import FilteredRelation, Q
 from django_filters.rest_framework import DjangoFilterBackend
-from rest_framework import views
+from rest_framework import mixins, views
 from rest_framework.decorators import action
 from rest_framework.filters import OrderingFilter, SearchFilter
-from rest_framework.mixins import (
-    # CreateModelMixin,
-    # DestroyModelMixin,
-    ListModelMixin,
-    RetrieveModelMixin,
-    # UpdateModelMixin,
-)
 from rest_framework.permissions import IsAdminUser
 from rest_framework.response import Response
 from rest_framework.reverse import reverse_lazy
@@ -37,6 +30,7 @@ from rest_framework.schemas import AutoSchema
 from rest_framework.viewsets import GenericViewSet
 
 from ... import models, search
+from ...filters import filter_category_tree
 from . import filters, serializers
 from .permissions import ReadOnly
 
@@ -62,19 +56,17 @@ class IndexAPIRootView(views.APIView):
                 "length-unit-list-url": reverse_lazy(
                     "length-unit-list", request=request
                 ),
-                "language-list-url": reverse_lazy(
-                    "language-list", request=request
-                ),
+                "language-list-url": reverse_lazy("language-list", request=request),
             }
         )
 
 
 class EntryViewSet(
-    ListModelMixin,
-    # CreateModelMixin,
-    # DestroyModelMixin,
-    RetrieveModelMixin,
-    # UpdateModelMixin,
+    mixins.ListModelMixin,
+    # mixins.CreateModelMixin,
+    # mixins.DestroyModelMixin,
+    mixins.RetrieveModelMixin,
+    # mixins.UpdateModelMixin,
     GenericViewSet,
 ):
     """
@@ -100,14 +92,22 @@ class EntryViewSet(
         url_name="list-by-category",
         detail=False,
         methods=["get"],
+        schema=filter_category_tree.schema,
     )
     def list_by_category(self, request):
         """Lists all entries in the index as they are organized in the category
-        tree. The same entry may appear in multiple categories.
+        tree. The same entry may appear in multiple categories. Empty categories are
+        not shown.
         """
 
-        root_cats = models.Category.objects.filter(parent__isnull=True).order_by("name")
-        s = serializers.CategoryTreeEntrySerializer(root_cats, many=True)
+        categories = models.Category.objects.filter(parent__isnull=True)
+        for cat in categories:
+            filter_category_tree(cat, request, [])
+        categories = [
+            c for c in categories if c.entries_filtered or c.children_filtered
+        ]
+
+        s = serializers.CategoryTreeEntrySerializer(categories, many=True)
         return Response(s.data)
 
 
@@ -143,11 +143,11 @@ class EntrySearchView(views.APIView):
 
 
 class CategoryViewSet(
-    ListModelMixin,
-    # CreateModelMixin,
-    # DestroyModelMixin,
-    RetrieveModelMixin,
-    # UpdateModelMixin,
+    mixins.ListModelMixin,
+    # mixins.CreateModelMixin,
+    # mixins.DestroyModelMixin,
+    mixins.RetrieveModelMixin,
+    # mixins.UpdateModelMixin,
     GenericViewSet,
 ):
     """
@@ -171,11 +171,11 @@ class CategoryViewSet(
 
 
 class IdentifierTypeViewSet(
-    ListModelMixin,
-    # CreateModelMixin,
-    # DestroyModelMixin,
-    RetrieveModelMixin,
-    # UpdateModelMixin,
+    mixins.ListModelMixin,
+    # mixins.CreateModelMixin,
+    # mixins.DestroyModelMixin,
+    mixins.RetrieveModelMixin,
+    # mixins.UpdateModelMixin,
     GenericViewSet,
 ):
     """
@@ -194,11 +194,11 @@ class IdentifierTypeViewSet(
 
 
 class LengthUnitViewSet(
-    ListModelMixin,
-    # CreateModelMixin,
-    # DestroyModelMixin,
-    RetrieveModelMixin,
-    # UpdateModelMixin,
+    mixins.ListModelMixin,
+    # mixins.CreateModelMixin,
+    # mixins.DestroyModelMixin,
+    mixins.RetrieveModelMixin,
+    # mixins.UpdateModelMixin,
     GenericViewSet,
 ):
     """
@@ -217,11 +217,11 @@ class LengthUnitViewSet(
 
 
 class TagViewSet(
-    ListModelMixin,
-    # CreateModelMixin,
-    # DestroyModelMixin,
-    RetrieveModelMixin,
-    # UpdateModelMixin,
+    mixins.ListModelMixin,
+    # mixins.CreateModelMixin,
+    # mixins.DestroyModelMixin,
+    mixins.RetrieveModelMixin,
+    # mixins.UpdateModelMixin,
     GenericViewSet,
 ):
     """
@@ -240,11 +240,11 @@ class TagViewSet(
 
 
 class AuthorViewSet(
-    ListModelMixin,
-    # CreateModelMixin,
-    # DestroyModelMixin,
-    RetrieveModelMixin,
-    # UpdateModelMixin,
+    mixins.ListModelMixin,
+    # mixins.CreateModelMixin,
+    # mixins.DestroyModelMixin,
+    mixins.RetrieveModelMixin,
+    # mixins.UpdateModelMixin,
     GenericViewSet,
 ):
     """
@@ -271,11 +271,11 @@ class AuthorViewSet(
 
 
 class LanguageViewSet(
-    ListModelMixin,
-    # CreateModelMixin,
-    # DestroyModelMixin,
-    RetrieveModelMixin,
-    # UpdateModelMixin,
+    mixins.ListModelMixin,
+    # mixins.CreateModelMixin,
+    # mixins.DestroyModelMixin,
+    mixins.RetrieveModelMixin,
+    # mixins.UpdateModelMixin,
     GenericViewSet,
 ):
     """

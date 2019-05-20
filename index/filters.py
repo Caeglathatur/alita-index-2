@@ -16,15 +16,19 @@ You should have received a copy of the GNU Affero General Public License
 along with Alita Index.  If not, see <https://www.gnu.org/licenses/>.
 """
 
-from django.conf import settings
-
+import coreapi
+import coreschema
 from django.db.models import Q
+from rest_framework.schemas import ManualSchema
 
 
 def filter_list_intersection(
     queryset, request, param_name, field_name, lookup_expr="exact", type=None
 ):
-    """The value 'null' is reserved for filtering on <field>__isnull=True."""
+    """The value 'null' is reserved for filtering on <field>__isnull=True.
+
+    THIS IS USED BY THE API. BE MINDFUL OF THE RISK OF INTRODUCING BREAKING CHANGES.
+    """
 
     values = request.GET.getlist(param_name)
 
@@ -43,7 +47,10 @@ def filter_list_intersection(
 
 
 def filter_list_union(queryset, request, param_name, field_name, type=None, default=[]):
-    """The value 'null' is reserved for filtering on <field>__isnull=True."""
+    """The value 'null' is reserved for filtering on <field>__isnull=True.
+
+    THIS IS USED BY THE API. BE MINDFUL OF THE RISK OF INTRODUCING BREAKING CHANGES.
+    """
 
     values = request.GET.getlist(param_name) or default
 
@@ -71,28 +78,69 @@ def filter_list_union(queryset, request, param_name, field_name, type=None, defa
     return queryset
 
 
-def filter_entries(queryset, request):
+def filter_entries(queryset, request, default_lang_filter):
+    """THIS IS USED BY THE API. BE MINDFUL OF THE RISK OF INTRODUCING BREAKING CHANGES."""
+
     queryset = filter_list_intersection(queryset, request, "tag", "tags", type="int")
     queryset = filter_list_union(
-        queryset,
-        request,
-        "lang",
-        "languages",
-        default=settings.INDEX_DEFAULT_LANG_FILTER
-        if hasattr(settings, "INDEX_DEFAULT_LANG_FILTER")
-        else [],
+        queryset, request, "lang", "languages", default=default_lang_filter
     )
     return queryset
 
 
-def filter_category_contents(category, request):
-    category.entries_filtered = filter_entries(category.entries_visible, request)
+def filter_category_tree(category, request, default_lang_filter=[]):
+    """Filters entries from category and its descendant categories, and filters out
+    descendant categories that are empty after the filtering of entries.
+
+    THIS IS USED BY THE API. BE MINDFUL OF THE RISK OF INTRODUCING BREAKING CHANGES.
+    """
+
+    category.entries_filtered = filter_entries(
+        category.entries_visible, request, default_lang_filter
+    )
     category.entries_filtered_traversed_count = len(category.entries_filtered)
     category.children_filtered = []
     for c in category.children.all():
-        filter_category_contents(c, request)
+        filter_category_tree(c, request, default_lang_filter)
         if c.entries_filtered or c.children_filtered:
             category.children_filtered.append(c)
             category.entries_filtered_traversed_count += (
                 c.entries_filtered_traversed_count
             )
+
+
+filter_category_tree.schema = ManualSchema(
+    fields=[
+        coreapi.Field(
+            "tag",
+            required=False,
+            location="query",
+            schema=coreschema.Integer(
+                title="Filter by tag",
+                description=(
+                    "Tag <code>id</code> to filter by. <code>null</code> matches "
+                    "untagged entries."
+                    "<br><br>Multiple values are supported by repeating the "
+                    "parameter with different values. The result will be the "
+                    "intersection (AND) of the filters."
+                ),
+            ),
+        ),
+        coreapi.Field(
+            "lang",
+            required=False,
+            location="query",
+            schema=coreschema.String(
+                title="Filter by language",
+                description=(
+                    "Lanaguage <code>code</code> to filter by. <code>null</code> "
+                    "matches entries with no specified language (language unknown, "
+                    "irrelevant or not important)."
+                    "<br><br>Multiple values are supported by repeating the "
+                    "parameter with different values. The result will be the "
+                    "union (OR) of the filters."
+                ),
+            ),
+        ),
+    ]
+)
