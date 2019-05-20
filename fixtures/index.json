@@ -21,7 +21,8 @@
             "tags": [
                 1,
                 2
-            ]
+            ],
+            "languages": []
         }
     },
     {
@@ -46,7 +47,8 @@
             "tags": [
                 1,
                 2
-            ]
+            ],
+            "languages": []
         }
     },
     {
@@ -71,7 +73,8 @@
             "tags": [
                 1,
                 2
-            ]
+            ],
+            "languages": []
         }
     },
     {
@@ -96,7 +99,8 @@
             "tags": [
                 1,
                 2
-            ]
+            ],
+            "languages": []
         }
     },
     {
@@ -110,7 +114,7 @@
             "length": null,
             "length_unit": null,
             "created": "2019-05-02T21:28:08.966Z",
-            "updated": "2019-05-14T16:19:11.954Z",
+            "updated": "2019-05-18T18:13:12.999Z",
             "is_visible": true,
             "categories": [
                 3
@@ -121,6 +125,9 @@
             "tags": [
                 1,
                 3
+            ],
+            "languages": [
+                "en"
             ]
         }
     },
@@ -135,7 +142,7 @@
             "length": null,
             "length_unit": null,
             "created": "2019-05-02T21:33:45.650Z",
-            "updated": "2019-05-14T16:19:43.553Z",
+            "updated": "2019-05-18T18:12:05.529Z",
             "is_visible": true,
             "categories": [
                 3
@@ -146,6 +153,9 @@
             "tags": [
                 1,
                 3
+            ],
+            "languages": [
+                "en"
             ]
         }
     },
@@ -160,7 +170,7 @@
             "length": 127,
             "length_unit": 2,
             "created": "2019-05-02T21:37:21.699Z",
-            "updated": "2019-05-14T16:19:31.828Z",
+            "updated": "2019-05-18T18:11:59.810Z",
             "is_visible": true,
             "categories": [
                 3
@@ -171,6 +181,9 @@
             "tags": [
                 1,
                 3
+            ],
+            "languages": [
+                "en"
             ]
         }
     },
@@ -185,7 +198,7 @@
             "length": 232,
             "length_unit": 2,
             "created": "2019-05-02T21:48:45.098Z",
-            "updated": "2019-05-14T16:17:46.152Z",
+            "updated": "2019-05-18T18:13:03.294Z",
             "is_visible": true,
             "categories": [
                 3
@@ -196,6 +209,9 @@
             "tags": [
                 1,
                 3
+            ],
+            "languages": [
+                "en"
             ]
         }
     },
@@ -210,7 +226,7 @@
             "length": null,
             "length_unit": null,
             "created": "2019-05-02T21:54:13.184Z",
-            "updated": "2019-05-14T16:26:30.548Z",
+            "updated": "2019-05-18T22:04:32.927Z",
             "is_visible": true,
             "categories": [
                 4
@@ -221,7 +237,8 @@
             "tags": [
                 1,
                 3
-            ]
+            ],
+            "languages": []
         }
     },
     {
@@ -229,13 +246,13 @@
         "pk": 10,
         "fields": {
             "title": "Alita's Theme",
-            "description": "Composed for the movie, but was not used in its purest form in the movie.",
+            "description": "Composed for *Alita: Battle Angel*, but was not used in its purest form in the movie.",
             "keywords": "strings orchestral symphony soundtrack film score",
             "url": "https://youtu.be/HLfloz6NWwQ?t=419",
             "length": 171,
             "length_unit": 4,
             "created": "2019-05-02T22:00:45.268Z",
-            "updated": "2019-05-14T16:21:20.801Z",
+            "updated": "2019-05-18T23:44:41.088Z",
             "is_visible": true,
             "categories": [
                 4
@@ -245,7 +262,8 @@
             ],
             "tags": [
                 3
-            ]
+            ],
+            "languages": []
         }
     },
     {
@@ -268,7 +286,8 @@
             "tags": [
                 1,
                 4
-            ]
+            ],
+            "languages": []
         }
     },
     {
@@ -291,7 +310,8 @@
             "tags": [
                 1,
                 4
-            ]
+            ],
+            "languages": []
         }
     },
     {
@@ -305,7 +325,7 @@
             "length": null,
             "length_unit": null,
             "created": "2019-05-02T22:18:26.453Z",
-            "updated": "2019-05-02T22:18:46.405Z",
+            "updated": "2019-05-18T18:15:33.743Z",
             "is_visible": true,
             "categories": [
                 6
@@ -314,6 +334,9 @@
             "tags": [
                 1,
                 3
+            ],
+            "languages": [
+                "en"
             ]
         }
     },
@@ -338,7 +361,8 @@
             ],
             "tags": [
                 3
-            ]
+            ],
+            "languages": []
         }
     },
     {
@@ -352,7 +376,7 @@
             "length": 10146,
             "length_unit": 4,
             "created": "2019-05-02T22:30:09.828Z",
-            "updated": "2019-05-16T19:53:53.419Z",
+            "updated": "2019-05-18T18:15:18.705Z",
             "is_visible": true,
             "categories": [
                 4,
@@ -363,6 +387,9 @@
             ],
             "tags": [
                 3
+            ],
+            "languages": [
+                "en"
             ]
         }
     },
@@ -371,19 +398,22 @@
         "pk": 16,
         "fields": {
             "title": "Alita Battle Angel Reddit Show",
-            "description": "*Alita: Battle Angel* film analysis and discussion, primarily based on [r/alitabattleangel](https://www.reddit.com/r/alitabattleangel/) on Reddit. [RSS feed](https://rss.castbox.fm/everest/9f8a546a8fa24be1899dbcf73c0150d6.xml).",
+            "description": "*Alita: Battle Angel* film analysis and discussion, primarily based on [r/alitabattleangel](https://www.reddit.com/r/alitabattleangel/) on Reddit.",
             "keywords": "subreddits discussions aba",
             "url": "https://castbox.fm/channel/id2125116",
             "length": null,
             "length_unit": null,
             "created": "2019-05-02T22:36:30.326Z",
-            "updated": "2019-05-17T22:05:07.065Z",
+            "updated": "2019-05-19T18:06:06.308Z",
             "is_visible": true,
             "categories": [
                 7
             ],
             "authors": [],
-            "tags": []
+            "tags": [],
+            "languages": [
+                "en"
+            ]
         }
     },
     {
@@ -397,7 +427,7 @@
             "length": 887,
             "length_unit": 7,
             "created": "2019-05-02T22:40:54.681Z",
-            "updated": "2019-05-12T23:46:59.701Z",
+            "updated": "2019-05-18T18:12:19.329Z",
             "is_visible": true,
             "categories": [
                 9
@@ -405,6 +435,9 @@
             "authors": [],
             "tags": [
                 3
+            ],
+            "languages": [
+                "en"
             ]
         }
     },
@@ -419,7 +452,7 @@
             "length": 21,
             "length_unit": 2,
             "created": "2019-05-02T22:54:44.448Z",
-            "updated": "2019-05-02T22:54:53.447Z",
+            "updated": "2019-05-18T18:15:01.152Z",
             "is_visible": true,
             "categories": [
                 9
@@ -429,6 +462,9 @@
             ],
             "tags": [
                 3
+            ],
+            "languages": [
+                "en"
             ]
         }
     },
@@ -443,7 +479,7 @@
             "length": 4283,
             "length_unit": 7,
             "created": "2019-05-02T22:58:00.031Z",
-            "updated": "2019-05-13T16:08:23.862Z",
+            "updated": "2019-05-18T18:16:14.078Z",
             "is_visible": true,
             "categories": [
                 9
@@ -453,6 +489,9 @@
             ],
             "tags": [
                 3
+            ],
+            "languages": [
+                "en"
             ]
         }
     },
@@ -467,7 +506,7 @@
             "length": null,
             "length_unit": null,
             "created": "2019-05-02T23:04:10.765Z",
-            "updated": "2019-05-02T23:05:17.219Z",
+            "updated": "2019-05-18T18:14:09.386Z",
             "is_visible": true,
             "categories": [
                 8
@@ -477,6 +516,9 @@
             ],
             "tags": [
                 3
+            ],
+            "languages": [
+                "en"
             ]
         }
     },
@@ -491,13 +533,16 @@
             "length": null,
             "length_unit": null,
             "created": "2019-05-02T23:08:19.348Z",
-            "updated": "2019-05-15T18:17:48.002Z",
+            "updated": "2019-05-18T18:13:54.358Z",
             "is_visible": true,
             "categories": [
                 10
             ],
             "authors": [],
-            "tags": []
+            "tags": [],
+            "languages": [
+                "en"
+            ]
         }
     },
     {
@@ -511,13 +556,16 @@
             "length": null,
             "length_unit": null,
             "created": "2019-05-02T23:16:46.160Z",
-            "updated": "2019-05-03T00:16:19.680Z",
+            "updated": "2019-05-18T18:14:44.261Z",
             "is_visible": true,
             "categories": [
                 10
             ],
             "authors": [],
-            "tags": []
+            "tags": [],
+            "languages": [
+                "en"
+            ]
         }
     },
     {
@@ -531,13 +579,16 @@
             "length": null,
             "length_unit": null,
             "created": "2019-05-02T23:17:23.714Z",
-            "updated": "2019-05-03T00:16:25.528Z",
+            "updated": "2019-05-18T18:14:37.057Z",
             "is_visible": true,
             "categories": [
                 10
             ],
             "authors": [],
-            "tags": []
+            "tags": [],
+            "languages": [
+                "en"
+            ]
         }
     },
     {
@@ -551,13 +602,16 @@
             "length": null,
             "length_unit": null,
             "created": "2019-05-02T23:18:32.042Z",
-            "updated": "2019-05-15T18:18:19.607Z",
+            "updated": "2019-05-18T18:15:45.407Z",
             "is_visible": true,
             "categories": [
                 10
             ],
             "authors": [],
-            "tags": []
+            "tags": [],
+            "languages": [
+                "en"
+            ]
         }
     },
     {
@@ -571,13 +625,16 @@
             "length": null,
             "length_unit": null,
             "created": "2019-05-02T23:18:56.345Z",
-            "updated": "2019-05-15T18:18:26.087Z",
+            "updated": "2019-05-18T18:15:49.626Z",
             "is_visible": true,
             "categories": [
                 10
             ],
             "authors": [],
-            "tags": []
+            "tags": [],
+            "languages": [
+                "en"
+            ]
         }
     },
     {
@@ -597,7 +654,8 @@
                 11
             ],
             "authors": [],
-            "tags": []
+            "tags": [],
+            "languages": []
         }
     },
     {
@@ -617,7 +675,8 @@
                 11
             ],
             "authors": [],
-            "tags": []
+            "tags": [],
+            "languages": []
         }
     },
     {
@@ -637,7 +696,8 @@
                 11
             ],
             "authors": [],
-            "tags": []
+            "tags": [],
+            "languages": []
         }
     },
     {
@@ -651,7 +711,7 @@
             "length": null,
             "length_unit": null,
             "created": "2019-05-02T23:29:31.878Z",
-            "updated": "2019-05-13T16:05:55.512Z",
+            "updated": "2019-05-18T18:16:19.389Z",
             "is_visible": true,
             "categories": [
                 12
@@ -661,6 +721,9 @@
             ],
             "tags": [
                 3
+            ],
+            "languages": [
+                "en"
             ]
         }
     },
@@ -685,29 +748,31 @@
             ],
             "tags": [
                 3
-            ]
+            ],
+            "languages": []
         }
     },
     {
         "model": "index.entry",
         "pk": 31,
         "fields": {
-            "title": "Alita Battle Angel",
+            "title": "Alita Battle Angel (Removed from YouTube)",
             "description": "Fan-made.",
             "keywords": "",
             "url": "https://www.youtube.com/channel/UChZ2hQPWPQAlDTk-67z2Pww",
             "length": null,
             "length_unit": null,
             "created": "2019-05-02T23:36:01.897Z",
-            "updated": "2019-05-02T23:38:19.613Z",
-            "is_visible": true,
+            "updated": "2019-05-19T18:21:52.086Z",
+            "is_visible": false,
             "categories": [
                 14
             ],
             "authors": [
                 12
             ],
-            "tags": []
+            "tags": [],
+            "languages": []
         }
     },
     {
@@ -721,7 +786,7 @@
             "length": null,
             "length_unit": null,
             "created": "2019-05-02T23:36:54.885Z",
-            "updated": "2019-05-15T18:21:39.426Z",
+            "updated": "2019-05-18T18:14:03.514Z",
             "is_visible": true,
             "categories": [
                 14
@@ -729,7 +794,10 @@
             "authors": [
                 13
             ],
-            "tags": []
+            "tags": [],
+            "languages": [
+                "en"
+            ]
         }
     },
     {
@@ -743,7 +811,7 @@
             "length": null,
             "length_unit": null,
             "created": "2019-05-02T23:37:31.011Z",
-            "updated": "2019-05-15T18:21:54.762Z",
+            "updated": "2019-05-18T18:14:51.192Z",
             "is_visible": true,
             "categories": [
                 14
@@ -751,7 +819,10 @@
             "authors": [
                 14
             ],
-            "tags": []
+            "tags": [],
+            "languages": [
+                "en"
+            ]
         }
     },
     {
@@ -765,7 +836,7 @@
             "length": null,
             "length_unit": null,
             "created": "2019-05-02T23:39:05.346Z",
-            "updated": "2019-05-02T23:39:05.346Z",
+            "updated": "2019-05-18T18:15:06.275Z",
             "is_visible": true,
             "categories": [
                 14
@@ -773,7 +844,10 @@
             "authors": [
                 15
             ],
-            "tags": []
+            "tags": [],
+            "languages": [
+                "en"
+            ]
         }
     },
     {
@@ -787,7 +861,7 @@
             "length": null,
             "length_unit": null,
             "created": "2019-05-02T23:39:41.162Z",
-            "updated": "2019-05-02T23:39:41.163Z",
+            "updated": "2019-05-18T18:16:07.653Z",
             "is_visible": true,
             "categories": [
                 14
@@ -795,7 +869,10 @@
             "authors": [
                 16
             ],
-            "tags": []
+            "tags": [],
+            "languages": [
+                "en"
+            ]
         }
     },
     {
@@ -809,7 +886,7 @@
             "length": null,
             "length_unit": null,
             "created": "2019-05-02T23:40:12.095Z",
-            "updated": "2019-05-02T23:40:12.095Z",
+            "updated": "2019-05-18T18:15:56.087Z",
             "is_visible": true,
             "categories": [
                 14
@@ -817,7 +894,10 @@
             "authors": [
                 17
             ],
-            "tags": []
+            "tags": [],
+            "languages": [
+                "en"
+            ]
         }
     },
     {
@@ -831,7 +911,7 @@
             "length": 1455,
             "length_unit": 4,
             "created": "2019-05-02T23:50:24.577Z",
-            "updated": "2019-05-17T22:01:08.569Z",
+            "updated": "2019-05-18T18:11:54.974Z",
             "is_visible": true,
             "categories": [
                 5
@@ -841,6 +921,9 @@
             ],
             "tags": [
                 3
+            ],
+            "languages": [
+                "en"
             ]
         }
     },
@@ -855,7 +938,7 @@
             "length": null,
             "length_unit": null,
             "created": "2019-05-02T23:53:15.469Z",
-            "updated": "2019-05-05T00:42:05.481Z",
+            "updated": "2019-05-18T18:12:11.864Z",
             "is_visible": true,
             "categories": [
                 5
@@ -866,6 +949,9 @@
             "tags": [
                 2,
                 3
+            ],
+            "languages": [
+                "en"
             ]
         }
     },
@@ -880,7 +966,7 @@
             "length": null,
             "length_unit": null,
             "created": "2019-05-02T23:54:59.209Z",
-            "updated": "2019-05-02T23:54:59.209Z",
+            "updated": "2019-05-18T18:14:18.024Z",
             "is_visible": true,
             "categories": [
                 5
@@ -890,6 +976,9 @@
             ],
             "tags": [
                 2
+            ],
+            "languages": [
+                "en"
             ]
         }
     },
@@ -904,7 +993,7 @@
             "length": null,
             "length_unit": null,
             "created": "2019-05-02T23:58:11.632Z",
-            "updated": "2019-05-17T22:02:33.958Z",
+            "updated": "2019-05-18T18:15:39.924Z",
             "is_visible": true,
             "categories": [
                 5
@@ -914,6 +1003,9 @@
             ],
             "tags": [
                 3
+            ],
+            "languages": [
+                "en"
             ]
         }
     },
@@ -928,7 +1020,7 @@
             "length": null,
             "length_unit": null,
             "created": "2019-05-04T15:05:43.949Z",
-            "updated": "2019-05-04T15:05:43.949Z",
+            "updated": "2019-05-18T18:14:56.106Z",
             "is_visible": true,
             "categories": [
                 14
@@ -936,7 +1028,10 @@
             "authors": [
                 21
             ],
-            "tags": []
+            "tags": [],
+            "languages": [
+                "en"
+            ]
         }
     },
     {
@@ -961,7 +1056,8 @@
             "tags": [
                 1,
                 2
-            ]
+            ],
+            "languages": []
         }
     },
     {
@@ -975,7 +1071,7 @@
             "length": null,
             "length_unit": null,
             "created": "2019-05-04T15:36:00.288Z",
-            "updated": "2019-05-15T18:20:57.481Z",
+            "updated": "2019-05-18T18:16:01.948Z",
             "is_visible": true,
             "categories": [
                 15
@@ -983,6 +1079,9 @@
             "authors": [],
             "tags": [
                 2
+            ],
+            "languages": [
+                "en"
             ]
         }
     },
@@ -1007,7 +1106,8 @@
             ],
             "tags": [
                 2
-            ]
+            ],
+            "languages": []
         }
     },
     {
@@ -1021,7 +1121,7 @@
             "length": null,
             "length_unit": null,
             "created": "2019-05-05T14:55:01.387Z",
-            "updated": "2019-05-15T18:26:11.844Z",
+            "updated": "2019-05-18T18:13:26.841Z",
             "is_visible": true,
             "categories": [
                 15
@@ -1031,6 +1131,9 @@
                 2,
                 3,
                 4
+            ],
+            "languages": [
+                "en"
             ]
         }
     },
@@ -1054,7 +1157,8 @@
             "tags": [
                 1,
                 3
-            ]
+            ],
+            "languages": []
         }
     },
     {
@@ -1077,7 +1181,8 @@
             "tags": [
                 1,
                 3
-            ]
+            ],
+            "languages": []
         }
     },
     {
@@ -1099,7 +1204,8 @@
             "authors": [],
             "tags": [
                 3
-            ]
+            ],
+            "languages": []
         }
     },
     {
@@ -1122,7 +1228,8 @@
             "tags": [
                 2,
                 3
-            ]
+            ],
+            "languages": []
         }
     },
     {
@@ -1144,7 +1251,8 @@
             "authors": [],
             "tags": [
                 3
-            ]
+            ],
+            "languages": []
         }
     },
     {
@@ -1166,7 +1274,8 @@
             "authors": [],
             "tags": [
                 3
-            ]
+            ],
+            "languages": []
         }
     },
     {
@@ -1188,7 +1297,8 @@
             "authors": [],
             "tags": [
                 3
-            ]
+            ],
+            "languages": []
         }
     },
     {
@@ -1212,7 +1322,8 @@
                 2,
                 3,
                 4
-            ]
+            ],
+            "languages": []
         }
     },
     {
@@ -1234,7 +1345,8 @@
             "authors": [],
             "tags": [
                 3
-            ]
+            ],
+            "languages": []
         }
     },
     {
@@ -1248,7 +1360,7 @@
             "length": null,
             "length_unit": null,
             "created": "2019-05-10T11:01:11.290Z",
-            "updated": "2019-05-10T11:01:11.290Z",
+            "updated": "2019-05-18T18:13:19.786Z",
             "is_visible": true,
             "categories": [
                 17
@@ -1256,6 +1368,9 @@
             "authors": [],
             "tags": [
                 2
+            ],
+            "languages": [
+                "en"
             ]
         }
     },
@@ -1278,7 +1393,8 @@
             "authors": [
                 24
             ],
-            "tags": []
+            "tags": [],
+            "languages": []
         }
     },
     {
@@ -1300,7 +1416,8 @@
             "authors": [],
             "tags": [
                 3
-            ]
+            ],
+            "languages": []
         }
     },
     {
@@ -1309,12 +1426,12 @@
         "fields": {
             "title": "Gunnm: Martian Memory",
             "description": "Game from 1998 for PlayStation 1. [Wikipedia article](https://en.wikipedia.org/wiki/Gunnm:_Martian_Memory).",
-            "keywords": "",
+            "keywords": "consoles",
             "url": "",
             "length": null,
             "length_unit": null,
             "created": "2019-05-12T09:53:47.291Z",
-            "updated": "2019-05-14T16:00:32.791Z",
+            "updated": "2019-05-20T13:03:48.032Z",
             "is_visible": true,
             "categories": [
                 18
@@ -1323,7 +1440,8 @@
             "tags": [
                 1,
                 2
-            ]
+            ],
+            "languages": []
         }
     },
     {
@@ -1337,13 +1455,16 @@
             "length": null,
             "length_unit": null,
             "created": "2019-05-12T09:56:33.894Z",
-            "updated": "2019-05-14T14:42:38.253Z",
+            "updated": "2019-05-18T23:46:39.825Z",
             "is_visible": true,
             "categories": [
                 13
             ],
             "authors": [],
-            "tags": []
+            "tags": [],
+            "languages": [
+                "en"
+            ]
         }
     },
     {
@@ -1357,7 +1478,7 @@
             "length": 1913,
             "length_unit": 7,
             "created": "2019-05-12T10:04:28.473Z",
-            "updated": "2019-05-13T16:08:47.003Z",
+            "updated": "2019-05-18T18:12:25.391Z",
             "is_visible": true,
             "categories": [
                 9
@@ -1367,6 +1488,9 @@
             ],
             "tags": [
                 3
+            ],
+            "languages": [
+                "en"
             ]
         }
     },
@@ -1381,13 +1505,16 @@
             "length": null,
             "length_unit": null,
             "created": "2019-05-12T10:14:16.096Z",
-            "updated": "2019-05-14T16:55:56.855Z",
+            "updated": "2019-05-19T18:04:16.027Z",
             "is_visible": true,
             "categories": [
                 18
             ],
             "authors": [],
-            "tags": []
+            "tags": [
+                3
+            ],
+            "languages": []
         }
     },
     {
@@ -1396,12 +1523,12 @@
         "fields": {
             "title": "Alita: Battle Angel: The Abridged Script",
             "description": "Parody movie script.",
-            "keywords": "funny humor humour",
+            "keywords": "funny humor humour comedy",
             "url": "https://www.the-editing-room.com/alita-battle-angel.html",
             "length": 2367,
             "length_unit": 7,
             "created": "2019-05-12T16:19:56.020Z",
-            "updated": "2019-05-13T16:04:05.799Z",
+            "updated": "2019-05-20T12:21:48.689Z",
             "is_visible": true,
             "categories": [
                 13
@@ -1411,6 +1538,9 @@
             ],
             "tags": [
                 3
+            ],
+            "languages": [
+                "en"
             ]
         }
     },
@@ -1434,7 +1564,8 @@
             "tags": [
                 2,
                 3
-            ]
+            ],
+            "languages": []
         }
     },
     {
@@ -1457,7 +1588,8 @@
             "tags": [
                 1,
                 3
-            ]
+            ],
+            "languages": []
         }
     },
     {
@@ -1471,7 +1603,7 @@
             "length": 2747,
             "length_unit": 7,
             "created": "2019-05-13T15:07:57.904Z",
-            "updated": "2019-05-15T16:48:08.945Z",
+            "updated": "2019-05-18T18:12:49.708Z",
             "is_visible": true,
             "categories": [
                 8
@@ -1481,6 +1613,9 @@
             ],
             "tags": [
                 3
+            ],
+            "languages": [
+                "en"
             ]
         }
     },
@@ -1504,7 +1639,8 @@
             "tags": [
                 1,
                 3
-            ]
+            ],
+            "languages": []
         }
     },
     {
@@ -1518,7 +1654,7 @@
             "length": 11043,
             "length_unit": 4,
             "created": "2019-05-15T12:48:25.065Z",
-            "updated": "2019-05-16T19:54:09.410Z",
+            "updated": "2019-05-18T18:12:40.159Z",
             "is_visible": true,
             "categories": [
                 5
@@ -1528,6 +1664,9 @@
             ],
             "tags": [
                 3
+            ],
+            "languages": [
+                "en"
             ]
         }
     },
@@ -1550,7 +1689,8 @@
             "authors": [],
             "tags": [
                 3
-            ]
+            ],
+            "languages": []
         }
     },
     {
@@ -1572,7 +1712,8 @@
             "authors": [],
             "tags": [
                 3
-            ]
+            ],
+            "languages": []
         }
     },
     {
@@ -1592,7 +1733,8 @@
                 12
             ],
             "authors": [],
-            "tags": []
+            "tags": [],
+            "languages": []
         }
     },
     {
@@ -1612,7 +1754,133 @@
                 12
             ],
             "authors": [],
-            "tags": []
+            "tags": [],
+            "languages": []
+        }
+    },
+    {
+        "model": "index.entry",
+        "pk": 72,
+        "fields": {
+            "title": "Lullaby for a Soldier",
+            "description": "Song used in trailer 1 for *Alita: Battle Angel*.",
+            "keywords": "",
+            "url": "https://www.youtube.com/watch?v=KmucVmr60HQ",
+            "length": 180,
+            "length_unit": 4,
+            "created": "2019-05-18T21:36:29.634Z",
+            "updated": "2019-05-18T21:36:29.634Z",
+            "is_visible": true,
+            "categories": [
+                4
+            ],
+            "authors": [
+                28
+            ],
+            "tags": [
+                3
+            ],
+            "languages": []
+        }
+    },
+    {
+        "model": "index.entry",
+        "pk": 73,
+        "fields": {
+            "title": "New Divide",
+            "description": "Song used in trailer 2 for *Alita: Battle Angel*. Cover of song by Linkin Park.",
+            "keywords": "",
+            "url": "",
+            "length": 174,
+            "length_unit": 4,
+            "created": "2019-05-18T21:44:05.193Z",
+            "updated": "2019-05-18T21:47:45.430Z",
+            "is_visible": true,
+            "categories": [
+                4
+            ],
+            "authors": [
+                29,
+                30
+            ],
+            "tags": [
+                3
+            ],
+            "languages": []
+        }
+    },
+    {
+        "model": "index.entry",
+        "pk": 74,
+        "fields": {
+            "title": "From the Earth",
+            "description": "Music used in trailer 3 for *Alita: Battle Angel*.",
+            "keywords": "",
+            "url": "https://www.youtube.com/watch?v=3MJslaIGvGQ",
+            "length": 201,
+            "length_unit": 4,
+            "created": "2019-05-18T21:55:33.916Z",
+            "updated": "2019-05-18T21:55:33.916Z",
+            "is_visible": true,
+            "categories": [
+                4
+            ],
+            "authors": [
+                31
+            ],
+            "tags": [
+                3
+            ],
+            "languages": []
+        }
+    },
+    {
+        "model": "index.entry",
+        "pk": 75,
+        "fields": {
+            "title": "Clips from \"Alita: Battle Angel\"",
+            "description": "",
+            "keywords": "",
+            "url": "",
+            "length": null,
+            "length_unit": null,
+            "created": "2019-05-20T12:41:48.708Z",
+            "updated": "2019-05-20T12:47:32.151Z",
+            "is_visible": true,
+            "categories": [
+                5
+            ],
+            "authors": [],
+            "tags": [
+                1,
+                3
+            ],
+            "languages": []
+        }
+    },
+    {
+        "model": "index.entry",
+        "pk": 76,
+        "fields": {
+            "title": "Headshot",
+            "description": "Music used in the *Alita: Battle Angel* clip titled \"Motorball\".",
+            "keywords": "trailers soundtrack",
+            "url": "",
+            "length": 126,
+            "length_unit": 4,
+            "created": "2019-05-20T12:54:37.192Z",
+            "updated": "2019-05-20T12:55:29.090Z",
+            "is_visible": true,
+            "categories": [
+                4
+            ],
+            "authors": [
+                32
+            ],
+            "tags": [
+                3
+            ],
+            "languages": []
         }
     },
     {
@@ -2232,6 +2500,160 @@
         }
     },
     {
+        "model": "index.subentry",
+        "pk": 45,
+        "fields": {
+            "title": "Spotify",
+            "description": "",
+            "order": null,
+            "entry": 73,
+            "parent": null,
+            "url": "https://open.spotify.com/track/2Irq4xbAirAYuAk8DHoz8t?si=AZwJ-4c_R4aM-wwWrKjRDQ",
+            "length": null,
+            "length_unit": null
+        }
+    },
+    {
+        "model": "index.subentry",
+        "pk": 46,
+        "fields": {
+            "title": "YouTube",
+            "description": "",
+            "order": null,
+            "entry": 73,
+            "parent": null,
+            "url": "https://www.youtube.com/watch?v=XEE4a3fefjA",
+            "length": null,
+            "length_unit": null
+        }
+    },
+    {
+        "model": "index.subentry",
+        "pk": 47,
+        "fields": {
+            "title": "YouTube playlist",
+            "description": "",
+            "order": null,
+            "entry": 9,
+            "parent": null,
+            "url": "https://www.youtube.com/playlist?list=PLohYzz4btpaSt2T0rcfmF8wfQzuW_6JTv",
+            "length": null,
+            "length_unit": null
+        }
+    },
+    {
+        "model": "index.subentry",
+        "pk": 48,
+        "fields": {
+            "title": "RSS feed",
+            "description": "",
+            "order": null,
+            "entry": 16,
+            "parent": null,
+            "url": "https://rss.castbox.fm/everest/9f8a546a8fa24be1899dbcf73c0150d6.xml",
+            "length": null,
+            "length_unit": null
+        }
+    },
+    {
+        "model": "index.subentry",
+        "pk": 49,
+        "fields": {
+            "title": "Motorball",
+            "description": "",
+            "order": null,
+            "entry": 75,
+            "parent": null,
+            "url": "https://www.youtube.com/watch?v=e5qAsdNJjeo",
+            "length": 122,
+            "length_unit": 4
+        }
+    },
+    {
+        "model": "index.subentry",
+        "pk": 50,
+        "fields": {
+            "title": "Mirror Punch",
+            "description": "",
+            "order": null,
+            "entry": 75,
+            "parent": null,
+            "url": "https://www.youtube.com/watch?v=qyTkUwjy52w",
+            "length": 57,
+            "length_unit": 4
+        }
+    },
+    {
+        "model": "index.subentry",
+        "pk": 51,
+        "fields": {
+            "title": "Underworld",
+            "description": "",
+            "order": null,
+            "entry": 75,
+            "parent": null,
+            "url": "https://www.youtube.com/watch?v=yfq-_dbIM4Y",
+            "length": 67,
+            "length_unit": 4
+        }
+    },
+    {
+        "model": "index.subentry",
+        "pk": 52,
+        "fields": {
+            "title": "I'm A Warrior",
+            "description": "",
+            "order": null,
+            "entry": 75,
+            "parent": null,
+            "url": "https://www.youtube.com/watch?v=hZi3Jx2EZFU",
+            "length": 52,
+            "length_unit": 4
+        }
+    },
+    {
+        "model": "index.subentry",
+        "pk": 53,
+        "fields": {
+            "title": "Ambush Alley",
+            "description": "",
+            "order": null,
+            "entry": 75,
+            "parent": null,
+            "url": "https://www.youtube.com/watch?v=islyzIqIBXQ",
+            "length": 51,
+            "length_unit": 4
+        }
+    },
+    {
+        "model": "index.subentry",
+        "pk": 54,
+        "fields": {
+            "title": "YouTube",
+            "description": "",
+            "order": null,
+            "entry": 76,
+            "parent": null,
+            "url": "https://www.youtube.com/watch?v=wgw2l4ZCQDc",
+            "length": null,
+            "length_unit": null
+        }
+    },
+    {
+        "model": "index.subentry",
+        "pk": 55,
+        "fields": {
+            "title": "Spotify",
+            "description": "",
+            "order": null,
+            "entry": 76,
+            "parent": null,
+            "url": "https://open.spotify.com/track/2ejS1kysr5TPQNGSOgzkdA",
+            "length": null,
+            "length_unit": null
+        }
+    },
+    {
         "model": "index.entryidentifier",
         "pk": 1,
         "fields": {
@@ -2343,7 +2765,7 @@
             "name": "Yukito Kishiro's Original Manga",
             "parent": 1,
             "slug": "books-original-manga",
-            "keywords": "battle angel alita gunnm comics japanese"
+            "keywords": "battle angel alita gunnm comics japanese baa"
         }
     },
     {
@@ -2741,6 +3163,51 @@
         }
     },
     {
+        "model": "index.author",
+        "pk": 28,
+        "fields": {
+            "name": "Maggie Siff",
+            "discriminator": "",
+            "url": ""
+        }
+    },
+    {
+        "model": "index.author",
+        "pk": 29,
+        "fields": {
+            "name": "J2",
+            "discriminator": "",
+            "url": "https://www.j2producer.com"
+        }
+    },
+    {
+        "model": "index.author",
+        "pk": 30,
+        "fields": {
+            "name": "Avery",
+            "discriminator": "",
+            "url": ""
+        }
+    },
+    {
+        "model": "index.author",
+        "pk": 31,
+        "fields": {
+            "name": "Totem",
+            "discriminator": "",
+            "url": "https://www.totemmx.com/"
+        }
+    },
+    {
+        "model": "index.author",
+        "pk": 32,
+        "fields": {
+            "name": "Klayton",
+            "discriminator": "",
+            "url": ""
+        }
+    },
+    {
         "model": "index.tag",
         "pk": 1,
         "fields": {
@@ -2830,6 +3297,13 @@
         "fields": {
             "name": "word",
             "name_plural": "words"
+        }
+    },
+    {
+        "model": "index.language",
+        "pk": "en",
+        "fields": {
+            "name": "English"
         }
     }
 ]
