@@ -98,14 +98,14 @@ def filter_category_tree(category, request, default_lang_filter=[]):
     category.entries_filtered = filter_entries(
         category.entries_visible, request, default_lang_filter
     )
-    category.entries_filtered_traversed_count = len(category.entries_filtered)
+    category.entries_filtered_traversed_unique = set(category.entries_filtered)
     category.children_filtered = []
     for c in category.children.all():
         filter_category_tree(c, request, default_lang_filter)
         if c.entries_filtered or c.children_filtered:
             category.children_filtered.append(c)
-            category.entries_filtered_traversed_count += (
-                c.entries_filtered_traversed_count
+            category.entries_filtered_traversed_unique |= (
+                c.entries_filtered_traversed_unique
             )
 
 

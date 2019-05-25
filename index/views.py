@@ -16,6 +16,8 @@ You should have received a copy of the GNU Affero General Public License
 along with Alita Index.  If not, see <https://www.gnu.org/licenses/>.
 """
 
+from functools import reduce
+
 from django.conf import settings
 from django.views import generic
 
@@ -43,8 +45,12 @@ class CategoriesView(generic.TemplateView):
             c for c in categories if c.entries_filtered or c.children_filtered
         ]
         context["categories"] = categories
-        context["entries_count"] = sum(
-            [c.entries_filtered_traversed_count for c in categories]
+        context["entries_count"] = len(
+            reduce(
+                lambda all, additional: all | additional,
+                [c.entries_filtered_traversed_unique for c in categories],
+                set(),
+            )
         )
 
         context["tags"] = models.Tag.objects.all()
