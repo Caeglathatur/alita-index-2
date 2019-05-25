@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ entry.title }} - {% endblock title %}
+
+{% block content %}
+    <div class="entry-detail">
+        <h1>{{ entry.title }}</h1>
+        <div class="meta">
+            {% if entry.tags.all %}
+                <div class="tags">
+                    {% for tag in entry.tags.all %}
+                        <div class="tag" style="{% if tag.color %}border-color: {{ tag.color }}; color: {{ tag.color }};{% endif %}">{{ tag.name }}</div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+            <div class="flex">
+                {% if entry.authors.all %}
+                    <div class="authors">
+                        {% for a in entry.authors.all %}
+                            {% if a.url %}
+                                <a href="{{ a.url }}">{{ a.name }}</a>{% if not forloop.last %},{% endif %}
+                            {% else %}
+                                {{ a.name }}{% if not forloop.last %},{% endif %}
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                {% endif %}
+                {% if entry.length_display %}
+                    <div class="length">
+                        {{ entry.length_display }}
+                    </div>
+                {% endif %}
+                {% if entry.categories_names %}
+                    <div class="categories">
+                        {{ entry.categories_names|join:', ' }}
+                    </div>
+                {% endif %}
+                {% if entry.created %}
+                    <div class="date">
+                        Added {{ entry.created|date:'Y-m-d H:i T' }}
+                    </div>
+                {% endif %}
+                {% if entry.updated %}
+                    <div class="date">
+                        Updated {{ entry.updated|date:'Y-m-d H:i T' }}
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+        <div class="entry">
+            {% if entry.url %}
+                <p class="entry-link"><a href="{{ entry.url }}">Visit this resource &rarr;</a></p>
+            {% endif %}
+            {% if entry.description_html %}
+                <div class="description">{{ entry.description_html|safe }}</div>
+            {% endif %}
+            {% if entry.identifiers %}
+                <div class="identifiers">
+                    <ul>
+                        {% for id in entry.identifiers %}
+                            <li>{{ id.type.name }}: {{ id.value }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            {% endif %}
+            {% if entry.children.all %}
+                <div class="sub-entries">
+                    {% for sub in entry.children.all %}
+                        {% include 'fragments/sub-entry.html' %}
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+    </div>
+{% endblock content %}

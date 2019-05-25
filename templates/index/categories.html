@@ -42,19 +42,21 @@
         </form>
     </div>
 
-    {% for c in categories %}
-        {% include 'fragments/category.html' with header='h2' %}
-        {% for c in c.children_filtered %}
-            {% include 'fragments/category.html' with header='h3' %}
+    <div class="entry-list">
+        {% for c in categories %}
+            {% include 'fragments/category.html' with header='h2' %}
             {% for c in c.children_filtered %}
-                {% include 'fragments/category.html' with header='h4' %}
+                {% include 'fragments/category.html' with header='h3' %}
                 {% for c in c.children_filtered %}
-                    {% include 'fragments/category.html' with header='h5' %}
+                    {% include 'fragments/category.html' with header='h4' %}
                     {% for c in c.children_filtered %}
-                        {% include 'fragments/category.html' with header='h6' %}
+                        {% include 'fragments/category.html' with header='h5' %}
+                        {% for c in c.children_filtered %}
+                            {% include 'fragments/category.html' with header='h6' %}
+                        {% endfor %}
                     {% endfor %}
                 {% endfor %}
             {% endfor %}
         {% endfor %}
-    {% endfor %}
+    </div>
 {% endblock content %}

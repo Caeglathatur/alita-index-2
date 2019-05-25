@@ -212,53 +212,7 @@ input, textarea, select {
     font-weight: bold;
 }
 
-.entry-note {
-    font-size: 0.8em;
-    color: var(--text-color-faded);
-}
-
-.entry {
-    margin-bottom: 15px;
-    margin-top: 0px;
-    background-color: var(--light-bg-color);
-    border-radius: var(--border-radius);
-    overflow: hidden;
-    line-height: 1em;
-}
-
-.entry > .header {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    background-color: var(--light-bg-color);
-    border-radius: var(--border-radius);
-}
-
-.entry > .header .title {
-    font-weight: bold;
-    vertical-align: middle;
-    margin: 10px 15px;
-    line-height: 1.3em;
-}
-
-.entry > .header > a {
-    display: block;
-}
-
-.entry > .header .authors {
-    margin: 10px 15px;
-    font-style: italic;
-    font-size: 0.8em;
-}
-
-.entry > .tags {
-    float: right;
-    text-align: right;
-    margin: 8px 15px;
-    font-size: 0.75em;
-}
-
-.entry > .tags .tag {
+.tags .tag {
     display: inline-block;
     border-radius: var(--border-radius);
     border: 1px solid var(--text-color-faded);
@@ -267,21 +221,138 @@ input, textarea, select {
     vertical-align: middle;
 }
 
-.entry > .header .length {
+.entry-note {
+    font-size: 0.8em;
+    color: var(--text-color-faded);
+}
+
+.entry-list .entry {
+    margin-bottom: 15px;
+    margin-top: 0px;
+    background-color: var(--light-bg-color);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    line-height: 1em;
+}
+
+.entry-list .entry > .header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    background-color: var(--light-bg-color);
+    border-radius: var(--border-radius);
+}
+
+.entry-list .entry > .header .title {
+    font-weight: bold;
+    vertical-align: middle;
+    margin: 10px 15px;
+    line-height: 1.3em;
+}
+
+.entry-list .entry > .header > a {
+    display: block;
+}
+
+.entry-list .entry > .header .authors {
+    margin: 10px 15px;
+    font-style: italic;
+    font-size: 0.8em;
+}
+
+.entry-list .entry > .tags {
+    float: right;
+    text-align: right;
+    margin: 8px 15px;
+    font-size: 0.75em;
+}
+
+.entry-list .entry > .header .length {
     margin: 10px 15px;
     font-size: 0.8em;
 }
 
-.entry > .description, .entry > .identifiers {
+.entry-list .entry > .description,
+.entry-list .entry > .identifiers,
+.entry-list .entry > .self-links {
     padding-left: 15px;
     padding-right: 15px;
     overflow: hidden;
     font-size: 0.9em;
 }
 
-.entry > .sub-entries {
+.entry-list .entry > .self-links {
+    text-align: right;
+    font-size: 0.8em;
+    line-height: 1em;
+}
+
+.entry-list .entry > .self-links p {
+    margin-top: 0;
+}
+
+.entry-list .entry > .sub-entries {
     margin-bottom: 14.4px;
     font-size: 0.9em;
+}
+
+.entry-detail .meta {
+    overflow: hidden;
+    margin-bottom: 21px;
+}
+
+.entry-detail .meta .flex {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+    top: 3px;
+}
+
+.entry-detail .meta .flex div {
+    margin-right: 30px;
+}
+
+.entry-detail .meta .authors {
+    font-style: italic;
+}
+
+.entry-detail .meta .date,
+.entry-detail .meta .categories {
+    font-size: 0.8em;
+    color: var(--text-color-faded);
+}
+
+.entry-detail .meta .tags {
+    float: right;
+    text-align: right;
+    font-size: 0.75em;
+}
+
+.entry-detail > .entry {
+    background-color: var(--light-bg-color);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    line-height: 1.6em;
+}
+
+.entry-detail > .entry > .entry-link,
+.entry-detail > .entry > .description,
+.entry-detail > .entry > .identifiers {
+    padding-left: 15px;
+    padding-right: 15px;
+    overflow: hidden;
+}
+
+.entry-detail > .entry > .entry-link {
+    font-weight: bold;
+}
+
+.entry-detail > .entry > .sub-entries {
+    margin-top: 14.4px;
+    margin-bottom: 14.4px;
 }
 
 .sub-entry {
@@ -306,17 +377,23 @@ input, textarea, select {
 .sub-entry > .header .title {
     font-weight: bold;
     vertical-align: middle;
-    margin: 5px 15px;
+    margin: 10px 15px 2px 15px;
     line-height: 1.3em;
 }
+
 
 .sub-entry > .header > a {
     display: block;
 }
 
 .sub-entry > .header .length {
-    margin: 5px 15px;
+    margin: 10px 15px 2px 15px;
     font-size: 0.8em;
+}
+
+.entry > .sub-entries > .sub-entry:first-child > .header .title,
+.entry > .sub-entries > .sub-entry:first-child > .header .length {
+    margin-top: 2px;
 }
 
 .sub-entry > .description, .sub-entry > .identifiers {

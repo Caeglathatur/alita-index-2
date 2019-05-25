@@ -1,4 +1,4 @@
-<div class="entry">
+<div class="entry" id="entry-{{ entry.id }}">
     {% if entry.tags.all %}
         <div class="tags">
             {% for tag in entry.tags.all %}
@@ -48,4 +48,7 @@
             {% endfor %}
         </div>
     {% endif %}
+    <div class="self-links">
+        <p><a href="#entry-{{ entry.id }}">Link</a> | <a href="{% url 'entry-detail' pk=entry.id %}">Details</a></p>
+    </div>
 </div>

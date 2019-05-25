@@ -28,6 +28,7 @@ urlpatterns = [
     path("contact/success/", ContactFormSuccessView.as_view(), name="contact-success"),
     path("index-api/", include("index.api.urls")),
     path("newest/", views.NewestView.as_view(), name="newest"),
+    path("entries/<int:pk>/", views.EntryDetailView.as_view(), name="entry-detail"),
     path("search/", views.SearchView.as_view(), name="search"),
     path("rss/", views.RssView.as_view(), name="rss"),
     path("alita-index.md", views.MarkdownView.as_view(), name="markdown"),

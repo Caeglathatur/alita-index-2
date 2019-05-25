@@ -17,7 +17,7 @@ along with Alita Index.  If not, see <https://www.gnu.org/licenses/>.
 """
 
 from django.conf import settings
-from django.views.generic import ListView, TemplateView
+from django.views import generic
 
 from . import filters, models, search
 
@@ -29,7 +29,7 @@ DEFAULT_LANG_FILTER = (
 )
 
 
-class CategoriesView(TemplateView):
+class CategoriesView(generic.TemplateView):
     id = "categories"
     template_name = "index/categories.html"
 
@@ -64,14 +64,21 @@ class CategoriesView(TemplateView):
         return context
 
 
-class NewestView(ListView):
+class NewestView(generic.ListView):
     id = "newest"
     queryset = models.Entry.objects.filter(is_visible=True).order_by("-created")
     template_name = "index/newest.html"
     context_object_name = "entries"
 
 
-class SearchView(TemplateView):
+class EntryDetailView(generic.DetailView):
+    id = "entry-detail"
+    queryset = models.Entry.objects.filter(is_visible=True)
+    template_name = "index/entry-detail.html"
+    context_object_name = "entry"
+
+
+class SearchView(generic.TemplateView):
     id = "search"
     template_name = "index/search.html"
 
@@ -86,7 +93,7 @@ class SearchView(TemplateView):
         return context
 
 
-class RssView(TemplateView):
+class RssView(generic.TemplateView):
     template_name = "index/rss.xml"
 
     def get_context_data(self, *args, **kwargs):
@@ -102,7 +109,7 @@ class RssView(TemplateView):
         )
 
 
-class MarkdownView(TemplateView):
+class MarkdownView(generic.TemplateView):
     template_name = "index/markdown.md"
 
     def get_context_data(self, **kwargs):
