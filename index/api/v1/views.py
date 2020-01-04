@@ -1,5 +1,5 @@
 """
-Copyright © 2019 Alita Index / Caeglathatur
+Copyright © 2019-2020 Alita Index / Caeglathatur
 
 This file is part of Alita Index.
 
