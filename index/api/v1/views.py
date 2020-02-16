@@ -16,8 +16,6 @@ You should have received a copy of the GNU Affero General Public License
 along with Alita Index.  If not, see <https://www.gnu.org/licenses/>.
 """
 
-import coreapi
-import coreschema
 from django.db.models import FilteredRelation, Q
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import mixins, views
@@ -26,7 +24,7 @@ from rest_framework.filters import OrderingFilter, SearchFilter
 from rest_framework.permissions import IsAdminUser
 from rest_framework.response import Response
 from rest_framework.reverse import reverse_lazy
-from rest_framework.schemas import AutoSchema
+from rest_framework.schemas.openapi import AutoSchema
 from rest_framework.viewsets import GenericViewSet
 
 from ... import models, search
@@ -38,7 +36,26 @@ from .permissions import ReadOnly
 class IndexAPIRootView(views.APIView):
     """Lists the URLs of provided list views. Detail views are not listed."""
 
+    class IndexAPIRootViewSchema(AutoSchema):
+        def get_operation(self, url, method, *args, **kwargs):
+            operation = super().get_operation(url, method, *args, **kwargs)
+            operation["responses"]["200"]["content"]["application/json"]["schema"] = {
+                "type": "object",
+                "properties": {
+                    "author-list-url": {"type": "string"},
+                    "length-unit-list-url": {"type": "string"},
+                    "identifier-type-list-url": {"type": "string"},
+                    "category-list-url": {"type": "string"},
+                    "tag-list-url": {"type": "string"},
+                    "language-list-url": {"type": "string"},
+                    "entry-list-url": {"type": "string"},
+                    "entry-list-by-category-url": {"type": "string"},
+                },
+            }
+            return operation
+
     permission_classes = (IsAdminUser | ReadOnly,)
+    schema = IndexAPIRootViewSchema()
 
     def get(self, request):
         return Response(
@@ -77,11 +94,45 @@ class EntryViewSet(
     Returns a single entry from the index.
     """
 
+    class EntryViewSetSchema(AutoSchema):
+        def get_operation(self, url, method, *args, **kwargs):
+            operation = super().get_operation(url, method, *args, **kwargs)
+            if self.view.action == "list_by_category":
+                operation["parameters"].append(
+                    {
+                        "name": "tag",
+                        "in": "query",
+                        "required": False,
+                        "description": """Tag `id` to filter by. `null` matches
+untagged entries.
+
+Multiple values are supported by repeating the parameter with different values. The
+result will be the intersection (AND) of the filters.""",
+                        "schema": {"type": "integer"},
+                    }
+                )
+                operation["parameters"].append(
+                    {
+                        "name": "lang",
+                        "in": "query",
+                        "required": False,
+                        "description": """Lanaguage `code` to filter by. `null`
+matches entries with no specified language (language unknown, irrelevant or
+unimportant).
+
+Multiple values are supported by repeating the parameter with different values. The
+result will be the  union (OR) of the filters.""",
+                        "schema": {"type": "string"},
+                    }
+                )
+            return operation
+
     serializer_class = serializers.EntrySerializer
     permission_classes = (IsAdminUser | ReadOnly,)
     filter_backends = (DjangoFilterBackend, OrderingFilter, SearchFilter)
     filterset_class = filters.EntryFilterSet
     search_fields = ("title", "description", "url", "keywords")
+    schema = EntryViewSetSchema()
 
     def get_queryset(self):
         qs = models.Entry.objects.filter(is_visible=True)
@@ -92,7 +143,6 @@ class EntryViewSet(
         url_name="list-by-category",
         detail=False,
         methods=["get"],
-        schema=filter_category_tree.schema,
     )
     def list_by_category(self, request):
         """Lists all entries in the index as they are organized in the category
@@ -112,19 +162,24 @@ class EntryViewSet(
 
 
 class EntrySearchView(views.APIView):
-    permission_classes = (IsAdminUser | ReadOnly,)
-    schema = AutoSchema(
-        manual_fields=[
-            coreapi.Field(
-                "q",
-                required=False,
-                location="query",
-                schema=coreschema.String(
-                    description=("Search query consisting of space-separated terms.")
-                ),
+    class EntrySearchViewSchema(AutoSchema):
+        def get_operation(self, url, method, *args, **kwargs):
+            operation = super().get_operation(url, method, *args, **kwargs)
+            operation["parameters"].append(
+                {
+                    "name": "q",
+                    "in": "query",
+                    "required": False,
+                    "description": (
+                        "Search query consisting of space-separated terms."
+                    ),
+                    "schema": {"type": "string"},
+                }
             )
-        ]
-    )
+            return operation
+
+    permission_classes = (IsAdminUser | ReadOnly,)
+    schema = EntrySearchViewSchema()
 
     def get(self, request, format=None):
         """Lists entries based on search query. The results are ordered in

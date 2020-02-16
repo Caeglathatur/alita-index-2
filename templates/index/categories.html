@@ -33,7 +33,7 @@
                     {% for lang in langs %}
                         <label><input type="checkbox" name="lang" value="{{ lang.code }}" {% if lang.code in langs_selected %}checked{% endif %}> {{ lang.name }}</label><br>
                     {% endfor %}
-                    <label><input type="checkbox" name="lang" value="null" {% if 'null' in langs_selected %}checked{% endif %}> None / Not important</label>
+                    <label><input type="checkbox" name="lang" value="null" {% if 'null' in langs_selected %}checked{% endif %}> None / Unimportant</label>
                 </p>
             </div>
             <div class="submit-row">

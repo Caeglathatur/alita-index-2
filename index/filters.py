@@ -16,10 +16,7 @@ You should have received a copy of the GNU Affero General Public License
 along with Alita Index.  If not, see <https://www.gnu.org/licenses/>.
 """
 
-import coreapi
-import coreschema
 from django.db.models import Q
-from rest_framework.schemas import ManualSchema
 
 
 def filter_list_intersection(
@@ -79,7 +76,8 @@ def filter_list_union(queryset, request, param_name, field_name, type=None, defa
 
 
 def filter_entries(queryset, request, default_lang_filter):
-    """THIS IS USED BY THE API. BE MINDFUL OF THE RISK OF INTRODUCING BREAKING CHANGES."""
+    """THIS IS USED BY THE API. BE MINDFUL OF THE RISK OF INTRODUCING BREAKING CHANGES.
+    """
 
     queryset = filter_list_intersection(queryset, request, "tag", "tags", type="int")
     queryset = filter_list_union(
@@ -107,40 +105,3 @@ def filter_category_tree(category, request, default_lang_filter=[]):
             category.entries_filtered_traversed_unique |= (
                 c.entries_filtered_traversed_unique
             )
-
-
-filter_category_tree.schema = ManualSchema(
-    fields=[
-        coreapi.Field(
-            "tag",
-            required=False,
-            location="query",
-            schema=coreschema.Integer(
-                title="Filter by tag",
-                description=(
-                    "Tag <code>id</code> to filter by. <code>null</code> matches "
-                    "untagged entries."
-                    "<br><br>Multiple values are supported by repeating the "
-                    "parameter with different values. The result will be the "
-                    "intersection (AND) of the filters."
-                ),
-            ),
-        ),
-        coreapi.Field(
-            "lang",
-            required=False,
-            location="query",
-            schema=coreschema.String(
-                title="Filter by language",
-                description=(
-                    "Lanaguage <code>code</code> to filter by. <code>null</code> "
-                    "matches entries with no specified language (language unknown, "
-                    "irrelevant or not important)."
-                    "<br><br>Multiple values are supported by repeating the "
-                    "parameter with different values. The result will be the "
-                    "union (OR) of the filters."
-                ),
-            ),
-        ),
-    ]
-)

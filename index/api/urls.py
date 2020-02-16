@@ -18,7 +18,9 @@ along with Alita Index.  If not, see <https://www.gnu.org/licenses/>.
 
 from django.conf import settings
 from django.urls import include, path
-from rest_framework.documentation import include_docs_urls
+from django.views.generic import TemplateView
+from rest_framework.schemas import get_schema_view
+
 
 title = (
     settings.INDEX_API_DOCS_TITLE
@@ -27,6 +29,22 @@ title = (
 )
 
 urlpatterns = [
-    path("docs/", include_docs_urls(title=title, permission_classes=[])),
+    path(
+        "openapi",
+        get_schema_view(
+            title="Alita Index API Docs",
+            # description="API for all things …",
+            # version="",
+        ),
+        name="openapi-schema",
+    ),
+    path(
+        "docs/",
+        TemplateView.as_view(
+            template_name="swagger-ui.html",
+            extra_context={"schema_url": "openapi-schema"},
+        ),
+        name="index-api-docs",
+    ),
     path("v1/", include("index.api.v1.urls", namespace="v1")),
 ]
