@@ -145,9 +145,9 @@ result will be the  union (OR) of the filters.""",
         methods=["get"],
     )
     def list_by_category(self, request):
-        """Lists all entries in the index as they are organized in the category
-        tree. The same entry may appear in multiple categories. Empty categories are
-        not shown.
+        """Lists all entries in the index as they are organized in the category tree.
+        The same entry may appear in multiple categories. Empty categories are not
+        shown.
         """
 
         categories = models.Category.objects.filter(parent__isnull=True)
@@ -182,12 +182,12 @@ class EntrySearchView(views.APIView):
     schema = EntrySearchViewSchema()
 
     def get(self, request, format=None):
-        """Lists entries based on search query. The results are ordered in
-        descending order by the number of matching search terms.
+        """Lists entries based on search query. The results are ordered in descending
+        order by the number of matching search terms.
 
-        Unlike the <code>search</code> query param of other entry views (which
-        is very shallow), this view performs a full text search across relationships
-        (entries, sub entries, authors, categories, tags and identifiers).
+        Unlike the `search` query param of other entry views (which is very shallow),
+        this view performs a full text search across relationships (entries, sub
+        entries, authors, categories, tags and identifiers).
         """
 
         query = self.request.GET.get("q", "")
