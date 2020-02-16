@@ -29,8 +29,8 @@ from rest_framework.viewsets import GenericViewSet
 
 from ... import models, search
 from ...filters import filter_category_tree
+from ..permissions import ReadOnly
 from . import filters, serializers
-from .permissions import ReadOnly
 
 
 class IndexAPIRootView(views.APIView):

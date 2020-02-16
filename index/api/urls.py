@@ -19,8 +19,10 @@ along with Alita Index.  If not, see <https://www.gnu.org/licenses/>.
 from django.conf import settings
 from django.urls import include, path
 from django.views.generic import TemplateView
+from rest_framework.permissions import IsAdminUser
 from rest_framework.schemas import get_schema_view
 
+from .permissions import ReadOnly
 
 title = (
     settings.INDEX_API_DOCS_TITLE
@@ -33,7 +35,8 @@ urlpatterns = [
         "openapi",
         get_schema_view(
             title="Alita Index API Docs",
-            # description="API for all things …",
+            permission_classes=(IsAdminUser | ReadOnly,)
+            # description="",
             # version="",
         ),
         name="openapi-schema",
