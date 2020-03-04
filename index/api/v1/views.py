@@ -16,7 +16,10 @@ You should have received a copy of the GNU Affero General Public License
 along with Alita Index.  If not, see <https://www.gnu.org/licenses/>.
 """
 
+from django.conf import settings
 from django.db.models import FilteredRelation, Q
+from django.utils.decorators import method_decorator
+from django.views.decorators.cache import cache_page
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import mixins, views
 from rest_framework.decorators import action
@@ -31,6 +34,8 @@ from ... import models, search
 from ...filters import filter_category_tree
 from ..permissions import ReadOnly
 from . import filters, serializers
+
+CACHE_TIMEOUT = settings.CACHES["default"]["TIMEOUT"]
 
 
 class IndexAPIRootView(views.APIView):
@@ -138,6 +143,7 @@ result will be the  union (OR) of the filters.""",
         qs = models.Entry.objects.filter(is_visible=True)
         return qs
 
+    @method_decorator(cache_page(CACHE_TIMEOUT))
     @action(
         url_path="by-category",
         url_name="list-by-category",
@@ -181,6 +187,7 @@ class EntrySearchView(views.APIView):
     permission_classes = (IsAdminUser | ReadOnly,)
     schema = EntrySearchViewSchema()
 
+    @method_decorator(cache_page(CACHE_TIMEOUT))
     def get(self, request, format=None):
         """Lists entries based on search query. The results are ordered in descending
         order by the number of matching search terms.
@@ -224,6 +231,14 @@ class CategoryViewSet(
             qs = qs.filter(parent__isnull=True)
         return qs
 
+    @method_decorator(cache_page(CACHE_TIMEOUT))
+    def list(self, *args, **kwargs):
+        return super().list(*args, **kwargs)
+
+    @method_decorator(cache_page(CACHE_TIMEOUT))
+    def retrieve(self, *args, **kwargs):
+        return super().retrieve(*args, **kwargs)
+
 
 class IdentifierTypeViewSet(
     mixins.ListModelMixin,
@@ -246,6 +261,14 @@ class IdentifierTypeViewSet(
     permission_classes = (IsAdminUser | ReadOnly,)
     filter_backends = (OrderingFilter, SearchFilter)
     search_fields = ("name",)
+
+    @method_decorator(cache_page(CACHE_TIMEOUT))
+    def list(self, *args, **kwargs):
+        return super().list(*args, **kwargs)
+
+    @method_decorator(cache_page(CACHE_TIMEOUT))
+    def retrieve(self, *args, **kwargs):
+        return super().retrieve(*args, **kwargs)
 
 
 class LengthUnitViewSet(
@@ -270,6 +293,14 @@ class LengthUnitViewSet(
     filter_backends = (OrderingFilter, SearchFilter)
     search_fields = ("name", "name_plural")
 
+    @method_decorator(cache_page(CACHE_TIMEOUT))
+    def list(self, *args, **kwargs):
+        return super().list(*args, **kwargs)
+
+    @method_decorator(cache_page(CACHE_TIMEOUT))
+    def retrieve(self, *args, **kwargs):
+        return super().retrieve(*args, **kwargs)
+
 
 class TagViewSet(
     mixins.ListModelMixin,
@@ -292,6 +323,14 @@ class TagViewSet(
     permission_classes = (IsAdminUser | ReadOnly,)
     filter_backends = (OrderingFilter, SearchFilter)
     search_fields = ("name",)
+
+    @method_decorator(cache_page(CACHE_TIMEOUT))
+    def list(self, *args, **kwargs):
+        return super().list(*args, **kwargs)
+
+    @method_decorator(cache_page(CACHE_TIMEOUT))
+    def retrieve(self, *args, **kwargs):
+        return super().retrieve(*args, **kwargs)
 
 
 class AuthorViewSet(
@@ -324,6 +363,14 @@ class AuthorViewSet(
     filter_backends = (OrderingFilter, SearchFilter)
     search_fields = ("name", "discriminator", "url")
 
+    @method_decorator(cache_page(CACHE_TIMEOUT))
+    def list(self, *args, **kwargs):
+        return super().list(*args, **kwargs)
+
+    @method_decorator(cache_page(CACHE_TIMEOUT))
+    def retrieve(self, *args, **kwargs):
+        return super().retrieve(*args, **kwargs)
+
 
 class LanguageViewSet(
     mixins.ListModelMixin,
@@ -346,3 +393,11 @@ class LanguageViewSet(
     permission_classes = (IsAdminUser | ReadOnly,)
     filter_backends = (OrderingFilter, SearchFilter)
     search_fields = ("name", "code")
+
+    @method_decorator(cache_page(CACHE_TIMEOUT))
+    def list(self, *args, **kwargs):
+        return super().list(*args, **kwargs)
+
+    @method_decorator(cache_page(CACHE_TIMEOUT))
+    def retrieve(self, *args, **kwargs):
+        return super().retrieve(*args, **kwargs)
