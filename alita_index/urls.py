@@ -34,8 +34,14 @@ urlpatterns = [
     path(
         "newest/", cache_page(CACHE_TIMEOUT)(views.NewestView.as_view()), name="newest"
     ),
-    path("entries/<int:pk>/", views.EntryDetailView.as_view(), name="entry-detail"),
-    path("search/", views.SearchView.as_view(), name="search"),
+    path(
+        "entries/<int:pk>/",
+        cache_page(CACHE_TIMEOUT)(views.EntryDetailView.as_view()),
+        name="entry-detail",
+    ),
+    path(
+        "search/", cache_page(CACHE_TIMEOUT)(views.SearchView.as_view()), name="search"
+    ),
     path("rss/", cache_page(CACHE_TIMEOUT)(views.RssView.as_view()), name="rss"),
     path(
         "alita-index.md",
