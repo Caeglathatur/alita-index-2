@@ -1,0 +1,8 @@
+{% extends 'council/base.html' %}
+
+{% block title %}Voting success - {% endblock title %}
+
+{% block content %}
+    Thank you for voting!
+    <p><a href="{% url 'poll-detail' poll %}">View results</a></p>
+{% endblock content %}

@@ -20,7 +20,6 @@ import math
 
 from . import models
 
-
 search_fields = {
     "Entry": ["title", "description", "url", "keywords"],
     "SubEntry": ["title", "description", "url"],

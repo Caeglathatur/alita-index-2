@@ -1,6 +1,5 @@
 from .settings_base import *
 
-
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = "(k#y&)_wn*c_pc6d-#q9e)y53k=0bczv7ss_0+py(hg7k6=e2c"
 

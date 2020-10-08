@@ -23,7 +23,6 @@ from django.views import generic
 
 from . import filters, models, search
 
-
 DEFAULT_LANG_FILTER = (
     settings.INDEX_DEFAULT_LANG_FILTER
     if hasattr(settings, "INDEX_DEFAULT_LANG_FILTER")

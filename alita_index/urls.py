@@ -22,6 +22,7 @@ from django.urls import include, path
 from django.views.decorators.cache import cache_page
 
 from contact_form.views import ContactFormSuccessView, ContactFormView
+from council import views as council_views
 from index import views
 
 CACHE_TIMEOUT = settings.CACHES["default"]["TIMEOUT"]
@@ -49,6 +50,22 @@ urlpatterns = [
         name="markdown",
     ),
     path("captcha/", include("captcha.urls")),
+    path("elders/", council_views.CouncilIndex.as_view(), name="elders-index"),
+    path(
+        "elders/poll/<str:pk>/",
+        council_views.PollDetailView.as_view(),
+        name="poll-detail",
+    ),
+    path(
+        "elders/poll/<str:pk>/vote-success/",
+        council_views.VoteSuccessView.as_view(),
+        name="vote-success",
+    ),
+    path(
+        "elders/vote/<str:key>/",
+        council_views.VoteDetailView.as_view(),
+        name="vote-detail",
+    ),
     path(
         "",
         cache_page(CACHE_TIMEOUT)(views.CategoriesView.as_view()),

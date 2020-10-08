@@ -1,0 +1,12 @@
+<div class="poll-header">
+    <h2>{{ header }}</h2>
+    {% if poll.is_open %}
+        {% if poll.end_datetime %}
+            <p class="open-status">Open until {{ poll.end_datetime|date:"D Y-m-d H:i:s e" }}</p>
+        {% else %}
+            <p class="open-status">Currently open</p>
+        {% endif %}
+    {% else %}
+        <p class="open-status">Closed {{ poll.end_datetime|date:"D Y-m-d H:i:s e" }}</p>
+    {% endif %}
+</div>

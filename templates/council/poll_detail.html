@@ -1,0 +1,49 @@
+{% extends 'council/base.html' %}
+
+
+{% block title %}{% if object %}Poll: {{ object.question }}{% else %}Poll not found{% endif %} - {% endblock title %}
+
+
+
+{% block content %}
+    {% if object %}
+        {% include 'council/fragments/poll-header.html' with header="Poll" poll=object %}
+
+        <div class="poll-question">
+            <p>{{ object.question }}</p>
+        </div>
+
+        <p>{{ object.cast_votes_count }} of {{ object.votes.all.count }} elders have cast their votes.</p>
+
+        {% if object.is_open %}
+            <p>The results will be shown here once the poll closes.</p>
+        {% else %}
+            <h3>Results</h3>
+            <table>
+                {% for choice in object.choices.all %}
+                    <tr>
+                        <td>{{ choice.text }}</td>
+                        <td>{{ choice.votes.all.count }}</td>
+                        <td class="align-right">{{ choice.votes_percentage }} %</td>
+                    </tr>
+                {% endfor %}
+            </table>
+            {% if not object.is_anonymous %}
+                <table>
+                    <thead>
+                        <th>Elder</th>
+                        <th>Vote</th>
+                    </thead>
+                    {% for vote in object.votes.all %}
+                        <tr>
+                            <td>{{ vote.voter.public_name }}</td>
+                            <td>{{ vote.choice.text }}</td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            {% endif %}
+        {% endif %}
+    {% else %}
+        <p>This poll either does not exist or is not public.</p>
+    {% endif %}
+{% endblock content %}

@@ -33,6 +33,7 @@ INSTALLED_APPS = [
     "alita_index.users",
     "index",
     "contact_form",
+    "council",
 ]
 
 MIDDLEWARE = [

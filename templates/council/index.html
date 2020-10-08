@@ -1,0 +1,14 @@
+{% extends 'council/base.html' %}
+
+{% block title %}{% endblock title %}
+
+{% block content %}
+
+These are the wise people who decide who shall be a Tipharean and who shall not.
+
+<ul>
+    {% for voter in voters %}
+        <li>{{ voter.public_name }}</li>
+    {% endfor %}
+</ul>
+{% endblock content %}

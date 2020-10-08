@@ -76,8 +76,7 @@ def filter_list_union(queryset, request, param_name, field_name, type=None, defa
 
 
 def filter_entries(queryset, request, default_lang_filter):
-    """THIS IS USED BY THE API. BE MINDFUL OF THE RISK OF INTRODUCING BREAKING CHANGES.
-    """
+    """THIS IS USED BY THE API. BE MINDFUL OF THE RISK OF INTRODUCING BREAKING CHANGES."""
 
     queryset = filter_list_intersection(queryset, request, "tag", "tags", type="int")
     queryset = filter_list_union(

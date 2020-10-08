@@ -1,0 +1,22 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{% block title %}{% endblock title %}Council of Elders of the Alita Discord Server</title>
+        <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+        <link rel="stylesheet" href="{% static 'css/council.css' %}">
+    </head>
+
+    <body>
+        <div class="content-box">
+            <a href="{% url 'elders-index' %}"><h1>Council of Elders of the Alita Discord Server</h1></a>
+            {% block content %}{% endblock content %}
+        </div>
+    </body>
+
+</html>
