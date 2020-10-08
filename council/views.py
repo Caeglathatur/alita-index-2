@@ -61,14 +61,27 @@ class VoteSuccessView(TemplateView):
 
 class VoteDetailView(DetailView):
     model = models.Vote
-    slug_field = "key"
-    slug_url_kwarg = "key"
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context["poll"] = context["object"].poll
-        context["has_voted"] = bool(context["object"].choice)
+        if context["object"]:
+            context["poll"] = context["object"].poll
+            context["has_voted"] = bool(context["object"].choice)
         return context
+
+    def get_object(self, queryset=None):
+        if queryset is None:
+            queryset = self.get_queryset()
+        try:
+            obj = queryset.get(key=self.kwargs.get("key"))
+        except self.model.DoesNotExist:
+            obj = None
+        return obj
+
+    def get(self, request, *args, **kwargs):
+        self.object = self.get_object()
+        context = self.get_context_data(object=self.object)
+        return self.render_to_response(context, status=200 if self.object else 404)
 
     def post(self, request, *args, **kwargs):
         self.object = self.get_object()

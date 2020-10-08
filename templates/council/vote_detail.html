@@ -1,34 +1,38 @@
 {% extends 'council/base.html' %}
 
-{% block title %}Voting: {{ poll.question }} - {% endblock title %}
+{% block title %}{% if object %}Voting: {{ poll.question }}{% else %}Invalid voting link{% endif %} - {% endblock title %}
 
 {% block content %}
+    {% if object %}
+        {% include 'council/fragments/poll-header.html' with header="Voting in poll" poll=poll %}
 
-    {% include 'council/fragments/poll-header.html' with header="Voting in poll" poll=poll %}
+        <div class="poll-question">
+            <p>{{ poll.question }}</p>
+        </div>
 
-    <div class="poll-question">
-        <p>{{ poll.question }}</p>
-    </div>
+        {% if not poll.is_open %}
+            <p>The poll is closed.</p>
+        {% elif has_voted %}
+            <p>You have already voted in this poll.</p>
+        {% else %}
+            <form method="post">
+                {% csrf_token %}
+                {% for choice in poll.choices.all %}
+                    <p><label><input type="radio" name="choice" value="{{ choice.id }}" required> {{ choice.text }}</label></p>
+                {% endfor %}
+                {% if poll.is_anonymous %}
+                    <p>You are voting anonymously.</p>
+                {% elif object.voter %}
+                    <p>You are voting publicly as {{ object.voter.public_name }}.</p>
+                {% endif %}
+                <input type="submit" value="Vote">
+            </form>
+        {% endif %}
 
-    {% if not poll.is_open %}
-        <p>The poll is closed.</p>
-    {% elif has_voted %}
-        <p>You have already voted in this poll.</p>
+        {% if error %}<p>Error: {{ error }}</p>{% endif %}
+
+        <p><a href="{% url 'poll-detail' object.poll.pk %}">View results</a></p>
     {% else %}
-        <form method="post">
-            {% csrf_token %}
-            {% for choice in poll.choices.all %}
-                <p><label><input type="radio" name="choice" value="{{ choice.id }}" required> {{ choice.text }}</label></p>
-            {% endfor %}
-            {% if poll.is_anonymous %}
-                <p>You are voting anonymously.</p>
-            {% elif object.voter %}
-                <p>You are voting publicly as {{ object.voter.public_name }}.</p>
-            {% endif %}
-            <input type="submit" value="Vote">
-        </form>
+        <p>This voting link has either expired or never existed.</p>
     {% endif %}
-    {% if error %}<p>Error: {{ error }}</p>{% endif %}
-
-    <p><a href="{% url 'poll-detail' object.poll.pk %}">View results</a></p>
 {% endblock content %}
