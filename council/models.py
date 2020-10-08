@@ -116,7 +116,7 @@ class Voter(models.Model):
 
     @property
     def public_name(self) -> str:
-        return self.name if self.is_public else "< hidden >"
+        return self.name if self.is_public else "<Hidden>"
 
     def __str__(self):
         return self.name
