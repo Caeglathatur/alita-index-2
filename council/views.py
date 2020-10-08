@@ -88,7 +88,7 @@ class VoteDetailView(DetailView):
             context["error"] = "The poll is closed. Your vote has not been counted."
             return self.render_to_response(context, status=403)
         except models.Vote.AlreadyVoted:
-            # The regular page voting page, once reloaded, will say that the user has
+            # The regular voting page, once reloaded, will say that the user has
             # already voted
             return self.render_to_response(context, status=403)
         except models.Vote.InvalidChoice:
