@@ -1,0 +1,10 @@
+[run]
+source =
+    alita_index
+    index
+    council
+    contact_form
+
+[report]
+omit =
+    *migrations*

@@ -1,3 +1,7 @@
 format:
-	isort alita_index/* contact_form/* index/* council/*
-	black --exclude migrations alita_index/ contact_form/ index/ council/
+	black .
+
+check:
+	coverage run -m pytest --black
+	coverage report
+	flake8

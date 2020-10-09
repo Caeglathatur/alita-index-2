@@ -44,7 +44,7 @@ keyword_count.short_description = "Keywords"
 
 
 def languages(obj):
-    return ", ".join([l.name for l in obj.languages.all()])
+    return ", ".join([lang.name for lang in obj.languages.all()])
 
 
 keyword_count.short_description = "Languages"

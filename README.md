@@ -1,11 +1,14 @@
 Alita Index
 ===========
 
-Source code for [www.alita-index.com](https://www.alita-index.com/). Written in
-Python 3.8 with Django and Django REST framework. The code is formatted using
-[Black](https://github.com/python/black).
+![Python 3.8](https://img.shields.io/badge/python-3.8-blue)
+[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+[![License: GNU Affero General Public License version 3](https://img.shields.io/badge/license-%20%09AGPL--3.0--only-blue)](LICENSE)
 
-Dependencies (Ubuntu): `python3 python3-dev libz-dev libjpeg-dev libfreetype6-dev`
+Source code for [www.alita-index.com](https://www.alita-index.com/). Written in
+Python with Django and Django REST framework.
+
+Dependencies (Ubuntu): `python3 python3-dev libz-dev libjpeg-dev libfreetype6-dev libmemcached-dev`
 
 ```sh
 python3 -m venv venv
