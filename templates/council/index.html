@@ -4,10 +4,8 @@
 
 {% block content %}
 
-<ul>
-    {% for voter in voters %}
-        <li>{{ voter.public_name }}</li>
-    {% endfor %}
-</ul>
+{% for voter in voters %}
+    <p>{{ voter.public_name }}</p>
+{% endfor %}
 
 {% endblock content %}
